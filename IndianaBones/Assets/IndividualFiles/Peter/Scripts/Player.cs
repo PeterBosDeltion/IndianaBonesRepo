@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Player : MonoBehaviour {
     public int currentLives;
     public int maxLives;
     public int coins;
     public int milk;
+
+    public int textDisplayTime;
+    private bool displayingText;
+
+    private TextMeshProUGUI descriptionText;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        descriptionText = GetComponentInChildren<TextMeshProUGUI>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -41,4 +46,24 @@ public class Player : MonoBehaviour {
     {
         maxLives += 1;
     }
+
+    public void SetText(string s)
+    {
+        if (!displayingText)
+        {
+            StartCoroutine(SetPlayerDescriptionText(s));
+            
+        }
+    }
+
+    private IEnumerator SetPlayerDescriptionText(string textToShow)
+    {
+        displayingText = true;
+        descriptionText.text = "" + textToShow;
+        yield return new WaitForSeconds(textDisplayTime);
+        descriptionText.text = "";
+        displayingText = false;
+    }
+
+
 }
