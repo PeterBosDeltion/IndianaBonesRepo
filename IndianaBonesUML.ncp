@@ -193,7 +193,7 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Size width="160" height="180" />
       </Entity>
       <Entity type="Class">
-        <Name>CaciumStore</Name>
+        <Name>CalciumStore</Name>
         <Access>Public</Access>
         <Location left="642" top="1694" />
         <Size width="162" height="216" />
