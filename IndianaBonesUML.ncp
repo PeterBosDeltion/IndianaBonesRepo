@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>GameManager</Name>
         <Access>Public</Access>
-        <Location left="1757" top="143" />
+        <Location left="2093" top="456" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void ChangeScene(int i)</Member>
@@ -57,7 +57,7 @@
       <Entity type="Class">
         <Name>Boulder</Name>
         <Access>Public</Access>
-        <Location left="1113" top="1910" />
+        <Location left="2093" top="1335" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void OnCollision()</Member>
@@ -66,7 +66,7 @@
       <Entity type="Class">
         <Name>Spikes</Name>
         <Access>Public</Access>
-        <Location left="1298" top="1910" />
+        <Location left="2302" top="1335" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void OnCollisionEnter()</Member>
@@ -105,7 +105,7 @@ Trapdoor/Door gaan open en spiketrap komt uit de vloer.</Text>
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="1757" top="436" />
+        <Location left="2093" top="749" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int HP</Member>
@@ -131,7 +131,7 @@ Trapdoor/Door gaan open en spiketrap komt uit de vloer.</Text>
       <Entity type="Class">
         <Name>MenuManager</Name>
         <Access>Public</Access>
-        <Location left="1549" top="436" />
+        <Location left="1885" top="749" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void PlayGame()</Member>
@@ -142,7 +142,7 @@ Trapdoor/Door gaan open en spiketrap komt uit de vloer.</Text>
       <Entity type="Class">
         <Name>UIManager</Name>
         <Access>Public</Access>
-        <Location left="1966" top="436" />
+        <Location left="2302" top="749" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void Resume()</Member>
@@ -158,7 +158,7 @@ Trapdoor/Door gaan open en spiketrap komt uit de vloer.</Text>
 de game manager regeld scene changes, save en load, quitgame en de timescale.
 
 alle classes die iets willen aanroepen in de gamemanager willen dus de state van de game aanpassen.</Text>
-        <Location left="1603" top="143" />
+        <Location left="1939" top="456" />
         <Size width="138" height="216" />
       </Entity>
       <Entity type="Class">
@@ -225,7 +225,7 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
       <Entity type="Class">
         <Name>TriggerSave</Name>
         <Access>Public</Access>
-        <Location left="2179" top="436" />
+        <Location left="2515" top="749" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void SaveMilestone()</Member>
@@ -234,7 +234,7 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
       <Entity type="Class">
         <Name>ObjectDescriptor</Name>
         <Access>Public</Access>
-        <Location left="1966" top="714" />
+        <Location left="2302" top="1043" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;string&gt; descriptions</Member>
@@ -243,6 +243,11 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Member type="Method">public void OnMouseEnter()</Member>
         <Member type="Method">public void OmMouseExit()</Member>
         <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>De ObjectDescriptor regelt de detectie van de muis boven een object + alt en of op dat object word geklickt en geeft dan description en name text informatie aan de ui managaer</Text>
+        <Location left="2495" top="1043" />
+        <Size width="160" height="118" />
       </Entity>
     </Entities>
     <Relationships>
@@ -431,9 +436,32 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>2045</X>
-          <Y>685</Y>
+          <X>2381</X>
+          <Y>998</Y>
         </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="6" second="10">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2386</X>
+          <Y>1310</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2174</X>
+          <Y>1261</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="10">
+        <Label>Damage()</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
