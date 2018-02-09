@@ -112,7 +112,6 @@ Trapdoor/Door gaan open en spiketrap komt uit de vloer.</Text>
         <Member type="Field">int Coins</Member>
         <Member type="Field">int Milk</Member>
         <Member type="Method">public void Death()</Member>
-        <Member type="Method">public void Damage()</Member>
         <Member type="Method">public void DrinkMilk()</Member>
         <Modifier>None</Modifier>
       </Entity>
