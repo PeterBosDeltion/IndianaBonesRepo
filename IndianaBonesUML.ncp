@@ -117,7 +117,7 @@ Trapdoor/Door gaan open en spiketrap komt uit de vloer.</Text>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Movement</Name>
+        <Name>PlayerMovement</Name>
         <Access>Public</Access>
         <Location left="1553" top="749" />
         <Size width="162" height="216" />
@@ -203,7 +203,7 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>LootHolding</Name>
+        <Name>LootHolder</Name>
         <Access>Public</Access>
         <Location left="642" top="371" />
         <Size width="162" height="216" />
@@ -249,15 +249,24 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Location left="2495" top="1043" />
         <Size width="160" height="118" />
       </Entity>
+      <Entity type="Class">
+        <Name>BoulderSpawner</Name>
+        <Access>Public</Access>
+        <Location left="58" top="1148" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void InstantiateBoulder()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Dependency" first="7" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="1" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -268,8 +277,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -284,6 +291,8 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -294,14 +303,20 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Dependency" first="7" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Dependency" first="7" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Dependency" first="7" second="9">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -310,6 +325,8 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="1" second="9">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -324,42 +341,56 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="13" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="12" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="10" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="15" second="11">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="15" second="16">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="15">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="18">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -374,6 +405,8 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Dependency" first="7" second="18">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -386,8 +419,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="1" second="19">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -402,8 +433,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Dependency" first="7" second="19">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -423,16 +452,12 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="21" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="22" second="13">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -443,8 +468,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="6" second="10">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -462,6 +485,26 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Label>Damage()</Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="10" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2280</X>
+          <Y>852</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="7" second="24">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
