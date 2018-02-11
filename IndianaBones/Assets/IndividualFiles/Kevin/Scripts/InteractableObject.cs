@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour {
 
 	public TriggerdObjects toTrigger;
+	public int puzzleNumber;
 
 	public void Trigger()
 	{
