@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 public class Player : MonoBehaviour {
+    public bool hasKey;
     public int currentLives;
     public int maxLives;
     public int coins;
     public int milk;
-
+    public int bones;
     public int textDisplayTime;
     private bool displayingText;
 
