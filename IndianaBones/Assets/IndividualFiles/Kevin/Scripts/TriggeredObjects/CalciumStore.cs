@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class CalciumStore : TriggerdObjects {
 
+	void Start()
+	{
+		player = GameObject.FindWithTag("Player").GetComponent<Player>();
+	}
 	public override void TriggerFunctionality()
 	{
-		
+		if(player.coins != 0)
+		{
+			player.coins -= 1;
+			player.milk += 1;
+		}
+		else if(player.coins == 0)
+		{
+			player.SetText("No mony no lifu");
+		}
 	}
 }

@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour {
 		}
 		else if (gm != null && gm != this)
 		{
-		Destroy(gameObject);
+			Destroy(gameObject);
 		}
-    	}
+    }
 	
 	public static void ChangeScene(int i)
 	{

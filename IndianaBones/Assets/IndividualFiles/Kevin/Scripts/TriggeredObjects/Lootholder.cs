@@ -14,7 +14,6 @@ public class LootHolder : TriggerdObjects {
 	}
 
 	public Collectables currentCollectable;
-	public Player player;
 
 	void Start()
 	{
