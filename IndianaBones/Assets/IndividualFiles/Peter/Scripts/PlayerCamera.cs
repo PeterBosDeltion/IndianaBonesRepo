@@ -19,6 +19,9 @@ public class PlayerCamera : MonoBehaviour {
 
     void MoveToPlayer()
     {
-       transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + yOffset, player.transform.position.z + zOffset), speed);
+        if(player.transform.position.x > player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x && player.transform.position.x < player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + yOffset, player.transform.position.z + zOffset), speed);
+        }
     }
 }

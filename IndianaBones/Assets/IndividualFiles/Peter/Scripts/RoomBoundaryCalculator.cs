@@ -32,15 +32,15 @@ public class RoomBoundaryCalculator : MonoBehaviour {
         Vector3 emptyPos = raycaster.transform.position;
 
         RaycastHit hit;
-        if(Physics.Raycast(emptyPos, transform.right, out hit, 99))
+        if (Physics.Raycast(emptyPos, transform.right, out hit, 99))
         {
-            rightSideBound = new Vector3(hit.transform.position.x -xOffset, hit.transform.position.y, hit.transform.position.z);
-            
+            rightSideBound = new Vector3(hit.transform.position.x - xOffset, hit.transform.position.y, hit.transform.position.z);
+
         }
 
         if (Physics.Raycast(emptyPos, -transform.right, out hit, 99))
         {
-            rightSideBound = new Vector3(hit.transform.position.x + xOffset, hit.transform.position.y, hit.transform.position.z);
+            leftSideBound = new Vector3(hit.transform.position.x + xOffset, hit.transform.position.y, hit.transform.position.z);
 
         }
     }

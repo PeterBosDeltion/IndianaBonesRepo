@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
     private bool displayingText;
 
     private TextMeshProUGUI descriptionText;
+    public GameObject currentRoom;
 	// Use this for initialization
 	void Start () {
         descriptionText = GetComponentInChildren<TextMeshProUGUI>();
