@@ -6,7 +6,6 @@ public class Door : TriggerdObjects {
 
 
 	public bool costsKey;
-	public Player player;
 
 	void Start()
 	{
