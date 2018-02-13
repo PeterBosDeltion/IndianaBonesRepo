@@ -5,8 +5,18 @@ using TMPro;
 
 public class UiManager : MonoBehaviour {
 
+	public Player player;
 	public GameObject pauseMenuPannel;
+	public TextMeshProUGUI milkCount;
+	public TextMeshProUGUI bonesCount;
+	public TextMeshProUGUI coinCount;
+	public GameObject keyImage;
 
+
+	void Start()
+	{
+		player = GameObject.FindWithTag("Player").GetComponent<Player>();
+	}
 	void Update()
 	{
 		if(Input.GetButtonDown("ESC") && !pauseMenuPannel.activeSelf)
@@ -20,6 +30,21 @@ public class UiManager : MonoBehaviour {
 			print("ok2");
 			pauseMenuPannel.SetActive(false);
 			GameManager.ToggleTimeScale();
+		}
+	}
+
+	public void UpdateValues()
+	{
+		milkCount.text = "Milk : " + player.milk;
+		bonesCount.text = "Bones : " + player.bones;
+		coinCount.text = "Coins : " + player.coins;
+		if(player.hasKey == true)
+		{
+			keyImage.SetActive(true);
+		}
+		else
+		{
+			keyImage.SetActive(false);
 		}
 	}
 	public void Resume()

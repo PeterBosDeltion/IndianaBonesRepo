@@ -14,9 +14,12 @@ public class Player : MonoBehaviour {
 
     private TextMeshProUGUI descriptionText;
     public GameObject currentRoom;
+
+    public UiManager uiManager;
 	// Use this for initialization
 	void Start () {
         descriptionText = GetComponentInChildren<TextMeshProUGUI>();
+        uiManager = GameObject.FindObjectOfType<UiManager>();
     }
 	
 	// Update is called once per frame
@@ -25,6 +28,10 @@ public class Player : MonoBehaviour {
         
 	}
 
+    public void CallUIUpdate()
+    {
+        uiManager.UpdateValues();
+    }
     public void Death()
     {
         if(currentLives <= 0)

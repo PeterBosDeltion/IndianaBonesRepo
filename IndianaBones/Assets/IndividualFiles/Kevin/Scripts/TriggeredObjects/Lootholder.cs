@@ -24,21 +24,25 @@ public class LootHolder : TriggerdObjects {
 		if(currentCollectable == Collectables.Bone)
 		{
 			player.bones += 1;
+			player.CallUIUpdate();
 		}
 
 		if(currentCollectable == Collectables.Coin)
 		{
 			player.coins += 1;
+			player.CallUIUpdate();
 		}
 
 		if(currentCollectable == Collectables.Key)
 		{
 			player.hasKey = true;
+			player.CallUIUpdate();
 		}
 
 		if(currentCollectable == Collectables.Milk)
 		{
 			player.milk += 1;
+			player.CallUIUpdate();
 		}
 	}
 }
