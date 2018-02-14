@@ -13,10 +13,14 @@ public class Door : TriggerdObjects {
 	}
 	public override void TriggerFunctionality()
 	{
-		if(costsKey == true)
+		if(triggerd == false)
 		{
-			player.hasKey = false;
+			triggerd = true;
+			if(costsKey == true)
+			{
+				player.hasKey = false;
+			}
+			GetComponent<Animation>().Play();
 		}
-		GetComponent<Animation>().Play();
 	}
 }

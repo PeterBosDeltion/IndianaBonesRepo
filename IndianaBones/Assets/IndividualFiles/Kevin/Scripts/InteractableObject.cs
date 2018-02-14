@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour {
 
-	public TriggerdObjects toTrigger;
-	public int puzzleNumber;
+	public List<TriggerdObjects> toTrigger = new List<TriggerdObjects>();
 
 	public void Trigger()
-	{
-		toTrigger.TriggerFunctionality();
+	{	
+		foreach(TriggerdObjects trigger in toTrigger)
+		{
+			trigger.TriggerFunctionality();
+		}
 	}
 
 	public void OnCollisionStay(Collision collision)

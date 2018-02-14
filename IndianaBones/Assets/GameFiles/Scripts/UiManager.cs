@@ -11,6 +11,10 @@ public class UiManager : MonoBehaviour {
 	public TextMeshProUGUI bonesCount;
 	public TextMeshProUGUI coinCount;
 	public GameObject keyImage;
+	//deze list word gevuld met geinstantiate plaatjes die de max lives voorstellen (instantiation proses nog neit geprogameerd momenteel placeholder voor prototype)
+	public List<GameObject> lifes = new List<GameObject>();
+	public Sprite emptyHeart;
+	public Sprite fullHeart;
 
 
 	void Start()
@@ -38,6 +42,10 @@ public class UiManager : MonoBehaviour {
 		milkCount.text = "Milk : " + player.milk;
 		bonesCount.text = "Bones : " + player.bones;
 		coinCount.text = "Coins : " + player.coins;
+		if(player.currentLives != player.maxLives)
+		{
+			lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
+		}
 		if(player.hasKey == true)
 		{
 			keyImage.SetActive(true);

@@ -5,6 +5,8 @@ using UnityEngine;
 public class TriggerdObjects : MonoBehaviour {
 
 	public Player player;
+	public bool triggerd;
+	public int puzzleNumber;
 	public virtual void TriggerFunctionality()
 	{
 		

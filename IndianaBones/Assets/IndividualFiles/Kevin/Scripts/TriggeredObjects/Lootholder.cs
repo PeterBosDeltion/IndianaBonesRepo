@@ -21,6 +21,9 @@ public class LootHolder : TriggerdObjects {
 	}
 	public override void TriggerFunctionality()
 	{
+		if(triggerd == false)
+		{
+			triggerd = true;
 		if(currentCollectable == Collectables.Bone)
 		{
 			player.bones += 1;
@@ -43,6 +46,7 @@ public class LootHolder : TriggerdObjects {
 		{
 			player.milk += 1;
 			player.CallUIUpdate();
+		}
 		}
 	}
 }
