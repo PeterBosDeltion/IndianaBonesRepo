@@ -14,9 +14,9 @@ public class InteractableObject : MonoBehaviour {
 		}
 	}
 
-	public void OnCollisionStay(Collision collision)
+	public void OnTriggerStay(Collider other)
 	{
-		if(collision.transform.tag == "Player")
+		if(other.transform.gameObject.tag == "Player")
 		{
 			if(Input.GetButtonDown("E"))
 			{
