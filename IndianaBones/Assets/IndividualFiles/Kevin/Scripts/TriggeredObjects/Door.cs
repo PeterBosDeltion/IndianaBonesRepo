@@ -20,7 +20,8 @@ public class Door : TriggerdObjects {
 			{
 				player.hasKey = false;
 			}
-			GetComponent<Animation>().Play();
+            //GetComponent<Animation>().Play();
+            gameObject.SetActive(false);
 		}
 	}
 }

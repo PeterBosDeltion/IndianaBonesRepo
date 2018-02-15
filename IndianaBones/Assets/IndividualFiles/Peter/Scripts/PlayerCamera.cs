@@ -24,4 +24,16 @@ public class PlayerCamera : MonoBehaviour {
             transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + yOffset, player.transform.position.z + zOffset), speed);
         }
     }
+
+    public void ResetCam()
+    {
+        if (player.GetComponent<Player>().enteredLeft)
+        {
+            transform.position = new Vector3(player.GetComponent<Player>().beginingRoom.x + player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().xOffset, player.transform.position.y + yOffset, player.transform.position.z + zOffset);
+        }
+        else
+        {
+            transform.position = new Vector3(player.GetComponent<Player>().beginingRoom.x - player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().xOffset, player.transform.position.y + yOffset, player.transform.position.z + zOffset);
+        }
+    }
 }

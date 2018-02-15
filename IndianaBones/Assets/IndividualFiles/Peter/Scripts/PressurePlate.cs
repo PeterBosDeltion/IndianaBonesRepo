@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boulder : MonoBehaviour {
+public class PressurePlate : InteractableObject {
 
 	// Use this for initialization
 	void Start () {
@@ -14,12 +14,11 @@ public class Boulder : MonoBehaviour {
 		
 	}
 
-    public void OnCollisionEnter(Collision col)
+    public void OnTriggerEnter(Collider other)
     {
-        if(col.gameObject.tag == "Player")
+        if(other.tag == "Player")
         {
-            col.transform.GetComponent<Player>().Death();
-            Destroy(gameObject);
+            Trigger();
         }
     }
 }

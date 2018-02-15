@@ -11,10 +11,12 @@ public class Player : MonoBehaviour {
     public int bones;
     public int textDisplayTime;
     private bool displayingText;
+
+    public bool enteredLeft;
     public Vector3 beginingRoom;
+    public GameObject currentRoom;
 
     private TextMeshProUGUI descriptionText;
-    public GameObject currentRoom;
 
     private UiManager uiManager;
 	// Use this for initialization
@@ -34,7 +36,15 @@ public class Player : MonoBehaviour {
         {
             currentLives -= 1;
             uiManager.UpdateValues();
-            transform.position = beginingRoom + new Vector3(2,0,0);
+            Camera.main.GetComponent<PlayerCamera>().ResetCam();
+            if (enteredLeft)
+            {
+                transform.position = beginingRoom + new Vector3(2, 0, 0);
+            }
+            else
+            {
+                transform.position = beginingRoom + new Vector3(-2, 0, 0);
+            }
             //Go reset to the bathroom or something
         }
         if(currentLives <= 0)
