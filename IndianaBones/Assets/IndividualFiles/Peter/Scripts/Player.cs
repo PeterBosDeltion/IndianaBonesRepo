@@ -11,22 +11,18 @@ public class Player : MonoBehaviour {
     public int bones;
     public int textDisplayTime;
     private bool displayingText;
+    public Vector3 beginingRoom;
 
     private TextMeshProUGUI descriptionText;
     public GameObject currentRoom;
 
-    public UiManager uiManager;
+    private UiManager uiManager;
 	// Use this for initialization
 	void Start () {
+        beginingRoom = transform.position;
         descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-
-        
-	}
 
     public void CallUIUpdate()
     {
@@ -34,14 +30,16 @@ public class Player : MonoBehaviour {
     }
     public void Death()
     {
+        if(currentLives > 0)
+        {
+            currentLives -= 1;
+            uiManager.UpdateValues();
+            transform.position = beginingRoom + new Vector3(2,0,0);
+            //Go reset to the bathroom or something
+        }
         if(currentLives <= 0)
         {
             Debug.Log("Git gud u fucking casul scrub");
-        }
-        else if(currentLives > 0)
-        {
-            currentLives -= 1;
-            //Go reset to the bathroom or something
         }
     }
 

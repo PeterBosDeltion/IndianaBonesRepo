@@ -5,7 +5,16 @@ using TMPro;
 
 public class UiManager : MonoBehaviour {
 
+	public enum UiState
+	{
+		Main,
+		Pause
+	}
+
+	public GameObject lastPannel;
+	public UiState uiState;
 	public Player player;
+	public GameObject mainPannel;
 	public GameObject pauseMenuPannel;
 	public TextMeshProUGUI milkCount;
 	public TextMeshProUGUI bonesCount;
@@ -19,20 +28,45 @@ public class UiManager : MonoBehaviour {
 
 	void Start()
 	{
+		lastPannel = mainPannel;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
+		UpdateValues();
 	}
 	void Update()
 	{
-		if(Input.GetButtonDown("ESC") && !pauseMenuPannel.activeSelf)
+		if(Input.GetButtonDown("ESC"))
 		{
-			print("ok");
-			pauseMenuPannel.SetActive(true);
-			GameManager.ToggleTimeScale();
+			ChangeUiState();
 		}
-		else if(Input.GetButtonDown("ESC") && pauseMenuPannel.activeSelf)
+	}
+
+	public void ChangeUiState()
+	{
+		if(uiState != UiState.Main)
 		{
-			print("ok2");
-			pauseMenuPannel.SetActive(false);
+			uiState = UiState.Main;
+		}
+		else if(uiState == UiState.Main)
+		{
+			uiState = UiState.Pause;
+		}
+	}
+
+	public void ChangePannel()
+	{
+		if(uiState == UiState.Main)
+		{
+			lastPannel.SetActive(false);
+			mainPannel.SetActive(true);
+			if(lastPannel == pauseMenuPannel)
+			{
+				GameManager.ToggleTimeScale();
+			}
+		}
+		if(uiState == UiState.Pause)
+		{
+			lastPannel.SetActive(false);
+			pauseMenuPannel.SetActive(true);
 			GameManager.ToggleTimeScale();
 		}
 	}
@@ -44,6 +78,7 @@ public class UiManager : MonoBehaviour {
 		coinCount.text = "Coins : " + player.coins;
 		if(player.currentLives != player.maxLives)
 		{
+			print("ll");
 			lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
 		}
 		if(player.hasKey == true)

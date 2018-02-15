@@ -18,6 +18,7 @@ public class Room : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
+            other.GetComponent<Player>().beginingRoom = other.transform.position;
             other.GetComponent<Player>().currentRoom = gameObject;
         }
     }
