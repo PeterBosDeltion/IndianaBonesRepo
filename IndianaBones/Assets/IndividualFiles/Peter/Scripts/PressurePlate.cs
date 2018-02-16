@@ -18,6 +18,7 @@ public class PressurePlate : InteractableObject {
     {
         if(other.tag == "Player")
         {
+            //GetComponent<Animation>().Play();
             Trigger();
         }
     }
