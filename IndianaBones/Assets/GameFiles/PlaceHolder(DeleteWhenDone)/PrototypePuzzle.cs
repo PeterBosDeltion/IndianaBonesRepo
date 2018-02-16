@@ -21,7 +21,7 @@ public class PrototypePuzzle : TriggerdObjects {
     {
         foreach (GameObject g in lights)
         {
-            if(g.GetComponent<Renderer>().material.color == Color.yellow)
+            if(g.GetComponent<Lamp>().fire.isPlaying)
             {
                 correctAmount++;
             }

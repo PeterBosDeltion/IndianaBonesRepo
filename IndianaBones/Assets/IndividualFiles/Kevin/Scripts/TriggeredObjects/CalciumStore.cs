@@ -17,7 +17,7 @@ public class CalciumStore : TriggerdObjects {
 		}
 		else if(player.coins == 0)
 		{
-			player.SetText("No mony no lifu");
+			player.SetText("No mony no lifu", 0);
 		}
 	}
 }

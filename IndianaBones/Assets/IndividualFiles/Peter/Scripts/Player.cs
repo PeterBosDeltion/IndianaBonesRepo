@@ -66,20 +66,20 @@ public class Player : MonoBehaviour {
         maxLives += 1;
     }
 
-    public void SetText(string s)
+    public void SetText(string s, float extraTime)
     {
         if (!displayingText)
         {
-            StartCoroutine(SetPlayerDescriptionText(s));
+            StartCoroutine(SetPlayerDescriptionText(s, extraTime));
             
         }
     }
 
-    private IEnumerator SetPlayerDescriptionText(string textToShow)
+    private IEnumerator SetPlayerDescriptionText(string textToShow, float extraTime)
     {
         displayingText = true;
         descriptionText.text = "" + textToShow;
-        yield return new WaitForSeconds(textDisplayTime);
+        yield return new WaitForSeconds(textDisplayTime + extraTime);
         descriptionText.text = "";
         displayingText = false;
     }

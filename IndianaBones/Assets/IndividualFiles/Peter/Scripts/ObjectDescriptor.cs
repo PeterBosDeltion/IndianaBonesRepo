@@ -6,6 +6,8 @@ public class ObjectDescriptor : MonoBehaviour {
     public List<string> descriptions = new List<string>();
     public TextMeshPro myNameText;
 
+    public float extraDisplayTime;
+
     private Player player;
 	// Use this for initialization
 	void Start () {
@@ -33,7 +35,7 @@ public class ObjectDescriptor : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftAlt))
         {
-           player.SetText(RandomStringFromList());
+           player.SetText(RandomStringFromList(), extraDisplayTime);
         }
     }
 
