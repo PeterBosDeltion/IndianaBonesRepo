@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094755957901710}
   m_LocalRotation: {x: -0, y: -0.0000000018626451, z: -3.783498e-10, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08000024, z: 0.25000083}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0.036}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4057570795604118}
@@ -319,7 +319,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1203320147
+  randomSeed: 1402123123
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3608,7 +3608,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1835580048
+  randomSeed: -1526905160
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4636,9 +4636,9 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: 0.5
+      minScalar: -0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4677,9 +4677,9 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: 0.5
+      minScalar: -0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4718,9 +4718,9 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 2
-      minScalar: 0
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6903,7 +6903,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1255850003
+  randomSeed: 594154660
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7368,7 +7368,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.8794197
+      value: 0.35713303
       mode: 0
       spread: 0
       speed:
