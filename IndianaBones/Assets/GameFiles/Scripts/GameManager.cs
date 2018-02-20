@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class GameManager : MonoBehaviour {
 
+	public AudioMixer mainMixer;
 	public static GameManager gm;
+	public int gameQualityIndex;
+	public Resolution resolution;
 
-   	 void Start()
-   	 {
+	void Start()
+	{
 		DontDestroyOnLoad(this.gameObject);
 		if (gm == null)
 		{
@@ -17,8 +21,7 @@ public class GameManager : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-    }
-	
+	}
 	public static void ChangeScene(int i)
 	{
 		SceneManager.LoadScene(i);	
@@ -43,5 +46,16 @@ public class GameManager : MonoBehaviour {
 		{
 			Time.timeScale = 1;
 		}
+	}
+
+	public void GameVolume(float volume)
+	{
+		mainMixer.SetFloat("MasterVolume",volume);
+	}
+
+	public void QualityOptionsUpdate()
+	{
+		QualitySettings.SetQualityLevel(gameQualityIndex);
+		Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
 	}
 }
