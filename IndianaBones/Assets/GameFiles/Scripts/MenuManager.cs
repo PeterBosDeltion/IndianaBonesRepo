@@ -79,6 +79,19 @@ public class MenuManager : MonoBehaviour {
 		gameManager.QualityOptionsUpdate();
 	}
 
+	public void ChangeScreenMode(int screenModeIndex)
+	{
+		print(screenModeIndex);
+		if(screenModeIndex == 0)
+		{
+			gameManager.screenMode = true;
+		}
+		else if(screenModeIndex == 1)
+		{
+			gameManager.screenMode = false;
+		}
+	}
+
 	public void BackToMenu()
 	{
 		move = false;

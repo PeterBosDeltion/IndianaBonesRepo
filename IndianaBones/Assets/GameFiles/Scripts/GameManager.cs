@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager gm;
 	public int gameQualityIndex;
 	public Resolution resolution;
+	public bool screenMode = true;
 
 	void Start()
 	{
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour {
 
 	public void QualityOptionsUpdate()
 	{
+		Screen.fullScreen = screenMode;
 		QualitySettings.SetQualityLevel(gameQualityIndex);
 		Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
 	}
