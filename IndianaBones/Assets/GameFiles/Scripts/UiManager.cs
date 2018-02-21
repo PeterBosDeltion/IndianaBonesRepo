@@ -8,14 +8,18 @@ public class UiManager : MonoBehaviour {
 	public enum UiState
 	{
 		Main,
-		Pause
+		Pause,
+		Options
 	}
 
+	public Resolution[] reselutions;
+	public TMP_Dropdown resolutionDropdown;
 	public GameObject lastPannel;
 	public UiState uiState;
 	public Player player;
 	public GameObject mainPannel;
 	public GameObject pauseMenuPannel;
+	public GameObject optionsPannel;
 	public TextMeshProUGUI milkCount;
 	public TextMeshProUGUI bonesCount;
 	public TextMeshProUGUI coinCount;
@@ -24,18 +28,40 @@ public class UiManager : MonoBehaviour {
 	public List<GameObject> lifes = new List<GameObject>();
 	public Sprite emptyHeart;
 	public Sprite fullHeart;
+	private GameManager gameManager;
 
 
 	void Start()
 	{
+		gameManager = GameObject.FindObjectOfType<GameManager>();
 		lastPannel = mainPannel;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		UpdateValues();
+
+		resolutionDropdown.ClearOptions();
+		reselutions = Screen.resolutions;
+		List<string> options = new List<string>();
+		int currentRes = 0;
+		int myRes = 0;
+		foreach(Resolution res in reselutions)
+		{
+			options.Add(res.width + "X" + res.height);
+			currentRes += 1;
+			if(res.width == Screen.currentResolution.width && res.height == Screen.currentResolution.height)
+			{
+				myRes = currentRes;
+			}
+		}
+		
+		resolutionDropdown.AddOptions(options);
+		resolutionDropdown.value = myRes;
+		resolutionDropdown.RefreshShownValue();
 	}
 	void Update()
 	{
 		if(Input.GetButtonDown("ESC"))
 		{
+			print("ok");
 			ChangeUiState();
 		}
 	}
@@ -50,6 +76,7 @@ public class UiManager : MonoBehaviour {
 		{
 			uiState = UiState.Pause;
 		}
+		ChangePannel();
 	}
 
 	public void ChangePannel()
@@ -58,16 +85,25 @@ public class UiManager : MonoBehaviour {
 		{
 			lastPannel.SetActive(false);
 			mainPannel.SetActive(true);
-			if(lastPannel == pauseMenuPannel)
-			{
-				GameManager.ToggleTimeScale();
-			}
+			lastPannel = mainPannel;
+			GameManager.ToggleTimeScale();
 		}
 		if(uiState == UiState.Pause)
 		{
 			lastPannel.SetActive(false);
 			pauseMenuPannel.SetActive(true);
-			GameManager.ToggleTimeScale();
+			if(lastPannel == mainPannel)
+			{
+				GameManager.ToggleTimeScale();
+			}
+			lastPannel = pauseMenuPannel;
+		}
+		
+		if(uiState == UiState.Options)
+		{
+			lastPannel.SetActive(false);
+			optionsPannel.SetActive(true);
+			lastPannel = optionsPannel;
 		}
 	}
 
@@ -92,18 +128,58 @@ public class UiManager : MonoBehaviour {
 	}
 	public void Resume()
 	{
-		pauseMenuPannel.SetActive(false);
-		GameManager.ToggleTimeScale();
+		uiState = UiState.Main;
+		ChangePannel();
 	}
 	public void Options()
 	{
-
+		uiState = UiState.Options;
+		ChangePannel();
 	}
 	public void Quit()
 	{
 		GameManager.ChangeScene(0);
 	}
+
+	// Options menu hieronder
+	public void ChangeReselution(int resolutionIndex)
+	{
+		gameManager.resolution = reselutions[resolutionIndex];
+	}
 	
+	public void ChangeVolume(float volume)
+	{
+		gameManager.GameVolume(volume);
+	}
+
+	public void ChangeQuality(int qualityIndex)
+	{
+		gameManager.gameQualityIndex = qualityIndex;
+	}
+
+	public void ChangeScreenMode(int screenModeIndex)
+	{
+		print(screenModeIndex);
+		if(screenModeIndex == 0)
+		{
+			gameManager.screenMode = true;
+		}
+		else if(screenModeIndex == 1)
+		{
+			gameManager.screenMode = false;
+		}
+	}
+
+	public void AcceptUIOptions()
+	{
+		gameManager.QualityOptionsUpdate();
+	}
+
+	public void ReturnToOptionsMenu()
+	{
+		uiState = UiState.Pause;
+		ChangePannel();
+	}
 
 	
 }
