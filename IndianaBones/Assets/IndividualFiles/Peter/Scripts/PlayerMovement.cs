@@ -10,23 +10,28 @@ public class PlayerMovement : MonoBehaviour {
 
     public int sprintCooldown;
     public float sprintSpeed;
-    public float jumpForce;
+
 
     private float startSpeed;
     private bool canSprint;
 
+    public float jumpForce;
+    public float jumpCooldown;
+    private bool canJump;
     
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         startSpeed = speed;
         canSprint = true;
+        canJump = true;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         Move();
         Sprint();
+        Jump();
 	}
 
     void Move()
@@ -64,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
             }
             if(stamina < 100)
             {
-                stamina += staminaUseRate / 8;
+                stamina += staminaUseRate * Time.deltaTime;
             }
         }
     }
@@ -74,5 +79,21 @@ public class PlayerMovement : MonoBehaviour {
         yield return new WaitForSeconds(sprintCooldown);
         canSprint = true;
 
+    }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && canJump)
+        {
+            rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
+            StartCoroutine(JumpCooldown());
+        }
+    }
+
+    IEnumerator JumpCooldown()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(jumpCooldown);
+        canJump = true;
     }
 }
