@@ -58,6 +58,6 @@ public class GameManager : MonoBehaviour {
 	{
 		Screen.fullScreen = screenMode;
 		QualitySettings.SetQualityLevel(gameQualityIndex);
-		Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen);
+		Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen = screenMode);
 	}
 }

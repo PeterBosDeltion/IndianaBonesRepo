@@ -5,7 +5,7 @@ using TMPro;
 public class Player : MonoBehaviour {
     public bool hasKey;
     public int currentLives;
-    public int maxLives;
+    public int maxLives = 3;
     public int coins;
     public int milk;
     public int bones;
@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     private UiManager uiManager;
 	// Use this for initialization
 	void Start () {
+        currentLives = maxLives;
         beginingRoom = transform.position;
         descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
@@ -64,6 +65,8 @@ public class Player : MonoBehaviour {
     public void ConsumeBone()
     {
         maxLives += 1;
+        currentLives += 1;
+        uiManager.AddLive();
     }
 
     public void SetText(string s, float extraTime)

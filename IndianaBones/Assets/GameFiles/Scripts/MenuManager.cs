@@ -77,6 +77,7 @@ public class MenuManager : MonoBehaviour {
 	public void AcceptUIOptions()
 	{
 		gameManager.QualityOptionsUpdate();
+		BackToMenu();
 	}
 
 	public void ChangeScreenMode(int screenModeIndex)

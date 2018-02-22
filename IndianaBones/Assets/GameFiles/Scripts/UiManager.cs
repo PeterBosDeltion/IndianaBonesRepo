@@ -24,20 +24,43 @@ public class UiManager : MonoBehaviour {
 	public TextMeshProUGUI bonesCount;
 	public TextMeshProUGUI coinCount;
 	public GameObject keyImage;
-	//deze list word gevuld met geinstantiate plaatjes die de max lives voorstellen (instantiation proses nog neit geprogameerd momenteel placeholder voor prototype)
+	//deze list word gevuld met geinstantiate plaatjes die de max lives voorstellen (instantiation proses nog niet geprogameerd momenteel placeholder voor prototype)
 	public List<GameObject> lifes = new List<GameObject>();
 	public Sprite emptyHeart;
-	public Sprite fullHeart;
+	public GameObject fullHeart;
+	public GameObject healthPannel;
 	private GameManager gameManager;
 
 
 	void Start()
 	{
+		if(mainPannel.activeSelf)
+		{
+			lastPannel = mainPannel;
+		}
+		else if(pauseMenuPannel.activeSelf)
+		{
+			lastPannel = pauseMenuPannel;
+		}
+		else if(optionsPannel.activeSelf)
+		{
+			lastPannel = optionsPannel;
+		}
+		else if(lastPannel == null)
+		{
+			lastPannel = pauseMenuPannel;
+		}
+		uiState = UiState.Main;
+		ChangePannel();
+		GameManager.ToggleTimeScale();
 		gameManager = GameObject.FindObjectOfType<GameManager>();
 		lastPannel = mainPannel;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		UpdateValues();
-
+		while(lifes.Count != player.maxLives)
+		{
+			AddLive();
+		}
 		resolutionDropdown.ClearOptions();
 		reselutions = Screen.resolutions;
 		List<string> options = new List<string>();
@@ -126,6 +149,14 @@ public class UiManager : MonoBehaviour {
 			keyImage.SetActive(false);
 		}
 	}
+
+	public void AddLive()
+	{
+		lifes.Add(Instantiate(fullHeart,healthPannel.transform.position,Quaternion.identity));
+		lifes[lifes.Count-1].transform.SetParent(healthPannel.transform);
+	}
+
+	//Pause Menu
 	public void Resume()
 	{
 		uiState = UiState.Main;
@@ -141,7 +172,8 @@ public class UiManager : MonoBehaviour {
 		GameManager.ChangeScene(0);
 	}
 
-	// Options menu hieronder
+	
+	// Options Menu
 	public void ChangeReselution(int resolutionIndex)
 	{
 		gameManager.resolution = reselutions[resolutionIndex];
