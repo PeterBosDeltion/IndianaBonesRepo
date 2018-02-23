@@ -1493,6 +1493,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8749b9b0dfc82c498bce01dd1995dc8, type: 2}
+    - target: {fileID: 114201400644077292, guid: df3bc8b6775e9334f8bc32ee4847c3b6,
+        type: 2}
+      propertyPath: yOffset
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df3bc8b6775e9334f8bc32ee4847c3b6, type: 2}
   m_IsPrefabParent: 0
@@ -2033,6 +2038,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8749b9b0dfc82c498bce01dd1995dc8, type: 2}
+    - target: {fileID: 114201400644077292, guid: df3bc8b6775e9334f8bc32ee4847c3b6,
+        type: 2}
+      propertyPath: yOffset
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df3bc8b6775e9334f8bc32ee4847c3b6, type: 2}
   m_IsPrefabParent: 0
@@ -2129,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222adeab452a13a49acde34fe6c07891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 3
+  yOffset: 3.6
   zOffset: -10
   speed: 10
 --- !u!1 &995334767

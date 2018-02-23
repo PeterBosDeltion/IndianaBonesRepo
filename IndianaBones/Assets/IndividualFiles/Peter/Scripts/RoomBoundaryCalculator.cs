@@ -6,7 +6,10 @@ public class RoomBoundaryCalculator : MonoBehaviour {
     public Vector3 leftSideBound;
     public Vector3 rightSideBound;
 
+    public Vector3 upSideBound;
+    public Vector3 downSideBound;
     public float xOffset;
+    public float yOffset;
 
     private GameObject raycaster;
 	// Use this for initialization
@@ -41,6 +44,18 @@ public class RoomBoundaryCalculator : MonoBehaviour {
         if (Physics.Raycast(emptyPos, -transform.right, out hit, 99))
         {
             leftSideBound = new Vector3(hit.transform.position.x + xOffset, hit.transform.position.y, hit.transform.position.z);
+
+        }
+
+        if (Physics.Raycast(emptyPos, transform.up, out hit, 99))
+        {
+            upSideBound = new Vector3(hit.transform.position.x, hit.transform.position.y - yOffset, hit.transform.position.z);
+
+        }
+
+        if (Physics.Raycast(emptyPos, -transform.up, out hit, 99))
+        {
+            downSideBound = new Vector3(hit.transform.position.x, hit.transform.position.y + yOffset, hit.transform.position.z);
 
         }
     }

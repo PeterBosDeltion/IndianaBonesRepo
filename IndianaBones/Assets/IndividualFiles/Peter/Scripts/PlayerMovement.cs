@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float jumpForce;
     public float jumpCooldown;
-    private bool canJump;
+    public bool canJump;
     
 	// Use this for initialization
 	void Start () {
