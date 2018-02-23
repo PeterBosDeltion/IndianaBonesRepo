@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerdObjects : MonoBehaviour {
+public abstract class TriggerdObjects : MonoBehaviour {
 
 	public Player player;
+	public PuzzleManager puzzleManager;
 	public bool triggerd;
 	public int puzzleNumber;
-	public int puzllePart;
-	public virtual void TriggerFunctionality()
-	{
-		
-	}
+	public int puzzlePart;
+
+	public abstract void TriggerFunctionality();
 }

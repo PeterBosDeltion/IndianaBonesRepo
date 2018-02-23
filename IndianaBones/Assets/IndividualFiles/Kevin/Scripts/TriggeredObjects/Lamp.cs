@@ -7,18 +7,25 @@ public class Lamp : TriggerdObjects {
     
     void Start()
     {
+        puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
         fire = GetComponentInChildren<ParticleSystem>();
     }
 
 	public override void TriggerFunctionality()
 	{
-        if (!fire.isPlaying)
+        print("step 1");
+        if(puzzleManager.puzzleList[puzzleNumber].returnBool == false)
         {
-            fire.Play();
-        }
-        else
-        {
-            fire.Stop();
+              print("step 2");
+            if (!fire.isPlaying)
+            {
+                fire.Play();
+            }
+            else
+            {
+                fire.Stop();
+            }
+            puzzleManager.puzzleInsert(this);
         }
     }
 }
