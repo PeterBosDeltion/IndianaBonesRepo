@@ -23,8 +23,10 @@ public class InteractableObject : MonoBehaviour {
 	{
 		if(other.transform.gameObject.tag == "Player")
 		{
+			print("collisison check");
 			if(Input.GetButtonDown("E"))
 			{
+				print("Pressed");
 				puzzleManager.triggers = toTrigger.Count;
 				Trigger();
 			}

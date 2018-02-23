@@ -26,11 +26,6 @@ public class TurnLightsOnPuzzle : Puzzle {
 		{
 			torches[trigger] = false;
 		}
-		for (int i = 0; i < torches.Count; i++)
-		{
-			print(torches[i]);
-		}
-		print("stop");
 		foreach (bool torch in torches)
 		{
 			if(torch == false)
