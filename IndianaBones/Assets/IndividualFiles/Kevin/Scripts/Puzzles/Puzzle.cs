@@ -4,5 +4,8 @@ using UnityEngine;
 
 public abstract class Puzzle : MonoBehaviour {
 	public bool returnBool;
-	public abstract bool PuzzleTrigger(int trigger);
+	public PuzzleManager puzzleManager;
+
+	public bool puzzleDone;
+	public abstract bool PuzzleTrigger(TriggerdObjects currentObject);
 }

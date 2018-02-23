@@ -9,21 +9,20 @@ public class Lamp : TriggerdObjects {
     {
         puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
         fire = GetComponentInChildren<ParticleSystem>();
+        fire.gameObject.SetActive(false);
     }
 
 	public override void TriggerFunctionality()
 	{
-        print("step 1");
-        if(puzzleManager.puzzleList[puzzleNumber].returnBool == false)
+        if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == false)
         {
-              print("step 2");
             if (!fire.isPlaying)
             {
-                fire.Play();
+                fire.gameObject.SetActive(true);
             }
             else
             {
-                fire.Stop();
+                fire.gameObject.SetActive(false);
             }
             puzzleManager.puzzleInsert(this);
         }

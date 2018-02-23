@@ -6,16 +6,22 @@ public class PuzzleManager : MonoBehaviour {
 
 	public List<TriggerdObjects> puzzleTriggerObjects = new List<TriggerdObjects>();
 	public List<Puzzle> puzzleList = new List<Puzzle>();
-
+	public int triggers;
 	//checked de puzzle list en probeert uit een functie een bool bvalue te krijgen die confirmed als je de puzzle af hebt
 	public void puzzleInsert(TriggerdObjects currentObject)
 	{
 		bool done = false;
-		done = puzzleList[currentObject.puzzleNumber].PuzzleTrigger(currentObject.puzzlePart);
+		done = puzzleList[currentObject.puzzleNumber].PuzzleTrigger(currentObject);
+
 		if(done == true)
 		{
-			print("puzzle done");
-			puzzleTriggerObjects[currentObject.puzzleNumber].TriggerFunctionality();
+			print("Trigger check");
+			if(triggers == 0)
+			{
+				print("puzzle done");
+				puzzleTriggerObjects[currentObject.puzzleNumber].TriggerFunctionality();
+				puzzleList[currentObject.puzzleNumber].puzzleDone = true;
+			}
 		}
 	}
 }

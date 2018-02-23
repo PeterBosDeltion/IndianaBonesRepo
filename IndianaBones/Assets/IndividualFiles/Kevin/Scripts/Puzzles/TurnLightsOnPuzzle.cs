@@ -5,8 +5,17 @@ using UnityEngine;
 public class TurnLightsOnPuzzle : Puzzle {
 
 	public List<bool> torches = new List<bool>();
-	
-	public override bool PuzzleTrigger(int trigger)
+
+	void Start()
+	{
+		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
+	}
+	public override bool PuzzleTrigger(TriggerdObjects currentObject)
+	{
+		return CheckTorches(currentObject.puzzlePart);
+	}
+
+	public bool CheckTorches(int trigger)
 	{
 		returnBool = true;
 		if(torches[trigger] ==false)
@@ -17,7 +26,11 @@ public class TurnLightsOnPuzzle : Puzzle {
 		{
 			torches[trigger] = false;
 		}
-
+		for (int i = 0; i < torches.Count; i++)
+		{
+			print(torches[i]);
+		}
+		print("stop");
 		foreach (bool torch in torches)
 		{
 			if(torch == false)
@@ -25,6 +38,7 @@ public class TurnLightsOnPuzzle : Puzzle {
 				returnBool = false;
 			}
 		}
+		puzzleManager.triggers -= 1;
 		return returnBool;
 	}
 }

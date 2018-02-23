@@ -466,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 649816649}
   - {fileID: 1271634745}
@@ -1893,6 +1894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger: []
 --- !u!65 &156860173
 BoxCollider:
@@ -2332,6 +2334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe597edf6d50ae04c8dc561623bca0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 1252871083}
 --- !u!65 &222910915
@@ -5036,6 +5039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 1878235527}
 --- !u!65 &504569958
@@ -6606,6 +6610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger: []
 --- !u!65 &675923263
 BoxCollider:
@@ -7991,6 +7996,7 @@ MonoBehaviour:
   - {fileID: 806351836}
   puzzleList:
   - {fileID: 806351841}
+  triggers: 0
 --- !u!1 &776246724
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,6 +8633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnBool: 0
+  puzzleManager: {fileID: 0}
+  puzzleDone: 0
   torches: 0000000000
 --- !u!1001 &828980757
 Prefab:
@@ -8935,6 +8943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger: []
 --- !u!65 &893242925
 BoxCollider:
@@ -9946,6 +9955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe597edf6d50ae04c8dc561623bca0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 1252871083}
 --- !u!23 &1002506285
@@ -10502,6 +10512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 1600022360}
   - {fileID: 1271634745}
@@ -11529,6 +11540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger: []
 --- !u!65 &1205887029
 BoxCollider:
@@ -11879,17 +11891,17 @@ Prefab:
     - target: {fileID: 198730758504017862, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198396483514614134, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198405577540902156, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc6914a2b240cec4eb912210c83c309b, type: 2}
@@ -13115,6 +13127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 1271634745}
   - {fileID: 1661761371}
@@ -14374,6 +14387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 649816649}
   - {fileID: 1600022360}
@@ -14750,17 +14764,17 @@ Prefab:
     - target: {fileID: 198405577540902156, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198396483514614134, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198730758504017862, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc6914a2b240cec4eb912210c83c309b, type: 2}
@@ -15173,17 +15187,17 @@ Prefab:
     - target: {fileID: 198405577540902156, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198730758504017862, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198396483514614134, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc6914a2b240cec4eb912210c83c309b, type: 2}
@@ -16718,6 +16732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger: []
 --- !u!65 &1740974981
 BoxCollider:
@@ -19965,6 +19980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger: []
 --- !u!65 &2022065943
 BoxCollider:
@@ -20262,17 +20278,17 @@ Prefab:
     - target: {fileID: 198405577540902156, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198730758504017862, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198396483514614134, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc6914a2b240cec4eb912210c83c309b, type: 2}
@@ -20355,7 +20371,7 @@ Prefab:
     - target: {fileID: 198405577540902156, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198405577540902156, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
@@ -20365,7 +20381,7 @@ Prefab:
     - target: {fileID: 198396483514614134, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198396483514614134, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
@@ -20375,7 +20391,7 @@ Prefab:
     - target: {fileID: 198730758504017862, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198730758504017862, guid: bc6914a2b240cec4eb912210c83c309b,
         type: 2}
@@ -20776,6 +20792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 1661761371}
   - {fileID: 1272404303}
