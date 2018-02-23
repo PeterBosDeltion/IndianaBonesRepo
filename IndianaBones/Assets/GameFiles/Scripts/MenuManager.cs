@@ -8,12 +8,15 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour {
 
 	public bool move;
-	private GameManager gameManager;
 
+	public AudioClip loop;
+	private GameManager gameManager;
+	public AudioSource audioSource;
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
 	void Start()
 	{
+		audioSource.Play();
 		gameManager = GameObject.FindObjectOfType<GameManager>();
 		resolutionDropdown.ClearOptions();
 		reselutions = Screen.resolutions;
@@ -36,13 +39,19 @@ public class MenuManager : MonoBehaviour {
 	}
 	void Update()
 	{
+		if(audioSource.isPlaying == false && audioSource.clip.name == "IndianaBonesStart")
+		{
+			audioSource.clip = loop;
+			audioSource.loop = true;
+			audioSource.Play();
+		}
 		if(move == true)
 		{
-			Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, 700),20);
+			Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, 700),800 * Time.deltaTime);
 		}
 		else
 		{
-			Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, -300),20);
+			Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, -300),800 * Time.deltaTime);
 		}
 	}
 	public void PlayGame()
@@ -77,7 +86,6 @@ public class MenuManager : MonoBehaviour {
 	public void AcceptUIOptions()
 	{
 		gameManager.QualityOptionsUpdate();
-		BackToMenu();
 	}
 
 	public void ChangeScreenMode(int screenModeIndex)

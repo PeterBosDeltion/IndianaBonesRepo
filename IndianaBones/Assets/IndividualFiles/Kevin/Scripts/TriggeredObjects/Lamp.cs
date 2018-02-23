@@ -8,13 +8,10 @@ public class Lamp : TriggerdObjects {
     void Start()
     {
         fire = GetComponentInChildren<ParticleSystem>();
-        fire.Stop();
     }
 
 	public override void TriggerFunctionality()
 	{
-        //GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
-
         if (!fire.isPlaying)
         {
             fire.Play();
@@ -23,15 +20,5 @@ public class Lamp : TriggerdObjects {
         {
             fire.Stop();
         }
-
-        //if (GetComponent<Renderer>().material.color != Color.yellow)
-        //{
-        //    GetComponent<Renderer>().material.color = Color.yellow;
-        //}
-        //else
-        //{
-        //    GetComponent<Renderer>().material.color = Color.black;
-        //}
-
     }
 }
