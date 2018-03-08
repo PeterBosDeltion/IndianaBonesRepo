@@ -36,7 +36,10 @@ public class Player : MonoBehaviour {
         if(currentLives > 0)
         {
             currentLives -= 1;
-            uiManager.UpdateValues();
+            if(uiManager != null)
+            {
+                uiManager.UpdateValues();
+            }
             Camera.main.GetComponent<PlayerCamera>().ResetCam();
             if (enteredLeft)
             {

@@ -132,22 +132,40 @@ public class UiManager : MonoBehaviour {
 
 	public void UpdateValues()
 	{
-		milkCount.text = "Milk : " + player.milk;
-		bonesCount.text = "Bones : " + player.bones;
-		coinCount.text = "Coins : " + player.coins;
-		if(player.currentLives != player.maxLives)
+        if(milkCount != null)
+        {
+            milkCount.text = "Milk : " + player.milk;
+        }
+        if(bonesCount != null)
+        {
+            bonesCount.text = "Bones : " + player.bones;
+        }
+        if(coinCount != null)
+        {
+            coinCount.text = "Coins : " + player.coins;
+        }
+        if (player.currentLives != player.maxLives)
 		{
 			print("ll");
-			lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
-		}
+            if(lifes.Count > 0)
+            {
+                lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
+            }
+        }
 		if(player.hasKey == true)
 		{
-			keyImage.SetActive(true);
-		}
+            if(keyImage != null)
+            {
+                keyImage.SetActive(true);
+            }
+        }
 		else
 		{
-			keyImage.SetActive(false);
-		}
+            if(keyImage != null)
+            {
+                keyImage.SetActive(false);
+            }
+        }
 	}
 
 	public void AddLive()
