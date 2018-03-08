@@ -542,6 +542,18 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
+      <Relationship type="Association" first="25" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>425</X>
+          <Y>1808</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
     </Relationships>
   </ProjectItem>
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UiManager : MonoBehaviour {
@@ -12,6 +13,9 @@ public class UiManager : MonoBehaviour {
 		Options
 	}
 
+	public Slider sliderMain;
+	public Slider sliderMusic;
+	public Slider sliderEffects;
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
 	public GameObject lastPannel;
@@ -30,6 +34,7 @@ public class UiManager : MonoBehaviour {
 	public GameObject fullHeart;
 	public GameObject healthPannel;
 	private GameManager gameManager;
+	public float audioValue;
 
 
 	void Start()
@@ -79,6 +84,13 @@ public class UiManager : MonoBehaviour {
 		resolutionDropdown.AddOptions(options);
 		resolutionDropdown.value = myRes;
 		resolutionDropdown.RefreshShownValue();
+
+		gameManager.mainMixer.GetFloat("Master",out audioValue);
+		sliderMain.value = audioValue;
+		gameManager.mainMixer.GetFloat("Music",out audioValue);
+		sliderMusic.value = audioValue;
+		gameManager.mainMixer.GetFloat("SoundEffects",out audioValue);
+		sliderEffects.value = audioValue;
 	}
 	void Update()
 	{
@@ -200,6 +212,16 @@ public class UiManager : MonoBehaviour {
 	public void ChangeVolume(float volume)
 	{
 		gameManager.GameVolume(volume);
+	}
+
+	public void ChangeVolumeMusic(float volume)
+	{
+		gameManager.GameVolumeMusic(volume);
+	}
+
+	public void ChangeVolumeEffects(float volume)
+	{
+		gameManager.GameVolumeEffects(volume);
 	}
 
 	public void ChangeQuality(int qualityIndex)

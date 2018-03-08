@@ -8,12 +8,15 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour {
 
 	public bool move;
-
+	public Slider sliderMain;
+	public Slider sliderMusic;
+	public Slider sliderEffects;
 	public AudioClip loop;
 	private GameManager gameManager;
 	public AudioSource audioSource;
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
+	public float audioValue;
 	void Start()
 	{
 		audioSource.Play();
@@ -36,6 +39,13 @@ public class MenuManager : MonoBehaviour {
 		resolutionDropdown.AddOptions(options);
 		resolutionDropdown.value = myRes;
 		resolutionDropdown.RefreshShownValue();
+
+		gameManager.mainMixer.GetFloat("Master",out audioValue);
+		sliderMain.value = audioValue;
+		gameManager.mainMixer.GetFloat("Music",out audioValue);
+		sliderMusic.value = audioValue;
+		gameManager.mainMixer.GetFloat("SoundEffects",out audioValue);
+		sliderEffects.value = audioValue;
 	}
 	void Update()
 	{
@@ -72,6 +82,16 @@ public class MenuManager : MonoBehaviour {
 	public void ChangeVolume(float volume)
 	{
 		gameManager.GameVolume(volume);
+	}
+
+	public void ChangeVolumeMusic(float volume)
+	{
+		gameManager.GameVolumeMusic(volume);
+	}
+
+	public void ChangeVolumeEffects(float volume)
+	{
+		gameManager.GameVolumeEffects(volume);
 	}
 
 	public void ChangeQuality(int qualityIndex)
