@@ -17,6 +17,10 @@ public class PuzzleManager : MonoBehaviour {
 			foreach(bool currentBool in GameManager.gm.currentData.finishedPuzzles)
 			{
 				puzzleList[puzzle].puzzleDone = currentBool;
+				if(currentBool == true)
+				{
+					puzzleTriggerObjects[puzzle].TriggerFunctionality();
+				}
 				puzzle += 1;
 			}
 		}
