@@ -12850,6 +12850,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  anim: {fileID: 0}
 --- !u!23 &1252871084
 MeshRenderer:
   m_ObjectHideFlags: 0
