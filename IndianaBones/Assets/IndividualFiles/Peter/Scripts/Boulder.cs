@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boulder : MonoBehaviour {
-
+    public float timeUntilDestroyed;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,5 +21,16 @@ public class Boulder : MonoBehaviour {
             col.transform.GetComponent<Player>().Death();
             Destroy(gameObject);
         }
+    }
+
+    public void StartDestroyTimer()
+    {
+        StartCoroutine(DestroyBoulder());
+    }
+
+    IEnumerator DestroyBoulder()
+    {
+        yield return new WaitForSeconds(timeUntilDestroyed);
+        Destroy(gameObject);
     }
 }
