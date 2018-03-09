@@ -33,7 +33,6 @@ public class UiManager : MonoBehaviour {
 	public Sprite emptyHeart;
 	public GameObject fullHeart;
 	public GameObject healthPannel;
-	private GameManager gameManager;
 	public float audioValue;
 
 
@@ -58,7 +57,6 @@ public class UiManager : MonoBehaviour {
 		uiState = UiState.Main;
 		ChangePannel();
 		GameManager.ToggleTimeScale();
-		gameManager = GameObject.FindObjectOfType<GameManager>();
 		lastPannel = mainPannel;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		UpdateValues();
@@ -85,11 +83,11 @@ public class UiManager : MonoBehaviour {
 		resolutionDropdown.value = myRes;
 		resolutionDropdown.RefreshShownValue();
 
-		gameManager.mainMixer.GetFloat("Master",out audioValue);
+		GameManager.gm.mainMixer.GetFloat("Master",out audioValue);
 		sliderMain.value = audioValue;
-		gameManager.mainMixer.GetFloat("Music",out audioValue);
+		GameManager.gm.mainMixer.GetFloat("Music",out audioValue);
 		sliderMusic.value = audioValue;
-		gameManager.mainMixer.GetFloat("SoundEffects",out audioValue);
+		GameManager.gm.mainMixer.GetFloat("SoundEffects",out audioValue);
 		sliderEffects.value = audioValue;
 	}
 	void Update()
@@ -206,27 +204,27 @@ public class UiManager : MonoBehaviour {
 	// Options Menu
 	public void ChangeReselution(int resolutionIndex)
 	{
-		gameManager.resolution = reselutions[resolutionIndex];
+		GameManager.gm.resolution = reselutions[resolutionIndex];
 	}
 	
 	public void ChangeVolume(float volume)
 	{
-		gameManager.GameVolume(volume);
+		GameManager.gm.GameVolume(volume);
 	}
 
 	public void ChangeVolumeMusic(float volume)
 	{
-		gameManager.GameVolumeMusic(volume);
+		GameManager.gm.GameVolumeMusic(volume);
 	}
 
 	public void ChangeVolumeEffects(float volume)
 	{
-		gameManager.GameVolumeEffects(volume);
+		GameManager.gm.GameVolumeEffects(volume);
 	}
 
 	public void ChangeQuality(int qualityIndex)
 	{
-		gameManager.gameQualityIndex = qualityIndex;
+		GameManager.gm.gameQualityIndex = qualityIndex;
 	}
 
 	public void ChangeScreenMode(int screenModeIndex)
@@ -234,17 +232,17 @@ public class UiManager : MonoBehaviour {
 		print(screenModeIndex);
 		if(screenModeIndex == 0)
 		{
-			gameManager.screenMode = true;
+			GameManager.gm.screenMode = true;
 		}
 		else if(screenModeIndex == 1)
 		{
-			gameManager.screenMode = false;
+			GameManager.gm.screenMode = false;
 		}
 	}
 
 	public void AcceptUIOptions()
 	{
-		gameManager.QualityOptionsUpdate();
+		GameManager.gm.QualityOptionsUpdate();
 	}
 
 	public void ReturnToOptionsMenu()
