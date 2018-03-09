@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour {
     public int sprintCooldown;
     public float sprintSpeed;
 
-
-    private float startSpeed;
-    private bool canSprint;
+    [HideInInspector]
+    public float startSpeed;
+    public bool canSprint;
 
     public float jumpForce;
     public float jumpCooldown;
