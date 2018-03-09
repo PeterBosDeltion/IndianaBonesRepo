@@ -13,7 +13,9 @@ public class CalciumStore : TriggerdObjects {
 		if(player.coins != 0)
 		{
 			player.coins -= 1;
+			SaveTrigger.coinsSave -= 1;
 			player.milk += 1;
+			SaveTrigger.milkSave -= 1;
 		}
 		else if(player.coins == 0)
 		{

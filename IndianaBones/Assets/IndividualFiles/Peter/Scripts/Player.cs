@@ -25,6 +25,16 @@ public class Player : MonoBehaviour {
         beginingRoom = transform.position;
         descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
+
+        if(GameManager.gm.currentData != null)
+        {
+            hasKey = GameManager.gm.currentData.hasKey;
+            currentLives = GameManager.gm.currentData.currentLives;
+            maxLives = GameManager.gm.currentData.maxLives;
+            coins = GameManager.gm.currentData.coins;
+            milk = GameManager.gm.currentData.milk;
+            bones = GameManager.gm.currentData.bones;
+        }
     }
 
     public void CallUIUpdate()
@@ -36,6 +46,7 @@ public class Player : MonoBehaviour {
         if(currentLives > 0)
         {
             currentLives -= 1;
+            SaveTrigger.currentLivesSave -=1;
             if(uiManager != null)
             {
                 uiManager.UpdateValues();
@@ -53,7 +64,7 @@ public class Player : MonoBehaviour {
         }
         if(currentLives <= 0)
         {
-            Debug.Log("Git gud u fucking casul scrub");
+            GameManager.gm.LoadGameState();
         }
     }
 
@@ -62,13 +73,16 @@ public class Player : MonoBehaviour {
         if(currentLives < maxLives)
         {
             currentLives += 1;
+            SaveTrigger.currentLivesSave += 1;
         }
     }
 
     public void ConsumeBone()
     {
         maxLives += 1;
+        SaveTrigger.maxLivesSave += 1;
         currentLives += 1;
+        SaveTrigger.currentLivesSave += 1;
         uiManager.AddLive();
     }
 
@@ -89,6 +103,4 @@ public class Player : MonoBehaviour {
         descriptionText.text = "";
         displayingText = false;
     }
-
-
 }

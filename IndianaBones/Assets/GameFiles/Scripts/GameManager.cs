@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 public class GameManager : MonoBehaviour {
 
+	public string filePath;
 	public AudioMixer mainMixer;
 	public static GameManager gm;
 	public int gameQualityIndex;
 	public Resolution resolution;
 	public bool screenMode = true;
+	public ToSave currentData;
 
 	void Start()
 	{
@@ -22,8 +26,9 @@ public class GameManager : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+		SaveGameState();
 	}
-	public static void ChangeScene(int i)
+	public void ChangeScene(int i)
 	{
 		SceneManager.LoadScene(i);	
 	}
@@ -68,4 +73,45 @@ public class GameManager : MonoBehaviour {
 		QualitySettings.SetQualityLevel(gameQualityIndex);
 		Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen = screenMode);
 	}
+
+	public void SaveGameState()
+	{
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file;
+		file = File.Create(Application.dataPath + filePath);
+		print(Application.persistentDataPath);
+		ToSave savefile = new ToSave();
+		bf.Serialize(file,savefile);
+		file.Close();
+	}
+
+	public void LoadGameState()
+	{
+		if(File.Exists(filePath + "/SaveGame.dat"))
+		{
+			ChangeScene(1);
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream file = File.Open(Application.dataPath + filePath, FileMode.Open);
+			ToSave savefile = (ToSave)bf.Deserialize(file);
+			currentData = savefile;
+			file.Close();
+		}
+		else
+		{
+			ChangeScene(1);
+		}
+	}
+}
+
+[System.Serializable]
+public class ToSave
+{
+	public bool hasKey;
+    public int currentLives;
+    public int maxLives;
+    public int coins;
+    public int milk;
+    public int bones;
+
+	public bool[] finishedPuzzles;
 }

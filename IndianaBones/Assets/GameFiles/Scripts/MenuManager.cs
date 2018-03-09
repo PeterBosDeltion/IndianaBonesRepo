@@ -65,7 +65,7 @@ public class MenuManager : MonoBehaviour {
 	}
 	public void PlayGame()
 	{
-		GameManager.ChangeScene(1);
+		GameManager.gm.LoadGameState();
 	}
 
 	public void Options()

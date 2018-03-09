@@ -224,7 +224,7 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
       <Entity type="Class">
         <Name>TriggerSave</Name>
         <Access>Public</Access>
-        <Location left="2515" top="749" />
+        <Location left="2511" top="749" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public void SaveMilestone()</Member>
@@ -247,15 +247,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Text>De ObjectDescriptor regelt de detectie van de muis boven een object + alt en of op dat object word geklickt en geeft dan description en name text informatie aan de ui managaer</Text>
         <Location left="2495" top="1043" />
         <Size width="160" height="118" />
-      </Entity>
-      <Entity type="Class">
-        <Name>BoulderSpawner</Name>
-        <Access>Public</Access>
-        <Location left="58" top="1148" />
-        <Size width="162" height="216" />
-        <Collapsed>False</Collapsed>
-        <Member type="Method">public void InstantiateBoulder()</Member>
-        <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>PuzzleManager</Name>
@@ -457,14 +448,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="21" second="0">
-        <Label>
-        </Label>
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
       <Relationship type="Association" first="22" second="13">
         <Label>
         </Label>
@@ -511,12 +494,6 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="7" second="24">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="7" second="25">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
@@ -528,7 +505,7 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="26" second="25">
+      <Relationship type="Association" first="25" second="24">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
@@ -536,13 +513,13 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Dependency" first="27" second="26">
+      <Relationship type="Dependency" first="26" second="25">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
-      <Relationship type="Association" first="25" second="7">
+      <Relationship type="Association" first="24" second="7">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
@@ -551,6 +528,12 @@ ook kan een animation triggeren en mogelijk daarna een trap</Text>
           <X>425</X>
           <Y>1808</Y>
         </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="21" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>

@@ -7,6 +7,19 @@ public class PuzzleManager : MonoBehaviour {
 	public List<TriggerdObjects> puzzleTriggerObjects = new List<TriggerdObjects>();
 	public List<Puzzle> puzzleList = new List<Puzzle>();
 	public int triggers;
+	public int puzzle;
+
+	void Start()
+	{
+		SaveTrigger.finishedPuzzlesSave = new bool[puzzleList.Count];
+		if(GameManager.gm.currentData != null)
+		{
+			foreach(Puzzle currentPuzzle in puzzleList)
+			{
+				//asing bools uit list in current data
+			}
+		}
+	}
 	//checked de puzzle list en probeert uit een functie een bool bvalue te krijgen die confirmed als je de puzzle af hebt
 	public void puzzleInsert(TriggerdObjects currentObject)
 	{
@@ -21,6 +34,7 @@ public class PuzzleManager : MonoBehaviour {
 				print("puzzle done");
 				puzzleTriggerObjects[currentObject.puzzleNumber].TriggerFunctionality();
 				puzzleList[currentObject.puzzleNumber].puzzleDone = true;
+				SaveTrigger.finishedPuzzlesSave.SetValue(true,currentObject.puzzleNumber);
 			}
 		}
 	}

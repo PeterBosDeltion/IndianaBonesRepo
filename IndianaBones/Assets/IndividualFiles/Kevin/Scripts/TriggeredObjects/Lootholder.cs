@@ -24,29 +24,33 @@ public class LootHolder : TriggerdObjects {
 		if(triggerd == false)
 		{
 			triggerd = true;
-		if(currentCollectable == Collectables.Bone)
-		{
-			player.bones += 1;
-			player.CallUIUpdate();
-		}
+			if(currentCollectable == Collectables.Bone)
+			{
+				player.bones += 1;
+				SaveTrigger.bonesSave += 1;
+				player.CallUIUpdate();
+			}
 
-		if(currentCollectable == Collectables.Coin)
-		{
-			player.coins += 1;
-			player.CallUIUpdate();
-		}
+			if(currentCollectable == Collectables.Coin)
+			{
+				player.coins += 1;
+				SaveTrigger.coinsSave += 1;
+				player.CallUIUpdate();
+			}
 
-		if(currentCollectable == Collectables.Key)
-		{
-			player.hasKey = true;
-			player.CallUIUpdate();
-		}
+			if(currentCollectable == Collectables.Key)
+			{
+				player.hasKey = true;
+				SaveTrigger.hasKeySave = true;
+				player.CallUIUpdate();
+			}
 
-		if(currentCollectable == Collectables.Milk)
-		{
-			player.milk += 1;
-			player.CallUIUpdate();
-		}
+			if(currentCollectable == Collectables.Milk)
+			{
+				player.milk += 1;
+				SaveTrigger.milkSave += 1;
+				player.CallUIUpdate();
+			}
 		}
 	}
 }

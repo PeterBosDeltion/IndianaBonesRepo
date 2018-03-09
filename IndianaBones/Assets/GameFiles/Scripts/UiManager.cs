@@ -197,7 +197,7 @@ public class UiManager : MonoBehaviour {
 	}
 	public void Quit()
 	{
-		GameManager.ChangeScene(0);
+		GameManager.gm.ChangeScene(0);
 	}
 
 	
