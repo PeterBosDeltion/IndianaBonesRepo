@@ -10,6 +10,10 @@ public class Lamp : TriggerdObjects {
         puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
         fire = GetComponentInChildren<ParticleSystem>();
         fire.gameObject.SetActive(false);
+    	if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == true)
+        {
+            fire.gameObject.SetActive(true);
+        }
     }
 
 	public override void TriggerFunctionality()

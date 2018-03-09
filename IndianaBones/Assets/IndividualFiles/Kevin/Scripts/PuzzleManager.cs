@@ -14,9 +14,10 @@ public class PuzzleManager : MonoBehaviour {
 		SaveTrigger.finishedPuzzlesSave = new bool[puzzleList.Count];
 		if(GameManager.gm.currentData != null)
 		{
-			foreach(Puzzle currentPuzzle in puzzleList)
+			foreach(bool currentBool in GameManager.gm.currentData.finishedPuzzles)
 			{
-				//asing bools uit list in current data
+				puzzleList[puzzle].puzzleDone = currentBool;
+				puzzle += 1;
 			}
 		}
 	}
@@ -28,7 +29,6 @@ public class PuzzleManager : MonoBehaviour {
 
 		if(done == true)
 		{
-			print("Trigger check");
 			if(triggers == 0)
 			{
 				print("puzzle done");
