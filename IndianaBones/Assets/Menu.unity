@@ -6003,9 +6003,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0010624fb68369488e63b70de9913ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filePath: /SaveGame.dat
   mainMixer: {fileID: 24100000, guid: 591a9aacbf47a6541a9da81f389f1609, type: 2}
   gameQualityIndex: 0
   screenMode: 1
+  currentData:
+    hasKey: 0
+    currentLives: 0
+    maxLives: 0
+    coins: 0
+    milk: 0
+    bones: 0
+    finishedPuzzles: 
 --- !u!4 &1732470608
 Transform:
   m_ObjectHideFlags: 0

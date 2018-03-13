@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33863886655486878}
   - component: {fileID: 23705873958001292}
   - component: {fileID: 95510055997096600}
+  - component: {fileID: 65512372021978268}
   m_Layer: 0
   m_Name: Side_Wall (2)
   m_TagString: Untagged
@@ -92,6 +93,7 @@ GameObject:
   - component: {fileID: 33244835511540656}
   - component: {fileID: 23748700512846924}
   - component: {fileID: 95780072502385596}
+  - component: {fileID: 65147369090998236}
   m_Layer: 0
   m_Name: Side_Wall (3)
   m_TagString: Untagged
@@ -543,6 +545,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00000038941445, y: 1.0000002, z: 2.000001}
   m_Center: {x: 0, y: 0, z: 1.0000005}
+--- !u!65 &65147369090998236
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580693569710378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17999999, y: 2.0000005, z: 2.2000005}
+  m_Center: {x: 0, y: 0, z: 1.1000003}
+--- !u!65 &65512372021978268
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015283237242030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17999999, y: 2.0000005, z: 2.2000005}
+  m_Center: {x: 0, y: 0, z: 1.1000003}
 --- !u!65 &65682135083257706
 BoxCollider:
   m_ObjectHideFlags: 1
