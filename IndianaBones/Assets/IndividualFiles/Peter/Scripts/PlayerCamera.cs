@@ -23,7 +23,7 @@ public class PlayerCamera : MonoBehaviour {
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z + zOffset), speed);
         }
-        if (player.transform.position.y > player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().downSideBound.y && player.transform.position.y < player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().upSideBound.y)
+        if (player.transform.position.y > player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().downSideBound.y || player.transform.position.y < player.GetComponent<Player>().currentRoom.GetComponent<RoomBoundaryCalculator>().upSideBound.y)
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, player.transform.position.y + yOffset, player.transform.position.z + zOffset), speed);
         }
