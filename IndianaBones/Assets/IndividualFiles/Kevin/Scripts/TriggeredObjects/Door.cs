@@ -6,11 +6,33 @@ public class Door : TriggerdObjects {
 
 
 	public bool costsKey;
-
-	void Start()
+	public bool left;
+	public bool rotate;
+	
+	void Update()
 	{
-		player = GameObject.FindWithTag("Player").GetComponent<Player>();
+		if(rotate == true)
+		{
+			if(left == true)
+			{
+				print(transform.eulerAngles);
+				transform.Rotate(Vector3.forward * Time.deltaTime * -40);
+				if(transform.rotation.eulerAngles.y <= 250)
+				{
+					rotate = false;
+				}
+			}
+			else
+			{
+				transform.Rotate(Vector3.forward * Time.deltaTime * 40);
+				if(transform.rotation.eulerAngles.y >= 110)
+				{
+					rotate = false;
+				}
+			}
+		}
 	}
+
 	public override void TriggerFunctionality()
 	{
 		if(triggerd == false)
@@ -20,8 +42,7 @@ public class Door : TriggerdObjects {
 			{
 				player.hasKey = false;
 			}
-            //GetComponent<Animation>().Play();
-            gameObject.SetActive(false);
+			rotate = true;
 		}
 	}
 }

@@ -5,12 +5,8 @@ using UnityEngine;
 public class RoomEntryChecker : MonoBehaviour {
     public bool left;
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Start () 
+    {
 		
 	}
 
