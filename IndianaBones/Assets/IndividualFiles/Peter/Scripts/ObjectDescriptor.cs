@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 public class ObjectDescriptor : MonoBehaviour {
+    [TextArea(15, 20)]
     public List<string> descriptions = new List<string>();
     public TextMeshPro myNameText;
 
