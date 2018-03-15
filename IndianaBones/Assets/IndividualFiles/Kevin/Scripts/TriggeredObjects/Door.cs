@@ -7,31 +7,6 @@ public class Door : TriggerdObjects {
 
 	public bool costsKey;
 	public bool left;
-	public bool rotate;
-	
-	void Update()
-	{
-		if(rotate == true)
-		{
-			if(left == true)
-			{
-				print(transform.eulerAngles);
-				transform.Rotate(Vector3.forward * Time.deltaTime * -40);
-				if(transform.rotation.eulerAngles.y <= 250)
-				{
-					rotate = false;
-				}
-			}
-			else
-			{
-				transform.Rotate(Vector3.forward * Time.deltaTime * 40);
-				if(transform.rotation.eulerAngles.y >= 110)
-				{
-					rotate = false;
-				}
-			}
-		}
-	}
 
 	public override void TriggerFunctionality()
 	{
@@ -42,7 +17,17 @@ public class Door : TriggerdObjects {
 			{
 				player.hasKey = false;
 			}
-			rotate = true;
+			print("k fam");
+			StartCoroutine(MechanismTimer());
 		}
+	}
+
+	IEnumerator MechanismTimer()
+	{
+		print("before");
+		yield return new WaitForSeconds(1.5f);
+		print("after");
+		GetComponent<Animator>().SetBool("Left",left);
+		GetComponent<Animator>().SetTrigger("OpenDoor");
 	}
 }

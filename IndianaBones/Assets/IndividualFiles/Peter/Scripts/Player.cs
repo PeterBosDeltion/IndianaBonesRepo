@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("Variable GameManager.gm is null, Script: Player");
+            Debug.LogError("Variable GameManager.gm is null, try launching from menu, Script: Player");
         }
        
     }

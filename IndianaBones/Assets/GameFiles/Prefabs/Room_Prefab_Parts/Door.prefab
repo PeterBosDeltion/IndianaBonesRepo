@@ -281,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 1865601465462016}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2b18b919dbf15124699334c8fc49e3b3, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b6d59b6cfb0bc94ea1480799172bc72, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -341,4 +341,3 @@ MonoBehaviour:
   puzzlePart: 0
   costsKey: 0
   left: 1
-  rotate: 0

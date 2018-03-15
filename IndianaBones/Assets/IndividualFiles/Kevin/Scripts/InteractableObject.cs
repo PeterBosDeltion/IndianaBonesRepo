@@ -8,6 +8,8 @@ public class InteractableObject : MonoBehaviour {
 	public List<TriggerdObjects> toTrigger = new List<TriggerdObjects>();
     public bool pressurePlate;
 
+	public bool triggersPuzzlePart;
+
 	void Start()
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
@@ -31,7 +33,10 @@ public class InteractableObject : MonoBehaviour {
 			if(Input.GetButtonDown("E"))
 			{
 				print("Pressed");
-				//puzzleManager.triggers = toTrigger.Count; Doe dit alleen als je ook daadwerkelijk een puzzel doet pls k thx
+				if(triggersPuzzlePart)
+				{
+					puzzleManager.triggers = toTrigger.Count;
+				}
 				Trigger();
 			}
 		}
@@ -39,7 +44,7 @@ public class InteractableObject : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if (pressurePlate && other.transform.tag == "Player") //Ik denk niet dat je op E moet drukken als je over een pressure plate loopt
+        if (pressurePlate && other.transform.tag == "Player")
         {
             Trigger();
         }

@@ -12,7 +12,9 @@ public class PuzzleManager : MonoBehaviour {
 	void Start()
 	{
 		SaveTrigger.finishedPuzzlesSave = new bool[puzzleList.Count];
-		if(GameManager.gm.currentData != null)
+		if(GameManager.gm != null)
+		{
+			if(GameManager.gm.currentData != null)
 		{
 			foreach(bool currentBool in GameManager.gm.currentData.finishedPuzzles)
 			{
@@ -23,6 +25,11 @@ public class PuzzleManager : MonoBehaviour {
 				}
 				puzzle += 1;
 			}
+		}
+		}
+		else
+		{
+			Debug.LogError("Variable GameManager.gm = null, try launching from menu, Script: PuzzleManager");
 		}
 	}
 	//checked de puzzle list en probeert uit een functie een bool bvalue te krijgen die confirmed als je de puzzle af hebt
