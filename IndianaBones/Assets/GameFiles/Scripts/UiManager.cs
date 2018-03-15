@@ -116,28 +116,52 @@ public class UiManager : MonoBehaviour {
 	{
 		if(uiState == UiState.Main)
 		{
-			lastPannel.SetActive(false);
-			mainPannel.SetActive(true);
-			lastPannel = mainPannel;
-			GameManager.ToggleTimeScale();
+            if(lastPannel != null && mainPannel != null)
+            {
+                lastPannel.SetActive(false);
+                mainPannel.SetActive(true);
+                lastPannel = mainPannel;
+                GameManager.ToggleTimeScale();
+            }
+            else
+            {
+                Debug.LogError("Variable lastPannel or mainPannel is null, Script: UiManager");
+            }
+			
 		}
 		if(uiState == UiState.Pause)
 		{
-			lastPannel.SetActive(false);
-			pauseMenuPannel.SetActive(true);
-			if(lastPannel == mainPannel)
-			{
-				GameManager.ToggleTimeScale();
-			}
-			lastPannel = pauseMenuPannel;
-		}
+            if(lastPannel != null && pauseMenuPannel != null && mainPannel != null)
+            {
+                lastPannel.SetActive(false);
+                pauseMenuPannel.SetActive(true);
+                if (lastPannel == mainPannel)
+                {
+                    GameManager.ToggleTimeScale();
+                }
+                lastPannel = pauseMenuPannel;
+            }
+            else
+            {
+                Debug.LogError("Variable pauseMenuPannel, lastPannel or mainPannel is null, Script: UiManager");
+            }
+
+        }
 		
 		if(uiState == UiState.Options)
 		{
-			lastPannel.SetActive(false);
-			optionsPannel.SetActive(true);
-			lastPannel = optionsPannel;
-		}
+            if(lastPannel != null && optionsPannel != null)
+            {
+                lastPannel.SetActive(false);
+                optionsPannel.SetActive(true);
+                lastPannel = optionsPannel;
+            }
+            else
+            {
+                Debug.LogError("Variable lastPannel or optionsPannel is null, Script: UiManager");
+            }
+
+        }
 	}
 
 	public void UpdateValues()
@@ -146,13 +170,25 @@ public class UiManager : MonoBehaviour {
         {
             milkCount.text = "Milk : " + player.milk;
         }
+        else
+        {
+            Debug.LogError("Variable milkCount is null, Script: UiManager");
+        }
         if(bonesCount != null)
         {
             bonesCount.text = "Bones : " + player.bones;
         }
-        if(coinCount != null)
+        else
+        {
+            Debug.LogError("Variable bonesCount is null, Script: UiManager");
+        }
+        if (coinCount != null)
         {
             coinCount.text = "Coins : " + player.coins;
+        }
+        else
+        {
+            Debug.LogError("Variable coinCount is null, Script: UiManager");
         }
         if (player.currentLives != player.maxLives)
 		{
@@ -204,27 +240,62 @@ public class UiManager : MonoBehaviour {
 	// Options Menu
 	public void ChangeReselution(int resolutionIndex)
 	{
-		GameManager.gm.resolution = reselutions[resolutionIndex];
-	}
+        if(GameManager.gm != null)
+        {
+            GameManager.gm.resolution = reselutions[resolutionIndex];
+        }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+        }
+    }
 	
 	public void ChangeVolume(float volume)
 	{
-		GameManager.gm.GameVolume(volume);
+        if(GameManager.gm != null)
+        {
+            GameManager.gm.GameVolume(volume);
+        }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+        }
 	}
 
 	public void ChangeVolumeMusic(float volume)
 	{
-		GameManager.gm.GameVolumeMusic(volume);
-	}
+        if(GameManager.gm != null)
+        {
+		    GameManager.gm.GameVolumeMusic(volume);
+        }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+        }
+    }
 
 	public void ChangeVolumeEffects(float volume)
 	{
-		GameManager.gm.GameVolumeEffects(volume);
+        if(GameManager.gm != null)
+        {
+            GameManager.gm.GameVolumeEffects(volume);
+        }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+        }
 	}
 
 	public void ChangeQuality(int qualityIndex)
 	{
-		GameManager.gm.gameQualityIndex = qualityIndex;
+        if(GameManager.gm != null)
+        {
+            GameManager.gm.gameQualityIndex = qualityIndex;
+        }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+        }
 	}
 
 	public void ChangeScreenMode(int screenModeIndex)
@@ -232,17 +303,38 @@ public class UiManager : MonoBehaviour {
 		print(screenModeIndex);
 		if(screenModeIndex == 0)
 		{
-			GameManager.gm.screenMode = true;
+            if(GameManager.gm != null)
+            {
+                GameManager.gm.screenMode = true;
+            }
+            else
+            {
+                Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+            }
 		}
 		else if(screenModeIndex == 1)
 		{
-			GameManager.gm.screenMode = false;
+            if(GameManager.gm != null)
+            {
+                GameManager.gm.screenMode = false;
+            }
+            else
+            {
+                Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+            }
 		}
 	}
 
 	public void AcceptUIOptions()
 	{
-		GameManager.gm.QualityOptionsUpdate();
+        if(GameManager.gm != null)
+        {
+            GameManager.gm.QualityOptionsUpdate();
+        }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, try starting from menu, Script: UiManager");
+        }
 	}
 
 	public void ReturnToOptionsMenu()
