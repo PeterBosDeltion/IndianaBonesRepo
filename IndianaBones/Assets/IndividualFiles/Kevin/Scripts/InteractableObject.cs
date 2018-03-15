@@ -16,8 +16,11 @@ public class InteractableObject : MonoBehaviour {
 	{	
 		foreach(TriggerdObjects trigger in toTrigger)
 		{
-			trigger.TriggerFunctionality();
-		}
+            if(trigger != null)
+            {
+                trigger.TriggerFunctionality();
+            }
+        }
 	}
 
 	public void OnTriggerStay(Collider other)
@@ -36,7 +39,7 @@ public class InteractableObject : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if (pressurePlate) //Ik denk niet dat je op E moet drukken als je over een pressure plate loopt
+        if (pressurePlate && other.transform.tag == "Player") //Ik denk niet dat je op E moet drukken als je over een pressure plate loopt
         {
             Trigger();
         }

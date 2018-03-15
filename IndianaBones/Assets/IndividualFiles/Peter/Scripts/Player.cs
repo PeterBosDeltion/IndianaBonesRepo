@@ -26,20 +26,35 @@ public class Player : MonoBehaviour {
         descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
 
-        if(GameManager.gm.currentData != null)
+        if(GameManager.gm != null)
         {
-            hasKey = GameManager.gm.currentData.hasKey;
-            currentLives = GameManager.gm.currentData.currentLives;
-            maxLives = GameManager.gm.currentData.maxLives;
-            coins = GameManager.gm.currentData.coins;
-            milk = GameManager.gm.currentData.milk;
-            bones = GameManager.gm.currentData.bones;
+            if (GameManager.gm.currentData != null)
+            {
+                hasKey = GameManager.gm.currentData.hasKey;
+                currentLives = GameManager.gm.currentData.currentLives;
+                maxLives = GameManager.gm.currentData.maxLives;
+                coins = GameManager.gm.currentData.coins;
+                milk = GameManager.gm.currentData.milk;
+                bones = GameManager.gm.currentData.bones;
+            }
         }
+        else
+        {
+            Debug.LogError("Variable GameManager.gm is null, Script: Player");
+        }
+       
     }
 
     public void CallUIUpdate()
     {
-        uiManager.UpdateValues();
+        if(uiManager != null)
+        {
+            uiManager.UpdateValues();
+        }
+        else
+        {
+            Debug.LogError("Variable uiManager is null, Script: Player");
+        }
     }
     public void Death()
     {
@@ -51,7 +66,19 @@ public class Player : MonoBehaviour {
             {
                 uiManager.UpdateValues();
             }
-            Camera.main.GetComponent<PlayerCamera>().ResetCam();
+            else
+            {
+                Debug.LogError("Variable uiManager is null, Script: Player");
+            }
+            PlayerCamera p = Camera.main.GetComponent<PlayerCamera>();
+            if(p != null)
+            {
+                p.ResetCam();
+            }
+            else
+            {
+                Debug.LogError("Variable p (PlayerCamera) is null, add PlayerCamera to Main Camera, Script: Player");
+            }
             if (enteredLeft)
             {
                 transform.position = beginingRoom + new Vector3(2, 0, 0);
@@ -64,7 +91,14 @@ public class Player : MonoBehaviour {
         }
         if(currentLives <= 0)
         {
-            GameManager.gm.LoadGameState();
+            if(GameManager.gm != null)
+            {
+                GameManager.gm.LoadGameState();
+            }
+            else
+            {
+                Debug.LogError("Variable GameManager.gm is null, Script: Player");
+            }
         }
     }
 
@@ -83,7 +117,14 @@ public class Player : MonoBehaviour {
         SaveTrigger.maxLivesSave += 1;
         currentLives += 1;
         SaveTrigger.currentLivesSave += 1;
-        uiManager.AddLive();
+        if(uiManager != null)
+        {
+            uiManager.AddLive();
+        }
+        else
+        {
+            Debug.LogError("Variable uiManager is null, Script: Player");
+        }
     }
 
     public void SetText(string s, float extraTime)
@@ -98,9 +139,23 @@ public class Player : MonoBehaviour {
     private IEnumerator SetPlayerDescriptionText(string textToShow, float extraTime)
     {
         displayingText = true;
-        descriptionText.text = "" + textToShow;
+        if(descriptionText != null)
+        {
+            descriptionText.text = "" + textToShow;
+        }
+        else
+        {
+            Debug.LogError("Variable descriptionText is null, Script: Player");
+        }
         yield return new WaitForSeconds(textDisplayTime + extraTime);
-        descriptionText.text = "";
+        if(descriptionText != null)
+        {
+            descriptionText.text = "";
+        }
+        else
+        {
+            Debug.LogError("Variable descriptionText is null, Script: Player");
+        }
         displayingText = false;
     }
 }

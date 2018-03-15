@@ -18,7 +18,16 @@ public class Spike : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            col.transform.GetComponent<Player>().Death();
+            Player p = col.gameObject.GetComponent<Player>();
+
+            if(p != null)
+            {
+                p.Death();
+            }
+            else
+            {
+                Debug.LogError("Variable p (Player) is null, Script: Spike");
+            }
         }
     }
 }

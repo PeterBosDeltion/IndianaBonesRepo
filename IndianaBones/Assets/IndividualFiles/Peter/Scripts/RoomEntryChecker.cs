@@ -14,14 +14,24 @@ public class RoomEntryChecker : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            if (left)
+            Player p = other.GetComponent<Player>();
+
+            if(p != null)
             {
-                other.GetComponent<Player>().enteredLeft = true;
+                if (left)
+                {
+                    other.GetComponent<Player>().enteredLeft = true;
+                }
+                else
+                {
+                    other.GetComponent<Player>().enteredLeft = false;
+                }
             }
             else
             {
-                other.GetComponent<Player>().enteredLeft = false;
+                Debug.LogError("Variable p (Player) is null, Script: RoomEntryChecker");
             }
+         
         }
     }
 }

@@ -12,44 +12,92 @@ public class ObjectDescriptor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myNameText = GetComponentInChildren<TextMeshPro>();
-        myNameText.text = gameObject.name;
-        myNameText.enabled = false;
+        if(myNameText != null)
+        {
+            myNameText.text = gameObject.name;
+            myNameText.enabled = false;
+        }
+        else
+        {
+            Debug.LogError("Variable myNameText is null, Add world space canvas with text to children, Script: ObjectDescriptor");
+        }
+    
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update () {
-        if (myNameText.isActiveAndEnabled && Input.GetKeyUp(KeyCode.LeftAlt))
+        if(myNameText != null)
         {
-            myNameText.enabled = false;
+            if (myNameText.isActiveAndEnabled && Input.GetKeyUp(KeyCode.LeftAlt))
+            {
+                myNameText.enabled = false;
+            }
         }
+        else
+        {
+            Debug.LogError("Variable myNameText is null, Add world space canvas with text to children, Script: ObjectDescriptor");
+        }
+
     }
 
     public void OnMouseOver()
     {
-        if (!myNameText.isActiveAndEnabled && Input.GetKey(KeyCode.LeftAlt))
+        if(myNameText != null)
         {
-            myNameText.enabled = true;
+            if (!myNameText.isActiveAndEnabled && Input.GetKey(KeyCode.LeftAlt))
+            {
+                myNameText.enabled = true;
+            }
         }
-
+        else
+        {
+            Debug.LogError("Variable myNameText is null, Add world space canvas with text to children, Script: ObjectDescriptor");
+        }
         if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftAlt))
         {
-           player.SetText(RandomStringFromList(), extraDisplayTime);
+            if(player != null)
+            {
+                player.SetText(RandomStringFromList(), extraDisplayTime);
+            }
+            else
+            {
+                Debug.LogError("Variable player is null, Script: ObjectDescriptor");
+            }
         }
     }
 
     private string RandomStringFromList()
     {
-        string s = descriptions[Random.Range(0, descriptions.Count)];
-        return s;
+        if(descriptions.Count > 0)
+        {
+            string s = descriptions[Random.Range(0, descriptions.Count)];
+            return s;
+
+        }
+        else
+        {
+            Debug.LogError("Object contains no descriptions, Script: ObjectDescriptor");
+            string s = null;
+            return s;
+        }
+
+
     }
 
     public void OnMouseExit()
     {
-        if (myNameText.isActiveAndEnabled)
+        if(myNameText != null)
         {
-            myNameText.enabled = false;
+            if (myNameText.isActiveAndEnabled)
+            {
+                myNameText.enabled = false;
+            }
+        }
+        else
+        {
+            Debug.LogError("Variable myNameText is null, Add world space canvas with text to children, Script: ObjectDescriptor");
         }
     }
 }

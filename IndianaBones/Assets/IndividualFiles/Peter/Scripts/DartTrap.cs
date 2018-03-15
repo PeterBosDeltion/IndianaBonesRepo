@@ -22,8 +22,17 @@ public class DartTrap : TriggerdObjects {
     public override void TriggerFunctionality()
     {
         GameObject g = Instantiate(arrowPrefab, emptyPos.transform.position, transform.rotation);
+        
         Rigidbody rb = g.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * arrowSpeed * Time.deltaTime);
+        if(rb != null)
+        {
+            rb.AddForce(transform.forward * arrowSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Destroy(g);
+            Debug.LogError("Dart arrow prefab does not have rigidbody, Script:DartTrap");
+        }
         Destroy(g, 4.0F);
 
     }

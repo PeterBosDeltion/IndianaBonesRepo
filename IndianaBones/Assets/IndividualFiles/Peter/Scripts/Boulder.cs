@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boulder : MonoBehaviour {
+public class Boulder : TriggerdObjects {
     public float timeUntilDestroyed;
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,11 @@ public class Boulder : MonoBehaviour {
             col.transform.GetComponent<Player>().Death();
             Destroy(gameObject);
         }
+    }
+
+    public override void TriggerFunctionality()
+    {
+        StartDestroyTimer();
     }
 
     public void StartDestroyTimer()

@@ -32,31 +32,39 @@ public class RoomBoundaryCalculator : MonoBehaviour {
             }
         }
 
-        Vector3 emptyPos = raycaster.transform.position;
-
-        RaycastHit hit;
-        if (Physics.Raycast(emptyPos, transform.right, out hit, 99))
+        if(raycaster != null)
         {
-            rightSideBound = new Vector3(hit.transform.position.x - xOffset, hit.transform.position.y, hit.transform.position.z);
+            Vector3 emptyPos = raycaster.transform.position;
+
+            RaycastHit hit;
+            if (Physics.Raycast(emptyPos, transform.right, out hit, 99))
+            {
+                rightSideBound = new Vector3(hit.transform.position.x - xOffset, hit.transform.position.y, hit.transform.position.z);
+
+            }
+
+            if (Physics.Raycast(emptyPos, -transform.right, out hit, 99))
+            {
+                leftSideBound = new Vector3(hit.transform.position.x + xOffset, hit.transform.position.y, hit.transform.position.z);
+
+            }
+
+            if (Physics.Raycast(emptyPos, transform.up, out hit, 99))
+            {
+                upSideBound = new Vector3(hit.transform.position.x, hit.transform.position.y - yOffset, hit.transform.position.z);
+
+            }
+
+            if (Physics.Raycast(emptyPos, -transform.up, out hit, 99))
+            {
+                downSideBound = new Vector3(hit.transform.position.x, hit.transform.position.y + yOffset, hit.transform.position.z);
+
+            }
 
         }
-
-        if (Physics.Raycast(emptyPos, -transform.right, out hit, 99))
+        else
         {
-            leftSideBound = new Vector3(hit.transform.position.x + xOffset, hit.transform.position.y, hit.transform.position.z);
-
-        }
-
-        if (Physics.Raycast(emptyPos, transform.up, out hit, 99))
-        {
-            upSideBound = new Vector3(hit.transform.position.x, hit.transform.position.y - yOffset, hit.transform.position.z);
-
-        }
-
-        if (Physics.Raycast(emptyPos, -transform.up, out hit, 99))
-        {
-            downSideBound = new Vector3(hit.transform.position.x, hit.transform.position.y + yOffset, hit.transform.position.z);
-
+            Debug.LogError("Variable raycaster is null, Add a empty object to children and give it the Raycaster tag, Script: RoomBoundaryCalculator");
         }
     }
 }

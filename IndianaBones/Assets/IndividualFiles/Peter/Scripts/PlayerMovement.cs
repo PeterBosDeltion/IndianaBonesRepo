@@ -85,8 +85,16 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") && canJump)
         {
-            rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
-            StartCoroutine(JumpCooldown());
+            if(rb != null)
+            {
+                rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
+                StartCoroutine(JumpCooldown());
+            }
+            else
+            {
+                Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
+            }
+         
         }
     }
 

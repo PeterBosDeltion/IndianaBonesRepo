@@ -16,7 +16,14 @@ public class Trapdoor : TriggerdObjects {
 
     public override void TriggerFunctionality()
     {
-        anim.Play("TrapdoorOpen");
+        if(anim != null)
+        {
+            anim.Play("TrapdoorOpen");
+        }
+        else
+        {
+            Debug.LogError("Variable anim (Animator) is null, Script: Trapdoor");
+        }
         //gameObject.SetActive(false);
     }
 }

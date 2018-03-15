@@ -22,27 +22,57 @@ public class Room : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
-            other.GetComponent<Player>().beginingRoom = other.transform.position;
-            other.GetComponent<Player>().currentRoom = gameObject;
 
-            if (other.GetComponent<PlayerMovement>().speed != other.GetComponent<PlayerMovement>().startSpeed)
+            Player p = other.GetComponent<Player>();
+            PlayerMovement plm = other.GetComponent<PlayerMovement>();
+
+            if(p != null)
             {
-                other.GetComponent<PlayerMovement>().speed = other.GetComponent<PlayerMovement>().startSpeed;
+                p.beginingRoom = other.transform.position;
+                p.currentRoom = gameObject;
+            }
+            else
+            {
+                Debug.LogError("Variable p (Player) is null, Script: Room");
+            }
+         
+
+            if(plm != null)
+            {
+                if (plm.speed != plm.startSpeed)
+                {
+                    plm.speed = plm.startSpeed;
+                }
+
+                float ogSpeed = other.GetComponent<PlayerMovement>().startSpeed;
+
+                plm.canSprint = false;
+                plm.startSpeed *= 2;
+
+                StartCoroutine(ReturnSpeed(other.gameObject, ogSpeed));
+            }
+            else
+            {
+                Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
             }
         
-            float ogSpeed = other.GetComponent<PlayerMovement>().startSpeed;
-
-            other.GetComponent<PlayerMovement>().canSprint = false;
-            other.GetComponent<PlayerMovement>().startSpeed *= 2;
-
-            StartCoroutine(ReturnSpeed(other.gameObject, ogSpeed));
         }
     }
 
     IEnumerator ReturnSpeed(GameObject player, float ogSpeed)
     {
+        PlayerMovement plm = player.GetComponent<PlayerMovement>();
         yield return new WaitForSeconds(0.6F);
-       StartCoroutine(player.GetComponent<PlayerMovement>().SprintCooldown());
-        player.GetComponent<PlayerMovement>().startSpeed = ogSpeed;
+
+        if(plm != null)
+        {
+            StartCoroutine(plm.SprintCooldown());
+            plm.startSpeed = ogSpeed;
+        }
+        else
+        {
+            Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
+        }
+
     }
 }

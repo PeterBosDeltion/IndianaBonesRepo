@@ -1603,6 +1603,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 1810854836}
   - {fileID: 268651825}
+  - {fileID: 656393328}
   pressurePlate: 1
 --- !u!23 &519394327
 MeshRenderer:
@@ -1898,7 +1899,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e02182be5acfca43b1378b8a0e8b138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeUntilDestroyed: 5
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  timeUntilDestroyed: 10
 --- !u!1001 &694009850
 Prefab:
   m_ObjectHideFlags: 0
@@ -2938,6 +2944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e02182be5acfca43b1378b8a0e8b138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
   timeUntilDestroyed: 0
 --- !u!1 &1470131150
 GameObject:
