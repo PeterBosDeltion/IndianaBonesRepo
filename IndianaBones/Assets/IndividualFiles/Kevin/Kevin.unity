@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 1092282207}
   - component: {fileID: 1092282212}
   - component: {fileID: 1092282211}
+  - component: {fileID: 1092282213}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -286,6 +287,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 0}
   pressurePlate: 0
+  triggersPuzzlePart: 0
 --- !u!114 &1092282212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +307,21 @@ MonoBehaviour:
   upTime: 0
   amountToMoveUp: 1
   speed: 50
+--- !u!114 &1092282213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092282206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0627b961d30a905409d2fbc4d2b555ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleTriggerObjects: []
+  puzzleList: []
+  triggers: 0
+  puzzle: 0
 --- !u!1 &1265431314
 GameObject:
   m_ObjectHideFlags: 0
