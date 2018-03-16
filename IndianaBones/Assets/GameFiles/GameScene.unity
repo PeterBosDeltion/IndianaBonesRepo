@@ -2977,6 +2977,7 @@ Transform:
   - {fileID: 1206810014}
   - {fileID: 1733597603}
   - {fileID: 1050211311}
+  - {fileID: 2012557039}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33895,6 +33896,243 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &2012557038
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 171888562}
+    m_Modifications:
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 54.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33696511765587350, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33385192399312450, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139458015480732, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139458015480732, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_text
+      value: If you die and you still have lives left, you go back to the beginning
+        of your current room. Otherwise you go back to your last milestone.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 138
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_textInfo.materialCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_subTextObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 2018186459}
+    - target: {fileID: 224053947108170728, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575490627695814, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+        type: 2}
+      propertyPath: descriptions.Array.data[0]
+      value: If you die and you still have lives left, you go back to the beginning
+        of your current room. Otherwise you go back to your last milestone.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986024441913344, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+      propertyPath: m_Name
+      value: Sign (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &2012557039 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4519939215345906, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+    type: 2}
+  m_PrefabInternal: {fileID: 2012557038}
+--- !u!224 &2012557040 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224053947108170728, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+    type: 2}
+  m_PrefabInternal: {fileID: 2012557038}
+--- !u!114 &2012557041 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114202617994340668, guid: 6ac2bef3239ba3a498a6a4c56dc0ec69,
+    type: 2}
+  m_PrefabInternal: {fileID: 2012557038}
+  m_Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!1 &2018186457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2018186458}
+  - component: {fileID: 2018186461}
+  - component: {fileID: 2018186460}
+  - component: {fileID: 2018186459}
+  m_Layer: 0
+  m_Name: TMP SubMesh [SkeletonPicsFont Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2018186458
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018186457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2012557040}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2018186459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018186457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1330537494, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 0.5
+  m_renderer: {fileID: 2018186460}
+  m_meshFilter: {fileID: 2018186461}
+  m_boxCollider: {fileID: 0}
+  m_TextComponent: {fileID: 2012557041}
+--- !u!23 &2018186460
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018186457}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2018186461
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018186457}
+  m_Mesh: {fileID: 0}
 --- !u!1 &2020727305
 GameObject:
   m_ObjectHideFlags: 0
