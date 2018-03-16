@@ -24,9 +24,7 @@ public class Door : TriggerdObjects {
 
 	IEnumerator MechanismTimer()
 	{
-		print("before");
 		yield return new WaitForSeconds(1.5f);
-		print("after");
 		GetComponent<Animator>().SetBool("Left",left);
 		GetComponent<Animator>().SetTrigger("OpenDoor");
 	}
