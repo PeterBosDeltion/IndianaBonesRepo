@@ -8,6 +8,7 @@ public class LightsPuzzle : TriggerdObjects {
     public GameObject horArrow;
     public GameObject vertArrow;
 
+
     public GameObject selectedLight;
     public Material emisiveYellow;
     public Material soulBlack;

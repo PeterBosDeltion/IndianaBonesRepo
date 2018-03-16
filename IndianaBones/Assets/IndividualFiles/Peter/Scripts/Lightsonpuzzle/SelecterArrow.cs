@@ -11,9 +11,9 @@ public class SelecterArrow : MonoBehaviour {
     public int maxHorPos = 5;
     public int maxVertPos = 5;
 
-    
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
