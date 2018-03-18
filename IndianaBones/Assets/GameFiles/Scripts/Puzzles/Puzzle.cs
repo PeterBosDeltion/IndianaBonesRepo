@@ -7,5 +7,5 @@ public abstract class Puzzle : MonoBehaviour {
 	public PuzzleManager puzzleManager;
 
 	public bool puzzleDone;
-	public abstract bool PuzzleTrigger(TriggerdObjects currentObject);
+	public abstract void PuzzleTrigger(TriggerdObjects currentObject);
 }

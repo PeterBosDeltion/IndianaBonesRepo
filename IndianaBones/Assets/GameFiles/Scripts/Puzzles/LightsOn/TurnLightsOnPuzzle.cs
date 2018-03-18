@@ -10,12 +10,12 @@ public class TurnLightsOnPuzzle : Puzzle {
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
 	}
-	public override bool PuzzleTrigger(TriggerdObjects currentObject)
+	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
-		return CheckTorches(currentObject.puzzlePart);
+		CheckTorches(currentObject.puzzlePart);
 	}
 
-	public bool CheckTorches(int trigger)
+	public void CheckTorches(int trigger)
 	{
 		returnBool = true;
 		if(torches[trigger] ==false)
@@ -34,6 +34,6 @@ public class TurnLightsOnPuzzle : Puzzle {
 			}
 		}
 		puzzleManager.triggers -= 1;
-		return returnBool;
+		puzzleManager.done = returnBool;
 	}
 }

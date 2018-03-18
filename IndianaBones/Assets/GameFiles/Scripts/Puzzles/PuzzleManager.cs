@@ -9,6 +9,7 @@ public class PuzzleManager : MonoBehaviour {
 	public int triggers;
 	public int puzzle;
 
+	public bool done;
 	void Start()
 	{
 		SaveTrigger.finishedPuzzlesSave = new bool[puzzleList.Count];
@@ -32,11 +33,11 @@ public class PuzzleManager : MonoBehaviour {
 			Debug.LogError("Variable GameManager.gm = null, try launching from menu, Script: PuzzleManager");
 		}
 	}
-	//checked de puzzle list en probeert uit een functie een bool bvalue te krijgen die confirmed als je de puzzle af hebt
+	//checked de puzzle list activeerd de bijhoorende puzzle fnctie en returned uitijndelijk een bool zonder de restrictie die de function een bool maken geeft
 	public void puzzleInsert(TriggerdObjects currentObject)
 	{
-		bool done = false;
-		done = puzzleList[currentObject.puzzleNumber].PuzzleTrigger(currentObject);
+		done = false;
+		puzzleList[currentObject.puzzleNumber].PuzzleTrigger(currentObject);
 
 		if(done == true)
 		{

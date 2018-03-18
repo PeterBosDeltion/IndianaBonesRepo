@@ -19,7 +19,7 @@ public class TurnLightsOffPuzzle : Puzzle {
 		lights = new GameObject[gridWidth,gridWidth];
 	}
 
-	public override bool PuzzleTrigger(TriggerdObjects currentObject)
+	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
 		if(currentObject.puzzlePart == 1)
 		{
@@ -27,7 +27,7 @@ public class TurnLightsOffPuzzle : Puzzle {
 		}
 		if(currentObject.puzzlePart == 2)
 		{
-			lights[hor,ver].GetComponent<Lights>().toggleLights;
+//			lights[hor,ver].GetComponent<Lights>().toggleLights;
 		}
 		if(currentObject.puzzlePart == 3)
 		{
@@ -37,10 +37,9 @@ public class TurnLightsOffPuzzle : Puzzle {
 		{
 			ver -= 1;
 		}
-		return CheckLights(currentObject.puzzlePart);
 	}
 
-	public bool CheckLights(int trigger)
+	public void CheckLights(int trigger)
 	{
 		returnBool = true;
 		if(lightsOnOff[trigger] ==false)
@@ -59,6 +58,6 @@ public class TurnLightsOffPuzzle : Puzzle {
 			}
 		}
 		puzzleManager.triggers -= 1;
-		return returnBool;
+		puzzleManager.done = returnBool;
 	}
 }
