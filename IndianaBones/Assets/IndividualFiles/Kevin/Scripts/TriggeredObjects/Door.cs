@@ -17,7 +17,6 @@ public class Door : TriggerdObjects {
 			{
 				player.hasKey = false;
 			}
-			print("k fam");
 			StartCoroutine(MechanismTimer());
 		}
 	}

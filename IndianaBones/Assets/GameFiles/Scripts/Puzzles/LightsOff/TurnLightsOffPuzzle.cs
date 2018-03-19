@@ -52,6 +52,7 @@ public class TurnLightsOffPuzzle : Puzzle {
 
 	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
+		print("in puzzle");
 		if(currentObject.GetComponent<Lamp>())
 		{
 			CheckLights(currentObject.puzzlePart);
@@ -61,7 +62,7 @@ public class TurnLightsOffPuzzle : Puzzle {
 			if(hor == 0)
 			{	
 				arrowHor.transform.Translate(4,0,0);
-				hor  = gridWidth;
+				hor  = gridWidth - 1;
 			}
 			else
 			{
@@ -75,7 +76,7 @@ public class TurnLightsOffPuzzle : Puzzle {
 		}
 		else if(currentObject.puzzlePart == 3)
 		{
-			if(hor == gridWidth)
+			if(hor == gridWidth - 1)
 			{
 				arrowHor.transform.Translate(-4,0,0);
 				hor = 0;
@@ -88,15 +89,18 @@ public class TurnLightsOffPuzzle : Puzzle {
 		}
 		else if(currentObject.puzzlePart == 4)
 		{
-			if(ver == gridWidth)
+			if(ver == gridWidth - 1)
 			{
+				print(gridWidth);
+				print("1");
 				arrowVer.transform.Translate(0,-4,0);
 				ver = 0;
 			}
 			else
 			{
+				print("2");
 				arrowVer.transform.Translate(0,1,0);
-				ver -= 1;
+				ver += 1;
 			}
 		}
 	}

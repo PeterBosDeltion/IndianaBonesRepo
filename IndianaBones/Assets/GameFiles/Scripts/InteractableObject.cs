@@ -32,7 +32,6 @@ public class InteractableObject : MonoBehaviour {
 			print("collisison check");
 			if(Input.GetButtonDown("E"))
 			{
-				print("Pressed");
 				if(triggersPuzzlePart)
 				{
 					puzzleManager.triggers = toTrigger.Count;

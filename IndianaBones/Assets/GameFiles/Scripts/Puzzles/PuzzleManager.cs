@@ -37,8 +37,9 @@ public class PuzzleManager : MonoBehaviour {
 	public void puzzleInsert(TriggerdObjects currentObject)
 	{
 		done = false;
+		print("insert pre");
 		puzzleList[currentObject.puzzleNumber].PuzzleTrigger(currentObject);
-
+		print("insert after");
 		if(done == true)
 		{
 			if(triggers == 0)
