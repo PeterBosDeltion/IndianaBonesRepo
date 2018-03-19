@@ -10,6 +10,9 @@ public class TurnLightsOffPuzzle : Puzzle {
 	public int hor = 0;
 	public int ver = 0;
 
+	public GameObject arrowHor;
+	public GameObject arrowVer;
+
 
 	public List<bool> lightsOnOff = new List<bool>();
 
@@ -19,23 +22,82 @@ public class TurnLightsOffPuzzle : Puzzle {
 		lights = new GameObject[gridWidth,gridWidth];
 	}
 
+
+	public void TriggerAllLights()
+	{
+		lights [hor,ver].GetComponent<Lamp>().TriggerFunctionality();
+		puzzleManager.triggers += 1;
+
+		if(hor + 1 <= gridWidth)
+		{
+			lights [hor += 1,ver].GetComponent<Lamp>().TriggerFunctionality();
+			puzzleManager.triggers += 1;
+		}
+		if(hor - 1 >= 0)
+		{
+			lights [hor -= 1,ver].GetComponent<Lamp>().TriggerFunctionality();
+			puzzleManager.triggers += 1;
+		}
+		if(ver + 1 <= gridWidth)
+		{
+			lights [hor,ver += 1].GetComponent<Lamp>().TriggerFunctionality();
+			puzzleManager.triggers += 1;
+		}
+		if(ver - 1 >= 0)
+		{
+			lights [hor,ver -= 1].GetComponent<Lamp>().TriggerFunctionality();
+			puzzleManager.triggers += 1;
+		}
+	}
+
 	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
-		if(currentObject.puzzlePart == 1)
+		if(currentObject.GetComponent<Lamp>())
 		{
-			hor -= 1;
+			CheckLights(currentObject.puzzlePart);
 		}
-		if(currentObject.puzzlePart == 2)
+		else if(currentObject.puzzlePart == 1)
 		{
-//			lights[hor,ver].GetComponent<Lights>().toggleLights;
+			if(hor == 0)
+			{	
+				arrowHor.transform.Translate(4,0,0);
+				hor  = gridWidth;
+			}
+			else
+			{
+				arrowHor.transform.Translate(-1,0,0);
+				hor -= 1;
+			}
 		}
-		if(currentObject.puzzlePart == 3)
+		else if(currentObject.puzzlePart == 2)
 		{
-			hor += 1;
+			TriggerAllLights();
 		}
-		if(currentObject.puzzlePart == 4)
+		else if(currentObject.puzzlePart == 3)
 		{
-			ver -= 1;
+			if(hor == gridWidth)
+			{
+				arrowHor.transform.Translate(-4,0,0);
+				hor = 0;
+			}
+			else
+			{
+				arrowHor.transform.Translate(1,0,0);
+				hor += 1;
+			}
+		}
+		else if(currentObject.puzzlePart == 4)
+		{
+			if(ver == gridWidth)
+			{
+				arrowVer.transform.Translate(0,-4,0);
+				ver = 0;
+			}
+			else
+			{
+				arrowVer.transform.Translate(0,1,0);
+				ver -= 1;
+			}
 		}
 	}
 
