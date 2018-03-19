@@ -12,47 +12,69 @@ public class TurnLightsOffPuzzle : Puzzle {
 
 	public GameObject arrowHor;
 	public GameObject arrowVer;
-
-
+	public List<GameObject> lightObjects = new List<GameObject>();
 	public List<bool> lightsOnOff = new List<bool>();
 
 	void Start()
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
 		lights = new GameObject[gridWidth,gridWidth];
+		int indexH = 0;
+		int indexV = 0;
+		foreach(GameObject light in lightObjects)
+		{
+			lights.SetValue(light,indexH,indexV);
+			if(indexH == 4)
+			{
+				indexV += 1;
+				indexH = 0;
+			}
+			else
+			{
+				indexH += 1;
+			}
+		}
 	}
 
 
 	public void TriggerAllLights()
 	{
+		print(lights[hor,ver]);
 		lights [hor,ver].GetComponent<Lamp>().TriggerFunctionality();
 		puzzleManager.triggers += 1;
 
-		if(hor + 1 <= gridWidth)
+		if(hor + 1 < gridWidth)
 		{
 			lights [hor += 1,ver].GetComponent<Lamp>().TriggerFunctionality();
+			hor -= 1;
+			print("ok");
 			puzzleManager.triggers += 1;
 		}
-		if(hor - 1 >= 0)
+		if(hor > 0)
 		{
 			lights [hor -= 1,ver].GetComponent<Lamp>().TriggerFunctionality();
+			hor += 1;
+			print("ok");
 			puzzleManager.triggers += 1;
 		}
-		if(ver + 1 <= gridWidth)
+		if(ver + 1 < gridWidth)
 		{
 			lights [hor,ver += 1].GetComponent<Lamp>().TriggerFunctionality();
+			ver -= 1;
+			print("ok");
 			puzzleManager.triggers += 1;
 		}
-		if(ver - 1 >= 0)
+		if(ver > 0)
 		{
 			lights [hor,ver -= 1].GetComponent<Lamp>().TriggerFunctionality();
+			ver += 1;
+			print("ok");
 			puzzleManager.triggers += 1;
 		}
 	}
 
 	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
-		print("in puzzle");
 		if(currentObject.GetComponent<Lamp>())
 		{
 			CheckLights(currentObject.puzzlePart);
@@ -92,13 +114,11 @@ public class TurnLightsOffPuzzle : Puzzle {
 			if(ver == gridWidth - 1)
 			{
 				print(gridWidth);
-				print("1");
 				arrowVer.transform.Translate(0,-4,0);
 				ver = 0;
 			}
 			else
 			{
-				print("2");
 				arrowVer.transform.Translate(0,1,0);
 				ver += 1;
 			}
@@ -110,16 +130,21 @@ public class TurnLightsOffPuzzle : Puzzle {
 		returnBool = true;
 		if(lightsOnOff[trigger] ==false)
 		{
+			print("stap 2");
 			lightsOnOff[trigger] = true;
 		}
 		else
 		{
+			print("stap 3");
 			lightsOnOff[trigger] = false;
 		}
+		print("tussen");
 		foreach (bool light in lightsOnOff)
 		{
+			print("stap 4");
 			if(light == false)
 			{
+				print("stap 5");
 				returnBool = false;
 			}
 		}

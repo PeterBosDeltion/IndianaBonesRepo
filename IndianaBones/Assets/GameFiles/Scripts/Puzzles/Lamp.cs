@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lamp : TriggerdObjects {
+    public bool startOn;
     public ParticleSystem fire;
     
     void Start()
     {
         puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
         fire = GetComponentInChildren<ParticleSystem>();
-        fire.gameObject.SetActive(false);
+        if(startOn == false)
+        {
+            fire.gameObject.SetActive(false);
+        }
     	if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == true)
         {
             fire.gameObject.SetActive(true);

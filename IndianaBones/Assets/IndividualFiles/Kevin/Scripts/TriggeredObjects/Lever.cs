@@ -15,7 +15,6 @@ public class Lever : TriggerdObjects {
 		GetComponent<Animator>().SetTrigger("Pull");
 		if(puzzle == true)
 		{
-			print("puzzleManager");
 			puzzleManager.puzzleInsert(this);
 		}
 	}

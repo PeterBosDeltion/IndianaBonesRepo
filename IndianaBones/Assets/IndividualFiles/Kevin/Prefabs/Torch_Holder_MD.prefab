@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 33203151979450698}
   - component: {fileID: 23698306083799664}
   - component: {fileID: 95463658045671150}
+  - component: {fileID: 114868612128891938}
   m_Layer: 0
   m_Name: Torch_Holder_MD
   m_TagString: Untagged
@@ -115,9 +116,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875453304829578}
-  m_LocalRotation: {x: -0.76604444, y: 0, z: -0, w: 0.64278764}
-  m_LocalPosition: {x: -10.15064, y: 2.33, z: 2.28}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: 0.098296225, z: -0.5566155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4824202683590642}
   m_Father: {fileID: 0}
@@ -259,6 +260,23 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114868612128891938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875453304829578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95a395d2d89f5d49992f37ec79a84d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  fire: {fileID: 198405577540902156}
 --- !u!198 &198396483514614134
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -319,7 +337,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1402123123
+  randomSeed: 2144408831
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3608,7 +3626,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1526905160
+  randomSeed: 1554151695
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6903,7 +6921,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 594154660
+  randomSeed: 932749449
   InitialModule:
     serializedVersion: 3
     enabled: 1
