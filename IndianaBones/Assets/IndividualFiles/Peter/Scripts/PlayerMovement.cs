@@ -41,7 +41,9 @@ public class PlayerMovement : MonoBehaviour {
     {
         float x = Input.GetAxis("Horizontal");
 
-        transform.Translate(transform.right * x * speed * Time.deltaTime);
+        transform.Translate(transform.right * -x * speed * Time.deltaTime);
+
+      
         if(x != 0)
         {
             anim.SetBool("Run", true);
