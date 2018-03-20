@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody rb;
+    public Animator anim;
     public float speed;
     public float stamina;
     public float staminaUseRate;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     [HideInInspector]
     public float startSpeed;
     public bool canSprint;
+    
 
     public float jumpForce;
     public float jumpCooldown;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         startSpeed = speed;
         canSprint = true;
         canJump = true;
@@ -39,6 +42,14 @@ public class PlayerMovement : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
 
         transform.Translate(transform.right * x * speed * Time.deltaTime);
+        if(x != 0)
+        {
+            anim.SetBool("Run", true);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+        }
     }
 
     void Sprint()
