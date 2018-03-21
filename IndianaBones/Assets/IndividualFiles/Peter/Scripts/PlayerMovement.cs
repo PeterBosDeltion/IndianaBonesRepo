@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour {
         else
         {
             anim.SetBool("Run", false);
+            anim.SetBool("Idle", true);
         }
     }
 
@@ -102,10 +103,12 @@ public class PlayerMovement : MonoBehaviour {
             {
                 rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
                 StartCoroutine(JumpCooldown());
+                anim.SetBool("Jump", true);
             }
             else
             {
                 Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
+                anim.SetBool("Jump", false);
             }
          
         }
