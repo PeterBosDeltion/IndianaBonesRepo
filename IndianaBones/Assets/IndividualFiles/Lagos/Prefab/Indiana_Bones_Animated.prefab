@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 136224800869484566}
   - component: {fileID: 114760871549726394}
   m_Layer: 0
-  m_Name: Skeleton_MD 1
+  m_Name: Indiana_Bones_Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

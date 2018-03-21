@@ -204,6 +204,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
+  - {fileID: 2100000, guid: 841f4b7081c83724496eb4f433a4d0e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,6 +239,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
+  - {fileID: 2100000, guid: 841f4b7081c83724496eb4f433a4d0e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -452,6 +454,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 1
   puzzlePart: 2
+  puzzle: 0
 --- !u!114 &114676109162423934
 MonoBehaviour:
   m_ObjectHideFlags: 1
