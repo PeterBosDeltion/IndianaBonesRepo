@@ -2203,6 +2203,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114685502965021510, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: returnLever
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7a6e913e06ab7b498abcd31ee30d9a6, type: 2}
   m_IsPrefabParent: 0
@@ -48314,11 +48319,11 @@ MonoBehaviour:
     lineCount: 4
     pageCount: 1
     materialCount: 2
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1110858543}
@@ -61224,6 +61229,11 @@ Prefab:
     - target: {fileID: 114685502965021510, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
         type: 2}
       propertyPath: puzzle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685502965021510, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: returnLever
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -82099,6 +82109,41 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b9dbccc353f0a94cae9d65516d8de1e, type: 2}
   m_IsPrefabParent: 0
@@ -84765,11 +84810,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1950875435}
