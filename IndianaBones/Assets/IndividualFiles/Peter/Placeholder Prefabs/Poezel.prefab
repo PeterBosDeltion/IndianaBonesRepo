@@ -3744,6 +3744,8 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  puzzle: 0
+  returnLever: 0
 --- !u!114 &114101125587757388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3942,6 +3944,8 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  puzzle: 0
+  returnLever: 0
 --- !u!114 &114218641866938764
 MonoBehaviour:
   m_ObjectHideFlags: 1

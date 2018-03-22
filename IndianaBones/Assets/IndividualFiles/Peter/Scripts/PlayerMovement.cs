@@ -6,15 +6,15 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody rb;
     public Animator anim;
     public float speed;
-    public float stamina;
-    public float staminaUseRate;
+    //public float stamina;
+    //public float staminaUseRate;
 
-    public int sprintCooldown;
-    public float sprintSpeed;
+    //public int sprintCooldown;
+    //public float sprintSpeed;
 
     [HideInInspector]
-    public float startSpeed;
-    public bool canSprint;
+    //public float startSpeed;
+    //public bool canSprint;
     
 
     public float jumpForce;
@@ -26,15 +26,15 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        startSpeed = speed;
-        canSprint = true;
+        //startSpeed = speed;
+        //canSprint = true;
         canJump = true;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         Move();
-        Sprint();
+        //Sprint();
         Jump();
 	}
 
@@ -44,6 +44,20 @@ public class PlayerMovement : MonoBehaviour {
 
         transform.Translate(transform.right * -x * speed * Time.deltaTime);
 
+        if(x < 0)
+        {
+            transform.localScale = new Vector3(-0.8F, 0.8F, 0.8F);
+            transform.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else if(x == 0)
+        {
+
+        }
+        else
+        {
+            transform.localScale = new Vector3(0.8F, 0.8F, 0.8F);
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+        }
       
         if(x != 0)
         {
@@ -56,45 +70,45 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void Sprint() //Need to fix this
-    {
-        if (Input.GetButton("Shift"))
-        {
-            if (stamina > 0 && canSprint)
-            {
-                stamina -= staminaUseRate;
-                speed += sprintSpeed;
-            }
-            else if (stamina <= 0 && canSprint)
-            {
+    //void Sprint() //Need to fix this
+    //{
+    //    if (Input.GetButton("Shift"))
+    //    {
+    //        if (stamina > 0 && canSprint)
+    //        {
+    //            stamina -= staminaUseRate;
+    //            speed += sprintSpeed;
+    //        }
+    //        else if (stamina <= 0 && canSprint)
+    //        {
 
-                if (speed != startSpeed)
-                {
-                    speed = startSpeed;
-                }
-                canSprint = false;
-                StartCoroutine(SprintCooldown());
-            }
-        }
-        else
-        {
-            if(speed != startSpeed)
-            {
-                speed = startSpeed;
-            }
-            if(stamina < 100)
-            {
-                stamina += staminaUseRate * Time.deltaTime;
-            }
-        }
-    }
+    //            if (speed != startSpeed)
+    //            {
+    //                speed = startSpeed;
+    //            }
+    //            canSprint = false;
+    //            StartCoroutine(SprintCooldown());
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if(speed != startSpeed)
+    //        {
+    //            speed = startSpeed;
+    //        }
+    //        if(stamina < 100)
+    //        {
+    //            stamina += staminaUseRate * Time.deltaTime;
+    //        }
+    //    }
+    //}
 
-    public IEnumerator SprintCooldown()
-    {
-        yield return new WaitForSeconds(sprintCooldown);
-        canSprint = true;
+    //public IEnumerator SprintCooldown()
+    //{
+    //    yield return new WaitForSeconds(sprintCooldown);
+    //    canSprint = true;
 
-    }
+    //}
 
     void Jump() //Also needs fixing
     {

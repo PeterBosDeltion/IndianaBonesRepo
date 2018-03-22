@@ -12,8 +12,11 @@ public class ObjectDescriptor : MonoBehaviour {
     private Player player;
 	// Use this for initialization
 	void Start () {
-        myNameText = GetComponentInChildren<TextMeshPro>();
-        if(myNameText != null)
+        if(transform.tag != "Player")
+        {
+            myNameText = GetComponentInChildren<TextMeshPro>();
+        }
+        if (myNameText != null)
         {
             myNameText.text = gameObject.name;
             myNameText.enabled = false;

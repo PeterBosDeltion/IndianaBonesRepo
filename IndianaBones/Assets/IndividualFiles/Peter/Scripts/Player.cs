@@ -16,14 +16,14 @@ public class Player : MonoBehaviour {
     public Vector3 beginingRoom;
     public GameObject currentRoom;
 
-    private TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI descriptionText;
 
     private UiManager uiManager;
 	// Use this for initialization
 	void Start () {
         currentLives = maxLives;
         beginingRoom = transform.position;
-        descriptionText = GetComponentInChildren<TextMeshProUGUI>();
+        //descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
 
         if(GameManager.gm != null)
