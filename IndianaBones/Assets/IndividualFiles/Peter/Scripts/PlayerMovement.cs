@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
     public float jumpCooldown;
     public bool canJump;
+    public float x;
     
 	// Use this for initialization
 	void Start () {
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Move()
     {
-        float x = Input.GetAxis("Horizontal");
+        x = Input.GetAxis("Horizontal");
 
         transform.Translate(transform.right * -x * speed * Time.deltaTime);
 
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void Sprint()
+    void Sprint() //Need to fix this
     {
         if (Input.GetButton("Shift"))
         {
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
-    void Jump()
+    void Jump() //Also needs fixing
     {
         if (Input.GetButtonDown("Jump") && canJump)
         {

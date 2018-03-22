@@ -20,59 +20,59 @@ public class Room : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
-        {
+        //if(other.gameObject.tag == "Player")
+        //{
 
-            Player p = other.GetComponent<Player>();
-            PlayerMovement plm = other.GetComponent<PlayerMovement>();
+        //    Player p = other.GetComponent<Player>();
+        //    PlayerMovement plm = other.GetComponent<PlayerMovement>();
 
-            if(p != null)
-            {
-                p.beginingRoom = other.transform.position;
-                p.currentRoom = gameObject;
-            }
-            else
-            {
-                Debug.LogError("Variable p (Player) is null, Script: Room");
-            }
+        //    if(p != null)
+        //    {
+        //        p.beginingRoom = other.transform.position;
+        //        p.currentRoom = gameObject;
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Variable p (Player) is null, Script: Room");
+        //    }
          
 
-            if(plm != null)
-            {
-                if (plm.speed != plm.startSpeed)
-                {
-                    plm.speed = plm.startSpeed;
-                }
+        //    if(plm != null)
+        //    {
+        //        if (plm.speed != plm.startSpeed)
+        //        {
+        //            plm.speed = plm.startSpeed;
+        //        }
 
-                float ogSpeed = other.GetComponent<PlayerMovement>().startSpeed;
+        //        float ogSpeed = other.GetComponent<PlayerMovement>().startSpeed;
 
-                plm.canSprint = false;
-                plm.startSpeed *= 2;
+        //        plm.canSprint = false;
+        //        plm.startSpeed *= 2;
 
-                StartCoroutine(ReturnSpeed(other.gameObject, ogSpeed));
-            }
-            else
-            {
-                Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
-            }
+        //        StartCoroutine(ReturnSpeed(other.gameObject, ogSpeed));
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
+        //    }
         
-        }
+        //}
     }
 
-    IEnumerator ReturnSpeed(GameObject player, float ogSpeed)
-    {
-        PlayerMovement plm = player.GetComponent<PlayerMovement>();
-        yield return new WaitForSeconds(0.6F);
+    //IEnumerator ReturnSpeed(GameObject player, float ogSpeed)
+    //{
+    //    PlayerMovement plm = player.GetComponent<PlayerMovement>();
+    //    yield return new WaitForSeconds(0.6F);
 
-        if(plm != null)
-        {
-            StartCoroutine(plm.SprintCooldown());
-            plm.startSpeed = ogSpeed;
-        }
-        else
-        {
-            Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
-        }
+    //    if(plm != null)
+    //    {
+    //        StartCoroutine(plm.SprintCooldown());
+    //        plm.startSpeed = ogSpeed;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
+    //    }
 
-    }
+    //}
 }
