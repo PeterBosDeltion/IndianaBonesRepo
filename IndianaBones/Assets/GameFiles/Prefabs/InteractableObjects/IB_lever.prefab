@@ -206,6 +206,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 9dc677b0f4de63045a434127adbec5ef, type: 2}
+  - {fileID: 2100000, guid: 9dc677b0f4de63045a434127adbec5ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -372,11 +373,12 @@ MonoBehaviour:
   puzzleNumber: 0
   puzzlePart: 0
   outlineMat: {fileID: 2100000, guid: e4bba45e422f0b64ea30e132e66b4168, type: 2}
+  mats: []
+  outlineChilds: []
   puzzle: 0
   returnLever: 0
-  outlineChild: {fileID: 1176041940119364}
   lever: {fileID: 2100000, guid: 8082f8fc6a35dcb4ead462e4f5b0e90f, type: 2}
-  mats: []
+  leverBase: {fileID: 0}
 --- !u!114 &114982990027207486
 MonoBehaviour:
   m_ObjectHideFlags: 1
