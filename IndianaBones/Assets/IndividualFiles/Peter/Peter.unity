@@ -733,11 +733,14 @@ Prefab:
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1272240414}
+<<<<<<< HEAD
     - target: {fileID: 33464719907570876, guid: a58cccc781b3e22429b2999a553c62f7,
         type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+=======
+>>>>>>> c211ebe16d9de3ce7979523ac13059b6d185ca92
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a58cccc781b3e22429b2999a553c62f7, type: 2}
   m_IsPrefabParent: 0
