@@ -7,6 +7,7 @@ public class InteractableObject : MonoBehaviour {
 	public PuzzleManager puzzleManager;
 	public List<TriggerdObjects> toTrigger = new List<TriggerdObjects>();
     public bool pressurePlate;
+	public GameObject shadedObject;
 
 	public bool triggersPuzzlePart;
 
@@ -30,6 +31,7 @@ public class InteractableObject : MonoBehaviour {
 		if(other.transform.gameObject.tag == "Player")
 		{
 			print("collisison check");
+			
 			if(Input.GetButtonDown("E"))
 			{
 				if(triggersPuzzlePart)
@@ -40,12 +42,28 @@ public class InteractableObject : MonoBehaviour {
 			}
 		}
 	}
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (pressurePlate && other.transform.tag == "Player")
+	public void OnTriggerEnter(Collider other)
+	{
+		if (pressurePlate && other.transform.tag == "Player")
         {
             Trigger();
         }
-    }
+		else if(other.transform.gameObject.tag == "Player")
+		{
+			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+			{
+				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
+			}
+		}
+	}
+	public void OnTriggerExit(Collider other)
+	{
+		if(other.transform.gameObject.tag == "Player")
+		{
+			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+			{
+				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
+			}
+		}	
+	}
 }

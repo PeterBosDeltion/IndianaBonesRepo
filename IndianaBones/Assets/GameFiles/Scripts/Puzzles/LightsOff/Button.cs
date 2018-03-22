@@ -5,6 +5,7 @@ using UnityEngine;
 public class Button : TriggerdObjects {
 	
 	public bool puzzle;
+	public Material button;
 	void Start()
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
@@ -19,5 +20,10 @@ public class Button : TriggerdObjects {
            		puzzleManager.puzzleInsert(this);
         	}
 		}
+	}
+
+	public override void OutlineShaderToggle()
+	{
+		
 	}
 }

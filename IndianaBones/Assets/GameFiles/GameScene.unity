@@ -2126,6 +2126,16 @@ Prefab:
       propertyPath: toTrigger.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23321066013880856, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23197789227841424, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4522414064439932, guid: c7a6e913e06ab7b498abcd31ee30d9a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: -289.92
@@ -2201,13 +2211,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1038900321285680, guid: c7a6e913e06ab7b498abcd31ee30d9a6, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114685502965021510, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
         type: 2}
       propertyPath: returnLever
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23321066013880856, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4bba45e422f0b64ea30e132e66b4168, type: 2}
+    - target: {fileID: 23197789227841424, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8082f8fc6a35dcb4ead462e4f5b0e90f, type: 2}
+    - target: {fileID: 114685502965021510, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: outlineChild
+      value: 
+      objectReference: {fileID: 1353143181}
+    - target: {fileID: 114209734528823250, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+        type: 2}
+      propertyPath: shadedObject
+      value: 
+      objectReference: {fileID: 1500160898}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7a6e913e06ab7b498abcd31ee30d9a6, type: 2}
   m_IsPrefabParent: 0
@@ -6281,6 +6311,7 @@ MonoBehaviour:
   - {fileID: 397176830}
   - {fileID: 570045000}
   pressurePlate: 1
+  shadedObject: {fileID: 0}
   triggersPuzzlePart: 0
 --- !u!65 &88538403
 BoxCollider:
@@ -32849,6 +32880,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 333933296}
   pressurePlate: 1
+  shadedObject: {fileID: 0}
   triggersPuzzlePart: 0
 --- !u!65 &859534031
 BoxCollider:
@@ -41297,6 +41329,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
   costsKey: 0
   left: 1
 --- !u!65 &938339159
@@ -45410,6 +45443,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
   costsKey: 0
   left: 1
 --- !u!65 &987697888
@@ -48319,11 +48353,11 @@ MonoBehaviour:
     lineCount: 4
     pageCount: 1
     materialCount: 2
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1110858543}
@@ -58227,6 +58261,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58243,6 +58278,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58259,6 +58295,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58275,6 +58312,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58291,6 +58329,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58307,6 +58346,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58323,6 +58363,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58339,6 +58380,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58355,6 +58397,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58371,6 +58414,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58387,6 +58431,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58403,6 +58448,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58419,6 +58465,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58435,6 +58482,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58451,6 +58499,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58467,6 +58516,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58483,6 +58533,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58499,6 +58550,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58515,6 +58567,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58531,6 +58584,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58547,6 +58601,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58563,6 +58618,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58579,6 +58635,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58595,6 +58652,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58611,6 +58669,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58627,6 +58686,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58643,6 +58703,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58659,6 +58720,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58675,6 +58737,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!114 &1300033737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58691,6 +58754,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
 --- !u!1 &1308746093
 GameObject:
   m_ObjectHideFlags: 0
@@ -59301,6 +59365,11 @@ Transform:
   m_Father: {fileID: 1946371212}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1353143181 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1176041940119364, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 58192371}
 --- !u!1 &1354627757
 GameObject:
   m_ObjectHideFlags: 0
@@ -66212,6 +66281,11 @@ Prefab:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: bc6914a2b240cec4eb912210c83c309b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1500160898 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1487434417164314, guid: c7a6e913e06ab7b498abcd31ee30d9a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 58192371}
 --- !u!1 &1516835293
 GameObject:
   m_ObjectHideFlags: 0
@@ -82144,6 +82218,171 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062166369047560, guid: 2b9dbccc353f0a94cae9d65516d8de1e,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b9dbccc353f0a94cae9d65516d8de1e, type: 2}
   m_IsPrefabParent: 0
@@ -84810,11 +85049,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1950875435}
@@ -87844,6 +88083,7 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
   costsKey: 0
   left: 0
 --- !u!65 &2037960327

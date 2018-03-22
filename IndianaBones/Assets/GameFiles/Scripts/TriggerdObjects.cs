@@ -9,6 +9,13 @@ public abstract class TriggerdObjects : MonoBehaviour {
 	public bool triggerd;
 	public int puzzleNumber;
 	public int puzzlePart;
+	public Material outlineMat;
+	public Material[] mats;
+	public List<GameObject> outlineChilds = new List<GameObject>();
 
 	public abstract void TriggerFunctionality();
+
+	public virtual void OutlineShaderToggle()
+	{
+	}
 }
