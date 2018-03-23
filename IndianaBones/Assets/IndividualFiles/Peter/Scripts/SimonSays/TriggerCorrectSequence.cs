@@ -18,13 +18,8 @@ public class TriggerCorrectSequence : TriggerdObjects {
 
     public override void TriggerFunctionality()
     {
-        if (displayCorrect)
-        {
+  
             simonSaysPuzzle.StartCoroutine(simonSaysPuzzle.ShowOrder());
-        }
-        else
-        {
-            simonSaysPuzzle.CheckOrder();
-        }
+       
     }
 }

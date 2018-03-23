@@ -16,49 +16,49 @@ public class Lever : TriggerdObjects {
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
 		mats[1] = lever;
 	}
-	public override void OutlineShaderToggle()
-	{
+	//public override void OutlineShaderToggle()
+	//{
 		
-		foreach (GameObject child in outlineChilds)
-		{
-			mats = child.GetComponent<Renderer>().materials;
-			print(outline);
-			if(mats[1] != outlineMat && outline != true)
-			{
-				print("2");
-				mats[1] = outlineMat;
-				partsLeft -= 1;
-				if(partsLeft == 0)
-				{
-					outline = true;
-				}
-			}
+	//	foreach (GameObject child in outlineChilds)
+	//	{
+	//		mats = child.GetComponent<Renderer>().materials;
+	//		print(outline);
+	//		if(mats[1] != outlineMat && outline != true)
+	//		{
+	//			print("2");
+	//			mats[1] = outlineMat;
+	//			partsLeft -= 1;
+	//			if(partsLeft == 0)
+	//			{
+	//				outline = true;
+	//			}
+	//		}
 
-			//naam shit werkt niet
+	//		//naam shit werkt niet
 			
-			else if()
-			{
-				print("3");
-				mats[1] = leverBase;
-				partsLeft += 1;
-				if(partsLeft == 2)
-				{
-					outline = false;
-				}
-			}
-			else if()
-			{
-				print("4");
-				mats[1] = lever;
-				partsLeft += 1;
-				if(partsLeft == 2)
-				{
-					outline = false;
-				}
-			}
-			child.GetComponent<Renderer>().materials = mats;
-		}
-	}
+	//		else if()
+	//		{
+	//			print("3");
+	//			mats[1] = leverBase;
+	//			partsLeft += 1;
+	//			if(partsLeft == 2)
+	//			{
+	//				outline = false;
+	//			}
+	//		}
+	//		////else if()
+	//		////{
+	//		//	print("4");
+	//		//	mats[1] = lever;
+	//		//	partsLeft += 1;
+	//		//	if(partsLeft == 2)
+	//		//	{
+	//		//		outline = false;
+	//		//	}
+	//		//}
+	//		child.GetComponent<Renderer>().materials = mats;
+	//	}
+	//}
 	public override void TriggerFunctionality()
 	{
 		GetComponent<Animator>().SetBool("Return",returnLever);

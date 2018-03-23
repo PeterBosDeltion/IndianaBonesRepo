@@ -8,7 +8,7 @@ public class SayButton : TriggerdObjects {
     public SimonSaysPuzzle simonSaysPuzzle;
 	// Use this for initialization
 	void Start () {
-        puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
+        puzzleManager = FindObjectOfType<PuzzleManager>();
 	}
 	
 	// Update is called once per frame
@@ -30,16 +30,18 @@ public class SayButton : TriggerdObjects {
             lightingUp = false;
 
         }
-      
+
 
     }
 
     public override void TriggerFunctionality()
     {
-        if(simonSaysPuzzle.insertedOrder.Count < simonSaysPuzzle.correctOrder.Count)
-        {
-            simonSaysPuzzle.EnterButton(gameObject);
-        }
+        TriggerPuzzleManager();
+        Debug.Log("Pressed " + transform.name);
+        //if(simonSaysPuzzle.insertedOrder.Count < simonSaysPuzzle.correctOrder.Count)
+        //{
+        //    simonSaysPuzzle.EnterButton(gameObject);
+        //}
     }
 
     public void TriggerPuzzleManager()

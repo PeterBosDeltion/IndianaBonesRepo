@@ -14,11 +14,14 @@ public class SimonSaysPuzzle : Puzzle {
     public int lightUpTime;
 
     private int correctAmount;
+    public bool done;
 
     public List<TriggerdObjects> toTriggerOnWin = new List<TriggerdObjects>();
+
+    private int intyMcIntface;
 	// Use this for initialization
 	void Start () {
-		
+        puzzleManager = FindObjectOfType<PuzzleManager>();
 	}
 	
 	// Update is called once per frame
@@ -44,87 +47,118 @@ public class SimonSaysPuzzle : Puzzle {
        
     }
 
-    public void EnterButton(GameObject button)
-    {
-        insertedOrder.Add(button);
-    }
+    //public void EnterButton(GameObject button)
+    //{
+    //    insertedOrder.Add(button);
+    //}
 
-    public void CheckOrder()
-    {
-        int w = new int();
+    //public void CheckOrder()
+    //{
+    //    int w = new int();
 
-        bool incorrect = new bool();
-        foreach (GameObject g in insertedOrder)
-        {
-            //if (correctOrder.Contains(g))
-            //{
-                for (int i = 0; i < correctOrder.Count; i++)
-                {
-                    if (insertedOrder[i] == correctOrder[i])
-                    {
-                        Debug.Log("Correct");
-                        finalOrder.Add(insertedOrder[i]);
-                        for (int q = 0; q < correctOrder.Count; q++)
-                        {
-                            if(finalOrder[i] == correctOrder[i])
-                            {
-                                w++;
-                                if(w == correctOrder.Count)
-                                {
-                                    Winner();
-                                }
-                            }
-                        }
-                        //if (correctAmount < correctOrder.Count)
-                        //{
-                        //    correctAmount++;
-                        //}
-                        Debug.Log(correctAmount);
-                    }
-                    else
-                    {
-                        incorrect = true;
-                        break;
+    //    bool incorrect = new bool();
+    //    foreach (GameObject g in insertedOrder)
+    //    {
+    //        //if (correctOrder.Contains(g))
+    //        //{
+    //            for (int i = 0; i < correctOrder.Count; i++)
+    //            {
+    //                if (insertedOrder[i] == correctOrder[i])
+    //                {
+    //                    Debug.Log("Correct");
+    //                    finalOrder.Add(insertedOrder[i]);
+    //                    for (int q = 0; q < correctOrder.Count; q++)
+    //                    {
+    //                        if(finalOrder[i] == correctOrder[i])
+    //                        {
+    //                            w++;
+    //                            if(w == correctOrder.Count)
+    //                            {
+    //                                Winner();
+    //                            }
+    //                        }
+    //                    }
+    //                    //if (correctAmount < correctOrder.Count)
+    //                    //{
+    //                    //    correctAmount++;
+    //                    //}
+    //                    Debug.Log(correctAmount);
+    //                }
+    //                else
+    //                {
+    //                    incorrect = true;
+    //                    break;
 
-                    }
-                }
-            //}
+    //                }
+    //            }
+    //        //}
 
            
-        }
+    //    }
 
-        if (incorrect)
-        {
-            IncorrectAnswer();
-        }
+    //    if (incorrect)
+    //    {
+    //        IncorrectAnswer();
+    //    }
 
 
-    }
+    //}
 
-    public void Winner()
-    {
-        foreach (TriggerdObjects t in toTriggerOnWin)
-        {
-            t.TriggerFunctionality();
-        }
-    }
+    //public void Winner()
+    //{
+    //    foreach (TriggerdObjects t in toTriggerOnWin)
+    //    {
+    //        t.TriggerFunctionality();
+    //    }
+    //    done = true;
+    //}
 
-    void IncorrectAnswer()
-    {
-        Debug.Log("Incorrect");
-        insertedOrder.Clear();
-        finalOrder.Clear();
-        correctAmount = 0;
-        Debug.Log(correctAmount);
+    //void IncorrectAnswer()
+    //{
+    //    Debug.Log("Incorrect");
+    //    insertedOrder.Clear();
+    //    finalOrder.Clear();
+    //    correctAmount = 0;
+    //    Debug.Log(correctAmount);
 
-        foreach (TriggerdObjects t in trapsToTriggerOnLose)
-        {
-            t.TriggerFunctionality();
-        }
-    }
+    //    foreach (TriggerdObjects t in trapsToTriggerOnLose)
+    //    {
+    //        t.TriggerFunctionality();
+    //    }
+    //}
 
     public override void PuzzleTrigger(TriggerdObjects currentObject)
     {
-        throw new NotImplementedException();
+        if (!done)
+        {
+            if(correctOrder[intyMcIntface] == currentObject.gameObject)
+            {
+                intyMcIntface++;
+            }
+            else
+            {
+                foreach (TriggerdObjects t in trapsToTriggerOnLose)
+                {
+                    t.TriggerFunctionality();
+                }
+                intyMcIntface = 0;
+            }
+
+            if(intyMcIntface == correctOrder.Count)
+            {
+                puzzleManager.done = true;
+                done = true;
+                //foreach (TriggerdObjects t in toTriggerOnWin)
+                //{
+                //    t.TriggerFunctionality();
+                //}
+            }
+
+        }
+        //IsDone();
+
     }
+
+
+
 }

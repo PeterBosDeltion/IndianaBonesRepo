@@ -42,29 +42,29 @@ public class InteractableObject : MonoBehaviour {
 			}
 		}
 	}
-	public void OnTriggerEnter(Collider other)
-	{
-		if (pressurePlate && other.transform.tag == "Player")
+    public void OnTriggerEnter(Collider other)
+    {
+        if (pressurePlate && other.transform.tag == "Player")
         {
             Trigger();
         }
-		else if(other.transform.gameObject.tag == "Player")
-		{
-			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
-			{
-				print("OutlineShader");
-				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
-			}
-		}
-	}
-	public void OnTriggerExit(Collider other)
-	{
-		if(other.transform.gameObject.tag == "Player")
-		{
-			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
-			{
-				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
-			}
-		}	
+	//	else if(other.transform.gameObject.tag == "Player")
+	//	{
+	//		if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+	//		{
+	//			print("OutlineShader");
+	//			shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
+	//		}
+	//	}
+	//}
+	//public void OnTriggerExit(Collider other)
+	//{
+	//	if(other.transform.gameObject.tag == "Player")
+	//	{
+	//		if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+	//		{
+	//			shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
+	//		}
+	//	}	
 	}
 }
