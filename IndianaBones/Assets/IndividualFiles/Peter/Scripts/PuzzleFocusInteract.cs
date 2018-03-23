@@ -7,6 +7,8 @@ using UnityEngine;
 public class PuzzleFocusInteract : MonoBehaviour {
     public GameObject focusPoint;
     public float focusDuration = 3;
+
+    public bool impairMovement;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,11 +19,26 @@ public class PuzzleFocusInteract : MonoBehaviour {
 		
 	}
 
-    public void OnTriggerStay()
+    public void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("E"))
+        if(other.transform.tag == "Player")
         {
-            Camera.main.GetComponent<PlayerCamera>().PuzzleFocus(focusPoint, focusDuration);
+            PlayerMovement plm = other.GetComponent<PlayerMovement>();
+            if (Input.GetButtonDown("E"))
+            {
+                if (impairMovement)
+                {
+                    plm.enabled = false;
+                }
+                Camera.main.GetComponent<PlayerCamera>().PuzzleFocus(focusPoint, focusDuration);
+            }
+
+            if(plm.x < -.6F || plm.x > .6F && !Camera.main.GetComponent<PlayerCamera>().focusPlayer)
+            {
+                Camera.main.GetComponent<PlayerCamera>().focussing = false;
+                Camera.main.GetComponent<PlayerCamera>().focusPlayer = true;
+            }
         }
+       
     }
 }

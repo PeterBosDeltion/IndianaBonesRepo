@@ -6,27 +6,38 @@ using UnityEngine;
 public class SayButton : TriggerdObjects {
     private bool lightingUp;
     public SimonSaysPuzzle simonSaysPuzzle;
+
+    public GameObject obj;
 	// Use this for initialization
 	void Start () {
         puzzleManager = FindObjectOfType<PuzzleManager>();
-	}
+        foreach (Transform t in transform)
+        {
+            if (t.name == "Cylinder003")
+            {
+                obj = t.gameObject;
+            }
+        }
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public IEnumerator LightUp(int time)
+    public IEnumerator LightUp(float time)
     {
         if (!lightingUp)
         {
             lightingUp = true;
-            GetComponent<InteractableObject>().enabled = false;
-            Vector3 spos = transform.position;
-            transform.position = new Vector3(spos.x, spos.y + .5F, spos.z);
+
+            obj.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            GetComponentInChildren<InteractableObject>().enabled = false;
             yield return new WaitForSeconds(time);
-            transform.position = spos;
-            GetComponent<InteractableObject>().enabled = true;
+            GetComponentInChildren<InteractableObject>().enabled = true;
+            obj.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+
             lightingUp = false;
 
         }

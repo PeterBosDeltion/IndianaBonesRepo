@@ -11,7 +11,7 @@ public class SimonSaysPuzzle : Puzzle {
     public List<TriggerdObjects> trapsToTriggerOnLose = new List<TriggerdObjects>();
 
     private bool showingOrder;
-    public int lightUpTime;
+    public float lightUpTime;
 
     private int correctAmount;
     public bool done;

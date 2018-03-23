@@ -7,8 +7,8 @@ public class PlayerCamera : MonoBehaviour {
     public float zOffset;
     public float speed;
     private GameObject player;
-    private bool focusPlayer;
-    private bool focussing;
+    public bool focusPlayer;
+    public bool focussing;
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -79,5 +79,9 @@ public class PlayerCamera : MonoBehaviour {
         yield return new WaitForSeconds(i);
         focusPlayer = true;
         focussing = false;
+        if (!player.GetComponent<PlayerMovement>().isActiveAndEnabled)
+        {
+            player.GetComponent<PlayerMovement>().enabled = true;
+        }
     }
 }
