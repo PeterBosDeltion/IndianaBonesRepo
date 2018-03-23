@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Boulder : TriggerdObjects {
     public float timeUntilDestroyed;
+    public List<GameObject> debris = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 		
@@ -19,8 +20,14 @@ public class Boulder : TriggerdObjects {
     {
         if(col.gameObject.tag == "Player")
         {
-            col.transform.GetComponent<Player>().Death();
+            foreach (GameObject g in debris)
+            {
+                GameObject q = Instantiate(g, transform.position, Quaternion.identity);
+                Destroy(q, 3.0F);
+            }
             Destroy(gameObject);
+
+            col.transform.GetComponent<Player>().Death();
         }
     }
 
@@ -37,6 +44,11 @@ public class Boulder : TriggerdObjects {
     IEnumerator DestroyBoulder()
     {
         yield return new WaitForSeconds(timeUntilDestroyed);
+        foreach (GameObject g in debris)
+        {
+            GameObject q = Instantiate(g, transform.position, Quaternion.identity);
+            Destroy(q, 3.0F);
+        }
         Destroy(gameObject);
     }
 }

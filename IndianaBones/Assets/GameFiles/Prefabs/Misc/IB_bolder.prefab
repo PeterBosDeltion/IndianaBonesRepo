@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 95471281637237468}
   - component: {fileID: 54571166713005792}
   - component: {fileID: 135079643120587128}
+  - component: {fileID: 114135341095417920}
   m_Layer: 0
   m_Name: IB_bolder
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194129279275612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -42.552822, y: 25.874, z: 7.989906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,7 +99,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!95 &95471281637237468
 Animator:
@@ -117,6 +118,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114135341095417920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194129279275612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e02182be5acfca43b1378b8a0e8b138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  timeUntilDestroyed: 10
+  debris:
+  - {fileID: 1846722350463250, guid: 1b113f5a02833ee4db015a8c138886ca, type: 2}
+  - {fileID: 1064164498661112, guid: 7073a872d73cbcd4f8cdbf07c2205a58, type: 2}
+  - {fileID: 1963162365588116, guid: e95b9c25957595b4cb8a14437b6b51b3, type: 2}
+  - {fileID: 1846722350463250, guid: 1b113f5a02833ee4db015a8c138886ca, type: 2}
+  - {fileID: 1064164498661112, guid: 7073a872d73cbcd4f8cdbf07c2205a58, type: 2}
+  - {fileID: 1963162365588116, guid: e95b9c25957595b4cb8a14437b6b51b3, type: 2}
+  - {fileID: 1963162365588116, guid: e95b9c25957595b4cb8a14437b6b51b3, type: 2}
+  - {fileID: 1846722350463250, guid: 1b113f5a02833ee4db015a8c138886ca, type: 2}
+  - {fileID: 1064164498661112, guid: 7073a872d73cbcd4f8cdbf07c2205a58, type: 2}
+  - {fileID: 1963162365588116, guid: e95b9c25957595b4cb8a14437b6b51b3, type: 2}
+  - {fileID: 1963162365588116, guid: e95b9c25957595b4cb8a14437b6b51b3, type: 2}
 --- !u!135 &135079643120587128
 SphereCollider:
   m_ObjectHideFlags: 1

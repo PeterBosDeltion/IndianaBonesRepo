@@ -17,10 +17,13 @@ public class Player : MonoBehaviour {
     public GameObject currentRoom;
 
     public TextMeshProUGUI descriptionText;
+    public GameObject deadPlayer;
 
     private UiManager uiManager;
-	// Use this for initialization
-	void Start () {
+    public float respawnTime;
+    private bool dying;
+    // Use this for initialization
+    void Start () {
         currentLives = maxLives;
         beginingRoom = transform.position;
         //descriptionText = GetComponentInChildren<TextMeshProUGUI>();
@@ -56,13 +59,21 @@ public class Player : MonoBehaviour {
             Debug.LogError("Variable uiManager is null, Script: Player");
         }
     }
-    public void Death()
+
+    IEnumerator Die()
     {
-        if(currentLives > 0)
+        dying = true;
+        GameObject g = Instantiate(deadPlayer, transform.position, Quaternion.identity);
+
+        Destroy(g, respawnTime);
+        yield return new WaitForSeconds(respawnTime);
+        if (currentLives > 0)
         {
+            GetComponentInChildren<Renderer>().enabled = true;
+            GetComponent<PlayerMovement>().enabled = true;
             currentLives -= 1;
-            SaveTrigger.currentLivesSave -=1;
-            if(uiManager != null)
+            SaveTrigger.currentLivesSave -= 1;
+            if (uiManager != null)
             {
                 uiManager.UpdateValues();
             }
@@ -71,7 +82,7 @@ public class Player : MonoBehaviour {
                 Debug.LogError("Variable uiManager is null, Script: Player");
             }
             PlayerCamera p = Camera.main.GetComponent<PlayerCamera>();
-            if(p != null)
+            if (p != null)
             {
                 p.ResetCam();
             }
@@ -89,9 +100,9 @@ public class Player : MonoBehaviour {
             }
             //Go reset to the bathroom or something
         }
-        if(currentLives <= 0)
+        if (currentLives <= 0)
         {
-            if(GameManager.gm != null)
+            if (GameManager.gm != null)
             {
                 GameManager.gm.LoadGameState();
             }
@@ -99,6 +110,20 @@ public class Player : MonoBehaviour {
             {
                 Debug.LogError("Variable GameManager.gm is null, Script: Player");
             }
+        }
+
+        dying = false;
+    }
+
+    public void Death()
+    {
+       
+        GetComponentInChildren<Renderer>().enabled = false;
+        GetComponent<PlayerMovement>().enabled = false;
+       
+        if (!dying)
+        {
+            StartCoroutine(Die());
         }
     }
 
