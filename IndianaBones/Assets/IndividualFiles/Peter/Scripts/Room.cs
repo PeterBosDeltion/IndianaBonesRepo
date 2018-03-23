@@ -20,22 +20,29 @@ public class Room : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        //if(other.gameObject.tag == "Player")
+        //if (other.gameObject.tag == "Player")
         //{
 
         //    Player p = other.GetComponent<Player>();
         //    PlayerMovement plm = other.GetComponent<PlayerMovement>();
 
-        //    if(p != null)
+        //    if (p != null)
         //    {
-        //        p.beginingRoom = other.transform.position;
-        //        p.currentRoom = gameObject;
+        //        if (p.enteredLeft)
+        //        {
+        //            p.beginingRoom = new Vector3(other.transform.position.x + 4, other.transform.position.y, other.transform.position.z);
+        //        }
+        //        else
+        //        {
+        //            p.beginingRoom = new Vector3(other.transform.position.x - 4, other.transform.position.y, other.transform.position.z);
+        //        }
+        //        //        p.currentRoom = gameObject;
         //    }
         //    else
         //    {
         //        Debug.LogError("Variable p (Player) is null, Script: Room");
         //    }
-         
+
 
         //    if(plm != null)
         //    {
@@ -55,7 +62,7 @@ public class Room : MonoBehaviour {
         //    {
         //        Debug.LogError("Variable plm (PlayerMovement) is null, Script: Room");
         //    }
-        
+
         //}
     }
 
