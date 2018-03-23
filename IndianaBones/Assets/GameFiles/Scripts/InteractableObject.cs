@@ -52,6 +52,7 @@ public class InteractableObject : MonoBehaviour {
 		{
 			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
 			{
+				print("OutlineShader");
 				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
 			}
 		}
