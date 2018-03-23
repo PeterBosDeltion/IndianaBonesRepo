@@ -106,13 +106,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534201974683382}
   m_LocalRotation: {x: 0.08715572, y: -0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: -2.324997, y: 0.16639328, z: -0.77081656}
+  m_LocalPosition: {x: -11.64, y: 2.41, z: -0.07}
   m_LocalScale: {x: 0.5, y: 0.5000002, z: 0.5000002}
   m_Children:
   - {fileID: 4575515141295142}
   - {fileID: 4445740734557604}
-  - {fileID: 4303640962993216}
   - {fileID: 224087274733376738}
+  - {fileID: 4303640962993216}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -123,11 +123,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438361344364830}
   m_LocalRotation: {x: 0.000000067055225, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.548689, z: -0.9148403}
+  m_LocalPosition: {x: 0, y: 1.8602555, z: -0.9159836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4059515659694770}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4445740734557604
 Transform:
@@ -204,7 +204,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
-  - {fileID: 2100000, guid: 841f4b7081c83724496eb4f433a4d0e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +238,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
-  - {fileID: 2100000, guid: 841f4b7081c83724496eb4f433a4d0e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -324,6 +322,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 114273289418616000}
   pressurePlate: 0
+  shadedObject: {fileID: 1534201974683382}
   triggersPuzzlePart: 0
 --- !u!114 &114194471383122046
 MonoBehaviour:
@@ -452,9 +451,16 @@ MonoBehaviour:
   player: {fileID: 0}
   puzzleManager: {fileID: 0}
   triggerd: 0
-  puzzleNumber: 1
-  puzzlePart: 2
-  puzzle: 0
+  puzzleNumber: 0
+  puzzlePart: 3
+  outlineMat: {fileID: 2100000, guid: 841f4b7081c83724496eb4f433a4d0e3, type: 2}
+  mats: []
+  outlineChilds:
+  - {fileID: 1291666896161750}
+  - {fileID: 1431548611117164}
+  puzzle: 1
+  button: {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
+  buttonBase: {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
 --- !u!114 &114676109162423934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptions:
-  - 
+  - The sign might have something to say about it
   myNameText: {fileID: 114194471383122046}
   extraDisplayTime: 0
 --- !u!222 &222068958817190060
@@ -487,7 +493,7 @@ RectTransform:
   m_LocalScale: {x: 1.5, y: 1, z: 0.099999964}
   m_Children: []
   m_Father: {fileID: 4059515659694770}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

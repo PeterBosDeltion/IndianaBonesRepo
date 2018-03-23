@@ -8,6 +8,8 @@ public class Lever : TriggerdObjects {
  	public bool returnLever;
 	public Material lever;
 	public Material leverBase;
+	bool outline = false;
+	int partsLeft = 2;
 
 	void Start()
 	{
@@ -18,25 +20,40 @@ public class Lever : TriggerdObjects {
 	{
 		foreach (GameObject child in outlineChilds)
 		{
-			bool outline = false;
-			print("1");
+			
 			mats = child.GetComponent<Renderer>().materials;
+			print(outline);
 			if(mats[1] != outlineMat && outline != true)
 			{
-				print(mats[1]);
 				print("2");
 				mats[1] = outlineMat;
-				outline = true;
+				partsLeft -= 1;
+				if(partsLeft == 0)
+				{
+					outline = true;
+				}
 			}
-			else if(mats[1].name == "feet")
+
+			//naam shit werkt niet
+			else if(mats[1].name == "Feet")
 			{
 				print("3");
 				mats[1] = leverBase;
+				partsLeft += 1;
+				if(partsLeft == 2)
+				{
+					outline = false;
+				}
 			}
 			else if(mats[1].name == "Handel")
 			{
 				print("4");
 				mats[1] = lever;
+				partsLeft += 1;
+				if(partsLeft == 2)
+				{
+					outline = false;
+				}
 			}
 			child.GetComponent<Renderer>().materials = mats;
 		}
