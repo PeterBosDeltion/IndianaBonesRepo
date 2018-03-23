@@ -29,7 +29,7 @@ public class Button : TriggerdObjects {
 	{
 		foreach (GameObject child in outlineChilds)
 		{
-			
+			print("1");
 			mats = child.GetComponent<Renderer>().materials;
 			print(outline);
 			if(mats[1] != outlineMat && outline != true)
@@ -42,22 +42,11 @@ public class Button : TriggerdObjects {
 					outline = true;
 				}
 			}
-
-			//naam shit werkt niet
-			else if(mats[1].name == "ButtonBase")
+			
+			else
 			{
 				print("3");
-				mats[1] = buttonBase;
-				partsLeft += 1;
-				if(partsLeft == 2)
-				{
-					outline = false;
-				}
-			}
-			else if(mats[1].name == "Button")
-			{
-				print("4");
-				mats[1] = button;
+				mats[1] = mats[0];
 				partsLeft += 1;
 				if(partsLeft == 2)
 				{

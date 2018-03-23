@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487434417164314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -289.92, y: 0.6, z: -3.29}
+  m_LocalPosition: {x: -36.487404, y: 2.38, z: -12.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4983890951169290}
@@ -336,8 +336,6 @@ MonoBehaviour:
   puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 114685502965021510}
-  - {fileID: 0}
-  - {fileID: 0}
   pressurePlate: 0
   shadedObject: {fileID: 1487434417164314}
   triggersPuzzlePart: 0
@@ -374,11 +372,13 @@ MonoBehaviour:
   puzzlePart: 0
   outlineMat: {fileID: 2100000, guid: e4bba45e422f0b64ea30e132e66b4168, type: 2}
   mats: []
-  outlineChilds: []
+  outlineChilds:
+  - {fileID: 1038900321285680}
+  - {fileID: 1176041940119364}
   puzzle: 0
   returnLever: 0
   lever: {fileID: 2100000, guid: 8082f8fc6a35dcb4ead462e4f5b0e90f, type: 2}
-  leverBase: {fileID: 0}
+  leverBase: {fileID: 2100000, guid: 9dc677b0f4de63045a434127adbec5ef, type: 2}
 --- !u!114 &114982990027207486
 MonoBehaviour:
   m_ObjectHideFlags: 1
