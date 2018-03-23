@@ -18,9 +18,9 @@ public class Lever : TriggerdObjects {
 	}
 	public override void OutlineShaderToggle()
 	{
+		
 		foreach (GameObject child in outlineChilds)
 		{
-			
 			mats = child.GetComponent<Renderer>().materials;
 			print(outline);
 			if(mats[1] != outlineMat && outline != true)
@@ -35,7 +35,8 @@ public class Lever : TriggerdObjects {
 			}
 
 			//naam shit werkt niet
-			else if(mats[1].name == "Feet")
+			
+			else if()
 			{
 				print("3");
 				mats[1] = leverBase;
@@ -45,7 +46,7 @@ public class Lever : TriggerdObjects {
 					outline = false;
 				}
 			}
-			else if(mats[1].name == "Handel")
+			else if()
 			{
 				print("4");
 				mats[1] = lever;

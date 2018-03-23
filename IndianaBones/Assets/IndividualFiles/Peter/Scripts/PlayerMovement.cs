@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour {
 
     public float jumpForce;
     public float jumpCooldown;
-    public bool canJump;
     public float x;
     
 	// Use this for initialization
@@ -28,7 +27,6 @@ public class PlayerMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         //startSpeed = speed;
         //canSprint = true;
-        canJump = true;
 	}
 	
 	// Update is called once per frame
@@ -112,27 +110,24 @@ public class PlayerMovement : MonoBehaviour {
 
     void Jump() //Also needs fixing
     {
-        if (Input.GetButtonDown("Jump") && canJump)
+        Vector3 pos = new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z);
+        RaycastHit hit;
+        if (Physics.Raycast(pos,Vector3.down,out hit,0.1f))
         {
-            if(rb != null)
+            anim.SetBool("Jump", false);
+            if(Input.GetButtonDown("Jump"))
             {
-                rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
-                StartCoroutine(JumpCooldown());
-                anim.SetBool("Jump", true);
+                if(rb != null)
+                {
+                    print("jump");
+                    rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
+                    anim.SetBool("Jump", true);
+                }
+                else
+                {
+                    Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
+                }
             }
-            else
-            {
-                Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
-                anim.SetBool("Jump", false);
-            }
-         
         }
-    }
-
-    IEnumerator JumpCooldown()
-    {
-        canJump = false;
-        yield return new WaitForSeconds(jumpCooldown);
-        canJump = true;
     }
 }
