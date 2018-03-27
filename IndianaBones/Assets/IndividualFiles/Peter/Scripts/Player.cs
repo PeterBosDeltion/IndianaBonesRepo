@@ -48,6 +48,12 @@ public class Player : MonoBehaviour {
        
     }
 
+
+    void Update()
+    {
+        Debug.DrawRay(transform.position, -transform.up, Color.red);
+    }
+
     public void CallUIUpdate()
     {
         if(uiManager != null)
@@ -93,10 +99,28 @@ public class Player : MonoBehaviour {
             if (enteredLeft)
             {
                 transform.position = beginingRoom + new Vector3(2, 0, 0);
+                RaycastHit hit;
+                if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Vector3.down, out hit))
+                {
+                    if(hit.transform.tag == "Room")
+                    {
+                        Debug.Log("Ray hit");
+                        currentRoom = hit.transform.parent.gameObject;
+                    }
+                }
             }
             else
             {
                 transform.position = beginingRoom + new Vector3(-2, 0, 0);
+                RaycastHit hit;
+                if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y +1, transform.position.z), -transform.up, out hit))
+                {
+                    if (hit.transform.tag == "Room")
+                    {
+                        Debug.Log("Ray hit");
+                        currentRoom = hit.transform.parent.gameObject;
+                    }
+                }
             }
             //Go reset to the bathroom or something
         }

@@ -31,11 +31,11 @@ public class RoomEntryChecker : MonoBehaviour {
 
                 if(other.GetComponent<PlayerMovement>().x > 0)
                 {
-                    other.transform.position = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x, other.transform.position.y, other.transform.position.z);
+                    other.transform.position = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x, nextPos.transform.position.y, other.transform.position.z);
                 }
                 else
                 {
-                    other.transform.position = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x, other.transform.position.y, other.transform.position.z);
+                    other.transform.position = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x, nextPos.transform.position.y, other.transform.position.z);
                 }
                 if (left)
                 {
@@ -47,14 +47,15 @@ public class RoomEntryChecker : MonoBehaviour {
                 }
 
             }
+            else
+            {
+                Debug.LogError("Variable p (Player) is null, Script: RoomEntryChecker");
+            }
 
         }
 
-        else
-        {
-            Debug.LogError("Variable p (Player) is null, Script: RoomEntryChecker");
-        }
-         
-        }
+    }
+
+       
     }
 

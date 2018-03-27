@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Raycaster
   - TestLights
+  - Room
   layers:
   - Default
   - TransparentFX
