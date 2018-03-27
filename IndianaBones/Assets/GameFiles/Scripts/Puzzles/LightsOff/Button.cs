@@ -15,11 +15,10 @@ public class Button : TriggerdObjects {
 	}
 	public override void TriggerFunctionality()
 	{
-		
+		print("ok");
+		GetComponent<Animator>().SetTrigger("Push");
 		if(puzzle == true)
 		{
-			print("ok");
-			GetComponent<Animator>().SetTrigger("Push");
 			if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == false)
         	{
            		puzzleManager.puzzleInsert(this);
