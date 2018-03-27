@@ -63,12 +63,14 @@ public class PlayerCamera : MonoBehaviour {
       
     }
 
-    public void PuzzleFocus(GameObject puzzle, float focusDuration)
+    public void PuzzleFocus(GameObject puzzle, float focusDuration,float extraZ)
     {
-        focusPlayer = false;
-        transform.position = Vector3.Lerp(transform.position, new Vector3(puzzle.transform.position.x, puzzle.transform.position.y, transform.position.z), speed * 1000 * Time.deltaTime);
         if (!focussing)
         {
+            focusPlayer = false;
+
+            transform.position = Vector3.Lerp(transform.position, new Vector3(puzzle.transform.position.x, puzzle.transform.position.y, transform.position.z - extraZ), speed * 1000 * Time.deltaTime);
+
             StartCoroutine(PuzzleDisplayTime(focusDuration));
         }
     }
