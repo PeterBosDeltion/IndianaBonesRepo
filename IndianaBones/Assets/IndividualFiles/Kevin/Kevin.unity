@@ -2110,6 +2110,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114027344608552938, guid: fbd78287e03f55f458336b04d23f9731,
+        type: 2}
+      propertyPath: toTrigger.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4059515659694770, guid: fbd78287e03f55f458336b04d23f9731, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.31
@@ -2156,6 +2161,26 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676109162423934, guid: fbd78287e03f55f458336b04d23f9731,
+        type: 2}
+      propertyPath: descriptions.Array.data[0]
+      value: A button ma dud
+      objectReference: {fileID: 0}
+    - target: {fileID: 114027344608552938, guid: fbd78287e03f55f458336b04d23f9731,
+        type: 2}
+      propertyPath: toTrigger.Array.data[1]
+      value: 
+      objectReference: {fileID: 1073083883}
+    - target: {fileID: 114027344608552938, guid: fbd78287e03f55f458336b04d23f9731,
+        type: 2}
+      propertyPath: triggersPuzzlePart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273289418616000, guid: fbd78287e03f55f458336b04d23f9731,
+        type: 2}
+      propertyPath: puzzle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbd78287e03f55f458336b04d23f9731, type: 2}
@@ -2513,6 +2538,41 @@ Transform:
   m_PrefabParentObject: {fileID: 4920626414401316, guid: 31c8c4d3bddbca44588bb1f32805948e,
     type: 2}
   m_PrefabInternal: {fileID: 1123301612}
+--- !u!1 &1073083880 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1223157103538488, guid: d9f40e2e6c9ea944196c4cc4c132196b,
+    type: 2}
+  m_PrefabInternal: {fileID: 519237011}
+--- !u!95 &1073083882 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95092458931911466, guid: d9f40e2e6c9ea944196c4cc4c132196b,
+    type: 2}
+  m_PrefabInternal: {fileID: 519237011}
+--- !u!114 &1073083883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073083880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01a20ebee1fba443a30bc64ebb3ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  state: 1
+  afterTime: 5
+  gradual: 0.25
+  instant: 2.5
+  gradualWaitTime: 8
+  beam: {fileID: 1073083882}
 --- !u!4 &1081402506 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4920626414401316, guid: 31c8c4d3bddbca44588bb1f32805948e,
