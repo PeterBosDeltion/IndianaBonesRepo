@@ -31,7 +31,6 @@ public class InteractableObject : MonoBehaviour {
 		if(other.transform.gameObject.tag == "Player")
 		{
 			print("collisison check");
-			
 			if(Input.GetButtonDown("E"))
 			{
 				if(triggersPuzzlePart)
@@ -52,7 +51,6 @@ public class InteractableObject : MonoBehaviour {
 		{
 			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
 			{
-				print("OutlineShader");
 				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
 			}
 		}

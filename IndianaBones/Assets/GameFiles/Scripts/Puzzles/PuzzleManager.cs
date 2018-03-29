@@ -16,24 +16,24 @@ public class PuzzleManager : MonoBehaviour {
 		if(GameManager.gm != null)
 		{
 			if(GameManager.gm.currentData != null)
-		{
-			foreach(bool currentBool in GameManager.gm.currentData.finishedPuzzles)
 			{
-				puzzleList[puzzle].puzzleDone = currentBool;
-				if(currentBool == true)
+				foreach(bool currentBool in GameManager.gm.currentData.finishedPuzzles)
 				{
-					puzzleTriggerObjects[puzzle].TriggerFunctionality();
+					puzzleList[puzzle].puzzleDone = currentBool;
+					if(currentBool == true)
+					{
+						puzzleTriggerObjects[puzzle].TriggerFunctionality();
+					}
+					puzzle += 1;
 				}
-				puzzle += 1;
 			}
-		}
 		}
 		else
 		{
 			Debug.LogError("Variable GameManager.gm = null, try launching from menu, Script: PuzzleManager");
 		}
 	}
-	//checked de puzzle list activeerd de bijhoorende puzzle fnctie en returned uitijndelijk een bool zonder de restrictie die de function een bool maken geeft
+	//checked de puzzle list activeerd de bijhoorende puzzle functie en returned uitijndelijk een bool zonder de restrictie die de function een bool maken geeft
 	public void puzzleInsert(TriggerdObjects currentObject)
 	{
 		done = false;

@@ -119,7 +119,6 @@ public class PlayerMovement : MonoBehaviour {
             {
                 if(rb != null)
                 {
-                    print("jump");
                     rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
                     anim.SetBool("Jump", true);
                 }

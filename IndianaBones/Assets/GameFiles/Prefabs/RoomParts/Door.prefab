@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 33981982266811908}
   - component: {fileID: 23396840952691206}
   - component: {fileID: 95443959908177750}
+  - component: {fileID: 114456186488707470}
+  - component: {fileID: 65332493169496700}
   m_Layer: 0
   m_Name: IB_door
   m_TagString: Untagged
@@ -100,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1275865995826180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10.22, y: 0.00000336229, z: -0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4743655729744256}
@@ -258,6 +260,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865601465462016}
   m_Mesh: {fileID: 4300000, guid: 2b18b919dbf15124699334c8fc49e3b3, type: 3}
+--- !u!65 &65332493169496700
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865601465462016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18800226, y: 1.0498552, z: 1.869466}
+  m_Center: {x: 0.05419155, y: 0.5202751, z: 0.90129644}
 --- !u!95 &95443959908177750
 Animator:
   serializedVersion: 3
@@ -309,3 +323,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114456186488707470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865601465462016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79754c77a0b2704ba9fecbe63ed4aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  costsKey: 0
+  left: 0

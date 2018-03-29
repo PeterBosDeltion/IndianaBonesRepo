@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4165256587666822}
   - component: {fileID: 95092458931911466}
+  - component: {fileID: 114308154097291010}
   m_Layer: 0
   m_Name: IB_Piston_Platform_MD
   m_TagString: Untagged
@@ -54,6 +55,7 @@ GameObject:
   - component: {fileID: 4721465572110260}
   - component: {fileID: 33070867931908754}
   - component: {fileID: 23509879300017380}
+  - component: {fileID: 65758459860052216}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -82,14 +84,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1862432828051148}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -63.888466, y: 26.055538, z: -6.63}
+  m_LocalRotation: {x: -0, y: -0.70711, z: -0, w: -0.70710367}
+  m_LocalPosition: {x: 3.4, y: 0.77, z: 3.206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4165256587666822}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -269.999, z: 0}
 --- !u!4 &4165256587666822
 Transform:
   m_ObjectHideFlags: 1
@@ -213,6 +215,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205351269362342}
   m_Mesh: {fileID: 4300002, guid: f7a106592a5a84a429a8ced2687b6078, type: 3}
+--- !u!65 &65758459860052216
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464765726332600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.000004, z: 1}
+  m_Center: {x: 0, y: 0.00000047683716, z: -0.000000014901165}
 --- !u!95 &95092458931911466
 Animator:
   serializedVersion: 3
@@ -230,3 +244,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114308154097291010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223157103538488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01a20ebee1fba443a30bc64ebb3ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  state: 2
+  afterTime: 5
+  gradual: 0.25
+  instant: 2.5
+  gradualWaitTime: 8
+  beam: {fileID: 95092458931911466}

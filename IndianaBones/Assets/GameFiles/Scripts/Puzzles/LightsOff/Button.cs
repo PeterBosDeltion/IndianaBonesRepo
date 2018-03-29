@@ -15,7 +15,6 @@ public class Button : TriggerdObjects {
 	}
 	public override void TriggerFunctionality()
 	{
-		print("ok");
 		GetComponent<Animator>().SetTrigger("Push");
 		if(puzzle == true)
 		{
@@ -30,12 +29,9 @@ public class Button : TriggerdObjects {
 	{
 		foreach (GameObject child in outlineChilds)
 		{
-			print("1");
 			mats = child.GetComponent<Renderer>().materials;
-			print(outline);
 			if(mats[1] != outlineMat && outline != true)
 			{
-				print("2");
 				mats[1] = outlineMat;
 				partsLeft -= 1;
 				if(partsLeft == 0)
@@ -46,7 +42,6 @@ public class Button : TriggerdObjects {
 			
 			else
 			{
-				print("3");
 				mats[1] = mats[0];
 				partsLeft += 1;
 				if(partsLeft == 2)
