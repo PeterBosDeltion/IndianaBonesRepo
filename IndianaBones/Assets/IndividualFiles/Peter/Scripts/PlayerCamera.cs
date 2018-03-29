@@ -81,6 +81,7 @@ public class PlayerCamera : MonoBehaviour {
         yield return new WaitForSeconds(i);
         focusPlayer = true;
         focussing = false;
+        ResetCam();
         if (!player.GetComponent<PlayerMovement>().isActiveAndEnabled)
         {
             player.GetComponent<PlayerMovement>().enabled = true;
