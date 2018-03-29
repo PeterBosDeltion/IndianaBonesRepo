@@ -7,6 +7,7 @@ public class TimedJumpPuzzle : Puzzle {
 	public List<TriggerdObjects> beams = new List<TriggerdObjects>();
 	public float time;
 	public float timeBetween;
+	public int beamsLeft;
 
 	void Start()
 	{
@@ -14,17 +15,21 @@ public class TimedJumpPuzzle : Puzzle {
 	}
 	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
-		if(currentObject.puzzlePart == 0)
+		if(beamsLeft == 0)
 		{
-			foreach(TriggerdObjects beam in beams)
+			beamsLeft = beams.Count;
+			if(currentObject.puzzlePart == 0)
 			{
-				StartCoroutine(NextBeam(beam));
-				time += timeBetween;
+				foreach(TriggerdObjects beam in beams)
+				{
+					StartCoroutine(NextBeam(beam));
+					time += timeBetween;
+				}
 			}
-		}
-		if(currentObject.puzzlePart == 1)
-		{
-			puzzleManager.done = true;
+			else if(currentObject.puzzlePart == 1)
+			{
+				puzzleManager.done = true;
+			}
 		}
 		
 	}
@@ -33,5 +38,11 @@ public class TimedJumpPuzzle : Puzzle {
 	{
 		yield return new WaitForSeconds(time);
 		beam.TriggerFunctionality();
+		beamsLeft -= 1;
+		print(beamsLeft);
+		if(beamsLeft == 0)
+		{
+			time = 0;
+		}
 	}
 }

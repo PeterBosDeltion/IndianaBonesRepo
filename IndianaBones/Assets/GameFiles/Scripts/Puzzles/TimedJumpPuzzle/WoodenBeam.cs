@@ -8,7 +8,8 @@ public class WoodenBeam : TriggerdObjects {
 	{
 		Instant,
 		Gradual,
-		AfterTime
+		AfterTime,
+		StayInPlace
 	}
 	
 	public BeamAction state;
@@ -40,6 +41,10 @@ public class WoodenBeam : TriggerdObjects {
 		{
 			beam.SetTrigger("Trigger");
 			StartCoroutine(BeamTimer(instant));
+		}
+		if(state == BeamAction.StayInPlace)
+		{
+			beam.SetTrigger("Trigger");
 		}
 	}
 	public IEnumerator BeamTimer (float time)
