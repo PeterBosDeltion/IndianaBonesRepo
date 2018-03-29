@@ -19,10 +19,22 @@ public class WoodenBeam : TriggerdObjects {
 	public float instant;
 	public float gradualWaitTime;
 	public Animator beam;
+	public bool startStayInPlaceStateExtended;
 
 	void Start()
 	{
 		beam = GetComponent<Animator>();
+		if(startStayInPlaceStateExtended == true)
+		{
+			if(state == BeamAction.StayInPlace)
+			{
+				TriggerFunctionality();
+			}
+			else
+			{
+				Debug.LogError("Wrong state, switch to StayInPlace");
+			}
+		}
 	}
 	public override void TriggerFunctionality()
 	{
