@@ -1832,6 +1832,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e114c4e2eb2b1a4195a3994323e7005, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &2007827368
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.74523115
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.1297191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6.3087807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221962930586326, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 65b2ecb8dd1633a4a99fbde3f29a0d0b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2070331027 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1472784677496708, guid: a3e1721c8fe388d44853860c5388afce,
