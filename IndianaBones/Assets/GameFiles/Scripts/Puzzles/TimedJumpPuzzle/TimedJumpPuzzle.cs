@@ -39,7 +39,6 @@ public class TimedJumpPuzzle : Puzzle {
 		yield return new WaitForSeconds(time);
 		beam.TriggerFunctionality();
 		beamsLeft -= 1;
-		print(beamsLeft);
 		if(beamsLeft == 0)
 		{
 			time = 0;
