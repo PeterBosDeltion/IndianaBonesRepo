@@ -11,13 +11,13 @@ public class SayButton : TriggerdObjects {
 	// Use this for initialization
 	void Start () {
         puzzleManager = FindObjectOfType<PuzzleManager>();
-        foreach (Transform t in transform)
-        {
-            if (t.name == "Cylinder003")
-            {
-                obj = t.gameObject;
-            }
-        }
+        //foreach (Transform t in transform)
+        //{
+        //    if (t.name == "Cylinder003")
+        //    {
+        //        obj = t.gameObject;
+        //    }
+        //}
 
     }
 	
