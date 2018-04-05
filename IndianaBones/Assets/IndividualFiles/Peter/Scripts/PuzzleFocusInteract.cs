@@ -31,7 +31,12 @@ public class PuzzleFocusInteract : MonoBehaviour {
                 {
                     plm.enabled = false;
                 }
-                Camera.main.GetComponent<PlayerCamera>().PuzzleFocus(focusPoint, focusDuration, extraZoffset);
+
+                if (!Camera.main.GetComponent<PlayerCamera>().focussing)
+                {
+                    Camera.main.GetComponent<PlayerCamera>().PuzzleFocus(focusPoint, focusDuration, extraZoffset);
+                    Camera.main.GetComponent<PlayerCamera>().focussing = true;
+                }
             }
 
             if(plm.x < -.6F || plm.x > .6F && !Camera.main.GetComponent<PlayerCamera>().focusPlayer)
