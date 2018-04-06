@@ -15,6 +15,7 @@ public class RotatingPillar : TriggerdObjects {
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
+		GetComponent<Animator>().SetInteger("CurentState", (int)side);
 	}
 	public override void TriggerFunctionality()
 	{
@@ -22,7 +23,7 @@ public class RotatingPillar : TriggerdObjects {
 		if(side == Side.side1)
 		{
 			side = Side.side2;
-			//animation shit gewoon EZ trigger aangezien die tog niet meer terug hoeft te draaien
+			GetComponent<Animator>().SetTrigger("Rotate");
 			if(correctState == 2)
 			{
 				puzzleManager.puzzleInsert(this);
@@ -35,9 +36,10 @@ public class RotatingPillar : TriggerdObjects {
 		else if(side == Side.side2)
 		{
 			side = Side.side3;
-			//animation shit gewoon EZ trigger aangezien die tog niet meer terug hoeft te draaien
+			GetComponent<Animator>().SetTrigger("Rotate");
 			if(correctState == 3)
 			{
+				print("ya boi");
 				puzzleManager.puzzleInsert(this);
 			}
 			else
@@ -48,7 +50,7 @@ public class RotatingPillar : TriggerdObjects {
 		else if(side == Side.side3)
 		{
 			side = Side.side1;
-			//animation shit gewoon EZ trigger aangezien die tog niet meer terug hoeft te draaien
+			GetComponent<Animator>().SetTrigger("Rotate");
 			if(correctState == 1)
 			{
 				puzzleManager.puzzleInsert(this);
