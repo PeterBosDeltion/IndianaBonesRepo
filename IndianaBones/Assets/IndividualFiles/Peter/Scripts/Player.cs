@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 
     public TextMeshProUGUI descriptionText;
     public GameObject deadPlayer;
+    public GameObject respawnParticles;
 
     private UiManager uiManager;
     public float respawnTime;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour {
         beginingRoom = transform.position;
         //descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
-
+        respawnParticles.SetActive(false);
         if(GameManager.gm != null)
         {
             if (GameManager.gm.currentData != null)
@@ -99,6 +100,13 @@ public class Player : MonoBehaviour {
             if (enteredLeft)
             {
                 transform.position = beginingRoom + new Vector3(.4F, 0, 0);
+
+                respawnParticles.SetActive(true);
+                GetComponent<PlayerMovement>().enabled = false;
+                yield return new WaitForSeconds(2F);
+                GetComponent<PlayerMovement>().enabled = true;
+                respawnParticles.SetActive(false);
+
                 RaycastHit hit;
                 if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Vector3.down, out hit))
                 {
@@ -112,6 +120,13 @@ public class Player : MonoBehaviour {
             else
             {
                 transform.position = beginingRoom + new Vector3(-.04F, 0, 0);
+
+                respawnParticles.SetActive(true);
+                GetComponent<PlayerMovement>().enabled = false;
+                yield return new WaitForSeconds(2F);
+                GetComponent<PlayerMovement>().enabled = true;
+                respawnParticles.SetActive(false);
+
                 RaycastHit hit;
                 if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y +1, transform.position.z), -transform.up, out hit))
                 {
