@@ -54,15 +54,15 @@ public class MenuManager : MonoBehaviour {
 			audioSource.loop = true;
 			audioSource.Play();
 		}
-		if(move == true)
-		{
-			//dit na laaten kijken
-			Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, 700),800 * Time.deltaTime);
-		}
-		else
-		{
-			Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, -300),800 * Time.deltaTime);
-		}
+		// if(move == true)
+		// {
+		// 	//dit na laaten kijken
+		// 	Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, 700),800 * Time.deltaTime);
+		// }
+		// else
+		// {
+		// 	Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, -300),800 * Time.deltaTime);
+		// }
 	}
 	public void PlayGame()
 	{
