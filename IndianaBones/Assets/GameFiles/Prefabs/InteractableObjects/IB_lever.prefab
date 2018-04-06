@@ -28,6 +28,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1067126039874238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4344702977579730}
+  - component: {fileID: 65497527377478120}
+  - component: {fileID: 114250718752581294}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1176041940119364
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4522414064439932}
   - component: {fileID: 95809684135579452}
+  - component: {fileID: 114284041174481830}
   m_Layer: 0
   m_Name: IB_lever
   m_TagString: Untagged
@@ -61,6 +79,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4344702977579730
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067126039874238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4522414064439932}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4502523046908210
 Transform:
   m_ObjectHideFlags: 1
@@ -81,11 +112,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487434417164314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.575038, y: 0.000003331265, z: 2.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4983890951169290}
   - {fileID: 4502523046908210}
+  - {fileID: 4344702977579730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,6 +216,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176041940119364}
   m_Mesh: {fileID: 4300002, guid: 3c3777ede0704ab4e80430bbada8abdf, type: 3}
+--- !u!65 &65497527377478120
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067126039874238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95809684135579452
 Animator:
   serializedVersion: 3
@@ -193,7 +237,7 @@ Animator:
   m_GameObject: {fileID: 1487434417164314}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3c3777ede0704ab4e80430bbada8abdf, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 537e380ddb6748640a77f3ab5fc296a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -201,3 +245,43 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114250718752581294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067126039874238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95e35d266c7bb74fbedfdd769388dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 0}
+  toTrigger:
+  - {fileID: 114284041174481830}
+  pressurePlate: 0
+  shadedObject: {fileID: 0}
+  triggersPuzzlePart: 0
+--- !u!114 &114284041174481830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487434417164314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9000602d8e0f9a6469a1c0c8c1f9da70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 3
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  puzzle: 1
+  returnLever: 0
+  lever: {fileID: 0}
+  leverBase: {fileID: 0}

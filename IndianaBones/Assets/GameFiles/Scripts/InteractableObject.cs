@@ -13,7 +13,7 @@ public class InteractableObject : MonoBehaviour {
 
 	void Start()
 	{
-		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
+		puzzleManager = FindObjectOfType<PuzzleManager>();
 	}
 	public void Trigger()
 	{	

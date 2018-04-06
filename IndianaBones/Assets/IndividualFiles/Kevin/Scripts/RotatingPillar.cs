@@ -12,6 +12,7 @@ public class RotatingPillar : TriggerdObjects {
 	}
 	public Side side;
 	public int correctState;
+	private bool canMove = true;
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -19,46 +20,44 @@ public class RotatingPillar : TriggerdObjects {
 	}
 	public override void TriggerFunctionality()
 	{
-		puzzleManager.triggers += 1;
-		if(side == Side.side1)
+		if(puzzleManager.puzzleList[puzzleNumber].puzzleDone != true && canMove == true)
 		{
-			side = Side.side2;
-			GetComponent<Animator>().SetTrigger("Rotate");
-			if(correctState == 2)
+			canMove = false;
+			StartCoroutine(rotationBlock());
+			if(side == Side.side1)
 			{
-				puzzleManager.puzzleInsert(this);
+				side = Side.side2;
+				GetComponent<Animator>().SetTrigger("Rotate");
+				if(correctState == 2)
+				{
+					puzzleManager.puzzleInsert(this);
+				}
 			}
-			else
+			else if(side == Side.side2)
 			{
-				puzzleManager.triggers -= 1;
+				side = Side.side3;
+				GetComponent<Animator>().SetTrigger("Rotate");
+				if(correctState == 3)
+				{
+					print("ya boi");
+					puzzleManager.puzzleInsert(this);
+				}
+			}
+			else if(side == Side.side3)
+			{
+				side = Side.side1;
+				GetComponent<Animator>().SetTrigger("Rotate");
+				if(correctState == 1)
+				{
+					puzzleManager.puzzleInsert(this);
+				}
 			}
 		}
-		else if(side == Side.side2)
-		{
-			side = Side.side3;
-			GetComponent<Animator>().SetTrigger("Rotate");
-			if(correctState == 3)
-			{
-				print("ya boi");
-				puzzleManager.puzzleInsert(this);
-			}
-			else
-			{
-				puzzleManager.triggers -= 1;
-			}
-		}
-		else if(side == Side.side3)
-		{
-			side = Side.side1;
-			GetComponent<Animator>().SetTrigger("Rotate");
-			if(correctState == 1)
-			{
-				puzzleManager.puzzleInsert(this);
-			}
-			else
-			{
-				puzzleManager.triggers -= 1;
-			}
-		}
+	}
+
+	public IEnumerator rotationBlock()
+	{
+		yield return new WaitForSeconds(1.5f);
+		canMove = true;
 	}
 }

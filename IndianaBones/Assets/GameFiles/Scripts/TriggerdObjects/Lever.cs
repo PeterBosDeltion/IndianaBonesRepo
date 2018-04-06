@@ -19,15 +19,12 @@ public class Lever : TriggerdObjects {
 	{
 		if(triggerd != true)
 		{
-			print("functie");
 			foreach (GameObject child in outlineChilds)
 			{
-				print("1");
 				mats = child.GetComponent<Renderer>().materials;
 				print(outline);
 				if(mats[1] != outlineMat && outline != true)
 				{
-					print("2");
 					mats[1] = outlineMat;
 					partsLeft -= 1;
 					if(partsLeft == 0)
@@ -38,7 +35,6 @@ public class Lever : TriggerdObjects {
 			
 				else
 				{
-					print("3");
 					mats[1] = mats[0];
 					partsLeft += 1;
 					if(partsLeft == 2)

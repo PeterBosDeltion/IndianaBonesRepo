@@ -6,16 +6,23 @@ public class SkyrimPuzzle : Puzzle
 {
 	public List<bool> finishedParts = new List<bool>();
 
+	void Start()
+	{
+		puzzleManager = FindObjectOfType<PuzzleManager>();
+	}
 	public override void PuzzleTrigger(TriggerdObjects currentObject)
 	{
-		if(finishedParts[currentObject.puzzlePart] == true)
+		if(currentObject.puzzlePart == 3)
+		{
+			PuzzleCheck();
+		}
+		else if(finishedParts[currentObject.puzzlePart] == true)
 		{
 			finishedParts[currentObject.puzzlePart] = false;
 		}
 		else
 		{
 			finishedParts[currentObject.puzzlePart] = true;
-			PuzzleCheck();
 		}
 	}
 
@@ -29,7 +36,6 @@ public class SkyrimPuzzle : Puzzle
 				returnBool = false;
 			}
 		}
-		puzzleManager.triggers -= 1;
 		puzzleManager.done = returnBool;
 	}
 }
