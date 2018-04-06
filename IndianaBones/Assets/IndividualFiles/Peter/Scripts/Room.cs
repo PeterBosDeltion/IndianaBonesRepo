@@ -30,11 +30,11 @@ public class Room : MonoBehaviour {
             {
                 if (p.enteredLeft)
                 {
-                    p.beginingRoom = new Vector3(other.transform.position.x + 4, other.transform.position.y, other.transform.position.z);
+                    p.beginingRoom = new Vector3(other.transform.position.x + .4F, other.transform.position.y, other.transform.position.z);
                 }
                 else
                 {
-                    p.beginingRoom = new Vector3(other.transform.position.x - 4, other.transform.position.y, other.transform.position.z);
+                    p.beginingRoom = new Vector3(other.transform.position.x - .4F, other.transform.position.y, other.transform.position.z);
                 }
                 p.currentRoom = gameObject;
             }

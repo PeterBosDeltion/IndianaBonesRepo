@@ -98,7 +98,7 @@ public class Player : MonoBehaviour {
             }
             if (enteredLeft)
             {
-                transform.position = beginingRoom + new Vector3(2, 0, 0);
+                transform.position = beginingRoom + new Vector3(.4F, 0, 0);
                 RaycastHit hit;
                 if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Vector3.down, out hit))
                 {
@@ -111,7 +111,7 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                transform.position = beginingRoom + new Vector3(-2, 0, 0);
+                transform.position = beginingRoom + new Vector3(-.04F, 0, 0);
                 RaycastHit hit;
                 if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y +1, transform.position.z), -transform.up, out hit))
                 {
