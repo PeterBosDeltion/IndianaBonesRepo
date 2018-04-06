@@ -16,6 +16,9 @@ public class MenuManager : MonoBehaviour {
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
 	public float audioValue;
+	public Animator cameraAnimator;
+	public Animator cascetAnimator;
+	public GameObject fadeOut;
 	void Start()
 	{
 		audioSource.Play();
@@ -64,14 +67,29 @@ public class MenuManager : MonoBehaviour {
 		// 	Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position,new Vector3(490, 210, -300),800 * Time.deltaTime);
 		// }
 	}
+
+	public void UIButton(int i)
+	{
+		if(i == 0)
+		{
+			cameraAnimator.SetTrigger("Play");
+			cascetAnimator.SetTrigger("Open");
+			StartCoroutine(Play());
+		}
+		if(i == 1)
+		{
+			cameraAnimator.SetTrigger("Options");
+		move = true;
+		}
+		if(i == 2)
+		{
+			cameraAnimator.SetTrigger("Exit");
+		}
+		
+	}
 	public void PlayGame()
 	{
 		GameManager.gm.LoadGameState();
-	}
-
-	public void Options()
-	{
-		move = true;
 	}
 
 	public void Quit()
@@ -123,6 +141,13 @@ public class MenuManager : MonoBehaviour {
 
 	public void BackToMenu()
 	{
-		move = false;
+		cameraAnimator.SetTrigger("Back");
+	}
+	public IEnumerator Play()
+	{
+		fadeOut.SetActive(true);
+		fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+		yield return new WaitUntil(()=>fadeOut.GetComponent<Image>().color.a==1);
+		PlayGame();
 	}
 }
