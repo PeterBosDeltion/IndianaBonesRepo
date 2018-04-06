@@ -26,8 +26,9 @@ public class SimonSaysPuzzle : Puzzle {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+            Debug.Log(intyMcIntface);
+
+    }
 
     public IEnumerator ShowOrder()
     {
@@ -143,6 +144,7 @@ public class SimonSaysPuzzle : Puzzle {
                 }
                 intyMcIntface = 0;
             }
+
 
             if(intyMcIntface == correctOrder.Count)
             {

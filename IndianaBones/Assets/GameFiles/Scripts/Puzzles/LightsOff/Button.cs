@@ -9,12 +9,26 @@ public class Button : TriggerdObjects {
 	public Material buttonBase;
 	bool outline = false;
 	int partsLeft = 2;
+
+    private bool emissionOff;
+    public GameObject redCircle;
 	void Start()
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
+        foreach (Transform t in transform)
+        {
+            if(t.transform.name == "Cylinder003")
+            {
+                redCircle = t.gameObject;
+            }
+        }
 	}
 	public override void TriggerFunctionality()
 	{
+        if (!emissionOff)
+        {
+            StartCoroutine(ChangeEmissive());
+        }
 		GetComponent<Animator>().SetTrigger("Push");
 		if(puzzle == true)
 		{
@@ -25,7 +39,22 @@ public class Button : TriggerdObjects {
 		}
 	}
 
-	public override void OutlineShaderToggle()
+    IEnumerator ChangeEmissive()
+    {
+        emissionOff = true;
+        foreach (Material m in redCircle.GetComponent<Renderer>().materials)
+        {
+            redCircle.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+        }
+        yield return new WaitForSeconds(.5F);
+        foreach (Material m in redCircle.GetComponent<Renderer>().materials)
+        {
+            redCircle.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+        }
+        emissionOff = false;
+    }
+
+    public override void OutlineShaderToggle()
 	{
 		foreach (GameObject child in outlineChilds)
 		{
