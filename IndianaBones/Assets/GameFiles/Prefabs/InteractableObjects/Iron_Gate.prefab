@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33541471716274798}
   - component: {fileID: 23246660321633546}
   - component: {fileID: 95356166198696426}
+  - component: {fileID: 65468974093685558}
   m_Layer: 0
   m_Name: Iron_Gate
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134338056370042}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.097817, y: -1.69, z: -0.49061167}
+  m_LocalPosition: {x: -399.21317, y: -4.2495456, z: -3.8200002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134338056370042}
   m_Mesh: {fileID: 4300000, guid: a378b53c634400e49813c5bfb5777cb3, type: 3}
+--- !u!65 &65468974093685558
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134338056370042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.057256248, y: 1.6572566, z: 2.7000008}
+  m_Center: {x: 0, y: 0, z: 1.3500004}
 --- !u!95 &95356166198696426
 Animator:
   serializedVersion: 3
