@@ -8,6 +8,7 @@ public class Door : TriggerdObjects {
 	public bool costsKey;
 	public bool left;
 
+
 	public override void TriggerFunctionality()
 	{
 		if(triggerd == false)
@@ -19,12 +20,17 @@ public class Door : TriggerdObjects {
 			}
 			StartCoroutine(MechanismTimer());
 		}
+		else
+		{
+			GetComponent<Animator>().SetBool("Close", true);
+			GetComponent<Animator>().SetTrigger("TriggerDoor");
+		}
 	}
 
 	IEnumerator MechanismTimer()
 	{
 		yield return new WaitForSeconds(1.5f);
 		GetComponent<Animator>().SetBool("Left",left);
-		GetComponent<Animator>().SetTrigger("OpenDoor");
+		GetComponent<Animator>().SetTrigger("TriggerDoor");
 	}
 }
