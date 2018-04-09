@@ -107,6 +107,24 @@ public class PlayerMovement : MonoBehaviour {
 
     //}
 
+    // public void OnTriggerStay()
+	// {
+    //     print("trigger");
+    //     Vector3 pos = new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z);
+    //     anim.SetBool("Jump", false);
+    //     if(Input.GetButtonDown("Jump"))
+    //     {
+    //         if(rb != null)
+    //         {
+    //             rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
+    //             anim.SetBool("Jump", true);
+    //         }
+    //         else
+    //         {
+    //             Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
+    //         }
+    //     }
+	// }
     void Jump()
     {
         Vector3 pos = new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z);
