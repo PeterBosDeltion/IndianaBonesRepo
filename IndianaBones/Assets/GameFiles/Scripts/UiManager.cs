@@ -192,7 +192,6 @@ public class UiManager : MonoBehaviour {
         }
         if (player.currentLives != player.maxLives)
 		{
-			print("ll");
             if(lifes.Count > 0)
             {
                 lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
