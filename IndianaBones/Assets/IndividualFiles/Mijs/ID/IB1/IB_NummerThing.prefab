@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33633863342373950}
   - component: {fileID: 23733813719290526}
   - component: {fileID: 95063311637572584}
+  - component: {fileID: 114793794102677162}
   m_Layer: 0
   m_Name: IB_NummerThing
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692347657448768}
-  m_LocalRotation: {x: 0.12735315, y: 0.99185747, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.13052616, y: -0.9914449, z: 0.00000003666222, w: 0.0000002784773}
+  m_LocalPosition: {x: 0.093997955, y: 0.02699852, z: 0.8569994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: -165.367}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 15}
 --- !u!23 &23733813719290526
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -100,3 +101,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114793794102677162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692347657448768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678f5508e7f55344bbf04480a9990c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  currentSelected: 0
+  combination: 03000000060000000700000009000000
