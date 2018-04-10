@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Move();
-        // Jump();
+        Jump();
 	}
 
     void Move()
@@ -58,9 +58,10 @@ public class PlayerMovement : MonoBehaviour {
     void Jump()
     {
         Vector3 pos = new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z);
-        RaycastHit hit;
-        if (Physics.Raycast(pos,Vector3.down,out hit,0.1f))
+        if (Physics.Raycast(pos += new Vector3(-0.2f,0,0),Vector3.down,0.1f) || Physics.Raycast(pos += new Vector3(0.27f,0,0),Vector3.down,0.1f))
         {
+            Debug.DrawRay(pos += new Vector3(0.27f,0,0),Vector3.down);
+            Debug.DrawRay(pos += new Vector3(-0.2f,0,0),Vector3.down);
             anim.SetBool("Jump", false);
             if(Input.GetButtonDown("Jump"))
             {
