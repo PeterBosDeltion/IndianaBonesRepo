@@ -28,6 +28,8 @@ public class RoomEntryChecker : MonoBehaviour {
             StartCoroutine(Fade(other.gameObject));
             Player p = other.GetComponent<Player>();
             other.GetComponent<PlayerMovement>().enabled = false;
+            p.currentRoom = nextRoom;
+
 
             if (p != null)
             {
@@ -35,11 +37,11 @@ public class RoomEntryChecker : MonoBehaviour {
 
                 if(other.GetComponent<PlayerMovement>().x > 0)
                 {
-                    other.transform.position = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x, nextPos.transform.position.y, other.transform.position.z);
+                    other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
                 }
                 else
                 {
-                    other.transform.position = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x, nextPos.transform.position.y, other.transform.position.z);
+                    other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
                 }
                 if (left)
                 {
@@ -66,7 +68,6 @@ public class RoomEntryChecker : MonoBehaviour {
         gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", false);
         gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
         yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
-        player.GetComponent<Player>().currentRoom = nextRoom;
 
         gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", true);
         gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
