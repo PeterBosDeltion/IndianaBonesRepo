@@ -23,8 +23,11 @@ public class Player : MonoBehaviour {
     private UiManager uiManager;
     public float respawnTime;
     private bool dying;
+
+    public static Animator animator;
     // Use this for initialization
     void Start () {
+        animator = GetComponent<Animator>(); 
         maxLives = 3;
         currentLives = maxLives;
         beginingRoom = transform.position;
@@ -222,5 +225,18 @@ public class Player : MonoBehaviour {
             Debug.LogError("Variable descriptionText is null, Script: Player");
         }
         displayingText = false;
+    }
+
+    public static void Interact(int i)
+    {
+        if(i == 1)
+        {
+           animator.SetTrigger("Interact");
+        }
+
+        if(i == 2)
+        {
+            animator.SetTrigger("Kick");
+        }
     }
 }

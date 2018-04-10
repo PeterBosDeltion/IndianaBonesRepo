@@ -8,6 +8,8 @@ public class InteractableObject : MonoBehaviour {
 	public List<TriggerdObjects> toTrigger = new List<TriggerdObjects>();
     public bool pressurePlate;
 	public GameObject shadedObject;
+	//refrence naar type in player script
+	public int interactionType;
 
 	public bool triggersPuzzlePart;
 
@@ -33,6 +35,7 @@ public class InteractableObject : MonoBehaviour {
 			print("collisison check");
 			if(Input.GetButtonDown("E"))
 			{
+				Player.Interact(interactionType);
 				if(triggersPuzzlePart)
 				{
 					puzzleManager.triggers = toTrigger.Count;
