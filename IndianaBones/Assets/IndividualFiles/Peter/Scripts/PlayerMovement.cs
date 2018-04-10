@@ -6,14 +6,8 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody rb;
     public Animator anim;
     public float speed;
-    //public float stamina;
-    //public float staminaUseRate;
 
-    //public int sprintCooldown;
-    //public float sprintSpeed;
-
-    //public float startSpeed;
-    //public bool canSprint;
+    public bool jump;
     
 
     public float jumpForce;
@@ -24,15 +18,13 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        //startSpeed = speed;
-        //canSprint = true;
+        jump = true;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         Move();
-        //Sprint();
-        Jump();
+        // Jump();
 	}
 
     void Move()
@@ -45,10 +37,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.localScale = new Vector3(-0.8F, 0.8F, 0.8F);
             transform.rotation = Quaternion.Euler(0, -90, 0);
-        }
-        else if(x == 0)
-        {
-
         }
         else
         {
@@ -67,64 +55,6 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    //void Sprint() //Need to fix this
-    //{
-    //    if (Input.GetButton("Shift"))
-    //    {
-    //        if (stamina > 0 && canSprint)
-    //        {
-    //            stamina -= staminaUseRate;
-    //            speed += sprintSpeed;
-    //        }
-    //        else if (stamina <= 0 && canSprint)
-    //        {
-
-    //            if (speed != startSpeed)
-    //            {
-    //                speed = startSpeed;
-    //            }
-    //            canSprint = false;
-    //            StartCoroutine(SprintCooldown());
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if(speed != startSpeed)
-    //        {
-    //            speed = startSpeed;
-    //        }
-    //        if(stamina < 100)
-    //        {
-    //            stamina += staminaUseRate * Time.deltaTime;
-    //        }
-    //    }
-    //}
-
-    //public IEnumerator SprintCooldown()
-    //{
-    //    yield return new WaitForSeconds(sprintCooldown);
-    //    canSprint = true;
-
-    //}
-
-    // public void OnTriggerStay()
-	// {
-    //     print("trigger");
-    //     Vector3 pos = new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z);
-    //     anim.SetBool("Jump", false);
-    //     if(Input.GetButtonDown("Jump"))
-    //     {
-    //         if(rb != null)
-    //         {
-    //             rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
-    //             anim.SetBool("Jump", true);
-    //         }
-    //         else
-    //         {
-    //             Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
-    //         }
-    //     }
-	// }
     void Jump()
     {
         Vector3 pos = new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z);

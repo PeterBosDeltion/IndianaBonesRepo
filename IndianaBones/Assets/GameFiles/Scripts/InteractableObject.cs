@@ -49,7 +49,7 @@ public class InteractableObject : MonoBehaviour {
         }
 		else if(other.transform.gameObject.tag == "Player")
 		{
-			if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+			if(shadedObject != null && shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
 			{
 				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
 			}

@@ -33,6 +33,7 @@ public class LootHolder : TriggerdObjects {
 
 			if(currentCollectable == Collectables.Coin)
 			{
+				print("Cashies");
 				player.coins += 1;
 				SaveTrigger.coinsSave += 1;
 				player.CallUIUpdate();
