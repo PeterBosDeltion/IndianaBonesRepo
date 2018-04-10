@@ -27,13 +27,18 @@ public class PlayerMovement : MonoBehaviour {
         Jump();
 	}
 
+ 
+
     void Move()
     {
-        x = Input.GetAxis("Horizontal");
+        if (GetComponent<PlayerMovement>().isActiveAndEnabled)
+        {
+            x = Input.GetAxis("Horizontal");
+            transform.Translate(transform.right * -x * speed * Time.deltaTime);
+        }
 
-        transform.Translate(transform.right * -x * speed * Time.deltaTime);
 
-        if(x < 0)
+        if (x < 0)
         {
             transform.localScale = new Vector3(-0.8F, 0.8F, 0.8F);
             transform.rotation = Quaternion.Euler(0, -90, 0);
