@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bounce : MonoBehaviour
+public class Bounce : TriggerdObjects
 {
 	private Rigidbody rb;
 
@@ -18,14 +18,12 @@ public class Bounce : MonoBehaviour
 		startpos = transform.position;
 	}
 
-	private void Update()
-	{// inplaats van get kay down push up oproepen 
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			PushUp();
-		}
-	}
-	public void PushUp()
+    public override void TriggerFunctionality()
+    {
+        PushUp();
+    }
+
+    public void PushUp()
 	{
 		// De Vector3 die straks gerandomized gaat worden.
 		Vector3 randomizer;
