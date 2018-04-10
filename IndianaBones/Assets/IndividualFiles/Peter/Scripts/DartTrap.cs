@@ -9,6 +9,7 @@ public class DartTrap : TriggerdObjects {
     public GameObject arrowPrefab;
 
     public float arrowSpeed;
+    public float repeatinterval = 3;
 	// Use this for initialization
 	void Start () {
 
@@ -21,10 +22,15 @@ public class DartTrap : TriggerdObjects {
 
     public override void TriggerFunctionality()
     {
+        InvokeRepeating("Shoot", 1, repeatinterval);
+    }
+
+    public void Shoot()
+    {
         GameObject g = Instantiate(arrowPrefab, emptyPos.transform.position, transform.rotation);
-        
+
         Rigidbody rb = g.GetComponent<Rigidbody>();
-        if(rb != null)
+        if (rb != null)
         {
             rb.AddForce(transform.forward * arrowSpeed * Time.deltaTime);
         }
@@ -34,6 +40,5 @@ public class DartTrap : TriggerdObjects {
             Debug.LogError("Dart arrow prefab does not have rigidbody, Script:DartTrap");
         }
         Destroy(g, 4.0F);
-
     }
 }

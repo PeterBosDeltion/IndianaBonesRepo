@@ -18,7 +18,8 @@ public class Trapdoor : TriggerdObjects {
     {
         if(anim != null)
         {
-            anim.Play("TrapdoorOpen");
+            
+            anim.Play("Trapdoor");
         }
         else
         {

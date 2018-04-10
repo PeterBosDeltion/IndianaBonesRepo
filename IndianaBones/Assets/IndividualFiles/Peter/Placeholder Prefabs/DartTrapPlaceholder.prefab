@@ -68,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824371756898996}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: -35.897, y: 20.405, z: 9.3185}
-  m_LocalScale: {x: 0.30119798, y: 0.30119804, z: 0.30119804}
+  m_LocalPosition: {x: -412.193, y: -10.375, z: -1.615}
+  m_LocalScale: {x: 0.06434876, y: 0.06434874, z: 0.06434874}
   m_Children:
   - {fileID: 4418915591079178}
   m_Father: {fileID: 0}
@@ -123,7 +123,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: aa57d1199d692bc44895dbbeda0cccef, type: 2}
+  - {fileID: 2100000, guid: 75d1b84b1a09fe743ac7e3808b589207, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,7 +177,7 @@ BoxCollider:
   m_GameObject: {fileID: 1824371756898996}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -197,7 +197,10 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
   emptyPos: {fileID: 1425571202925894}
-  arrowPrefab: {fileID: 1800519014913246, guid: 4aeb115d9d77be04085a41ce85c23144,
+  arrowPrefab: {fileID: 1102757140050494, guid: 1ee7b9a3a6f3d484a8c03bf33ad6285a,
     type: 2}
   arrowSpeed: 70000

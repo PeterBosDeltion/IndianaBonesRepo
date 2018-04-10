@@ -47,7 +47,7 @@ public class InteractableObject : MonoBehaviour {
         {
             Trigger();
         }
-		else if(other.transform.gameObject.tag == "Player")
+	    if(other.transform.gameObject.tag == "Player")
 		{
 			if(shadedObject != null && shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
 			{
