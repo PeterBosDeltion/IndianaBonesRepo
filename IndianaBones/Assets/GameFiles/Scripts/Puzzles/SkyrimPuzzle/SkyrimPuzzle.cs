@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkyrimPuzzle : Puzzle 
 {
 	public List<bool> finishedParts = new List<bool>();
+	public TriggerdObjects trap;
 
 	void Start()
 	{
@@ -27,6 +28,10 @@ public class SkyrimPuzzle : Puzzle
 			{
 				returnBool = false;
 			}
+		}
+		if(returnBool == false)
+		{
+			trap.TriggerFunctionality();
 		}
 		puzzleManager.done = returnBool;
 	}
