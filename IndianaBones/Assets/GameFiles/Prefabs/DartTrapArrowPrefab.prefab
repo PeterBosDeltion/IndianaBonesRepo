@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 95601444012508008}
   - component: {fileID: 54656528448572276}
   - component: {fileID: 114356222686305932}
+  - component: {fileID: 65131330393907844}
   m_Layer: 0
   m_Name: DartTrapArrowPrefab
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1102757140050494}
   m_LocalRotation: {x: -0.5609855, y: -0.4304595, z: -0.43045944, w: 0.56098545}
-  m_LocalPosition: {x: -413.73016, y: -10.777343, z: -3.4923818}
+  m_LocalPosition: {x: -441.20224, y: -14.072222, z: -5.952841}
   m_LocalScale: {x: 0.429716, y: 0.42971596, z: 0.42971596}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +101,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!65 &65131330393907844
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102757140050494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.097822815, y: 0.06608618, z: 1.4397609}
+  m_Center: {x: -0.000000079389245, y: -0.000000039232305, z: 0.71466863}
 --- !u!95 &95601444012508008
 Animator:
   serializedVersion: 3

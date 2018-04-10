@@ -10,6 +10,8 @@ public class DartTrap : TriggerdObjects {
 
     public float arrowSpeed;
     public float repeatinterval = 3;
+
+    private bool shooting;
 	// Use this for initialization
 	void Start () {
 
@@ -22,7 +24,11 @@ public class DartTrap : TriggerdObjects {
 
     public override void TriggerFunctionality()
     {
-        InvokeRepeating("Shoot", 1, repeatinterval);
+        if (!shooting)
+        {
+            InvokeRepeating("Shoot", 1, repeatinterval);
+            shooting = true;
+        }
     }
 
     public void Shoot()
