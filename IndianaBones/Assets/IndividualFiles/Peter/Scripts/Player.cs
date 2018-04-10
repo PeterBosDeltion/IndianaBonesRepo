@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
     private bool dying;
     // Use this for initialization
     void Start () {
+        maxLives = 3;
         currentLives = maxLives;
         beginingRoom = transform.position;
         //descriptionText = GetComponentInChildren<TextMeshProUGUI>();

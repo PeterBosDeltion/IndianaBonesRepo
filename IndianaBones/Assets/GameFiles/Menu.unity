@@ -6499,8 +6499,8 @@ MonoBehaviour:
   screenMode: 1
   currentData:
     hasKey: 0
-    currentLives: 0
-    maxLives: 0
+    currentLives: 3
+    maxLives: 3
     coins: 0
     milk: 0
     bones: 0
