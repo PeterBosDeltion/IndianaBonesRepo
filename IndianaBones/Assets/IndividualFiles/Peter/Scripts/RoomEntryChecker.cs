@@ -14,25 +14,35 @@ public class RoomEntryChecker : MonoBehaviour {
     public PlayerCamera pc;
 
     private bool running;
+    private bool colliding; 
+
     // Use this for initialization
     void Start () 
     {
         gm = FindObjectOfType<GameManager>();
         pc = FindObjectOfType<PlayerCamera>();
     }
-
-    void OnTriggerEnter(Collider other)
+    void OnTriggerExit(Collider other)
     {
-
-        if (other.tag == "Player")
+        if(other.tag == "Player")
         {
+            colliding = false;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        colliding = true;
+        if (other.tag == "Player" && colliding)
+        {
+            other.transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+            other.GetComponent<PlayerMovement>().enabled = false;
             pc.focusPlayer = false;
             if (!running)
             {
                 StartCoroutine(Fade(other.gameObject));
             }
             Player p = other.GetComponent<Player>();
-            other.GetComponent<PlayerMovement>().enabled = false;
             p.currentRoom = nextRoom;
 
 
@@ -74,27 +84,31 @@ public class RoomEntryChecker : MonoBehaviour {
         Debug.Log("Started fade");
 
         running = true;
-        gm.fadeOut.GetComponent<Animator>().speed = 2.9F;
+        if (running)
+        {
+            gm.fadeOut.GetComponent<Animator>().speed = 2.5F;
 
-        gm.fadeOut.SetActive(true);
-        gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", false);
-        gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
-        yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
-        Debug.Log("Faded out");
-        pc.ResetCam();
+            gm.fadeOut.SetActive(true);
+            gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", false);
+            gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+            yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
+            Debug.Log("Faded out");
+            pc.ResetCam();
 
-        gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", true);
-        gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+            gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", true);
+            gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
 
-        yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a <= 0);
-        gm.fadeOut.SetActive(false);
+            yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a <= 0);
+            gm.fadeOut.SetActive(false);
 
-        Debug.Log("Faded in");
+            Debug.Log("Faded in");
 
-        p.GetComponent<PlayerMovement>().enabled = true;
-        pc.focusPlayer = true;
+            p.GetComponent<PlayerMovement>().enabled = true;
+            pc.focusPlayer = true;
 
-        running = false;
+            running = false;
+
+        }
 
     }
 

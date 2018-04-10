@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    private Rigidbody rb;
+    public Rigidbody rb;
     public Animator anim;
     public float speed;
 
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     void Update()
     {
         Jump();
+        Debug.Log(rb.velocity);
     }
  
 
