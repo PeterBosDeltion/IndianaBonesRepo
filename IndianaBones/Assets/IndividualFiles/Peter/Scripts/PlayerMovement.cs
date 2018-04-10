@@ -11,8 +11,10 @@ public class PlayerMovement : MonoBehaviour {
     
 
     public float jumpForce;
-    public float jumpCooldown;
+    //public float jumpCooldown;
     public float x;
+
+    public float jumpHeight = 7;
     
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,6 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Move();
-        Jump();
 	}
     
     void Update()
@@ -80,7 +81,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 if(rb != null)
                 {
-                    rb.AddRelativeForce(transform.up * jumpForce * Time.deltaTime);
+                    rb.velocity += new Vector3(0, jumpHeight, 0);
                     anim.SetBool("Jump", true);
                 }
                 else

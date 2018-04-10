@@ -1098,16 +1098,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   speed: 3
+  jump: 0
   jumpForce: 15000
-  jumpCooldown: 2
   x: 0
+  jumpHeight: 7
 --- !u!136 &136087060040382876
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919761243496360}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7773bab487f6b9b4aab610e8dfec6224, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.4

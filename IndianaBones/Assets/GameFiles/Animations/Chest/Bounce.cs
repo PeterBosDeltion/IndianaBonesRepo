@@ -12,6 +12,7 @@ public class Bounce : TriggerdObjects
 	public float randomSideForce;
 	public bool moveZ;
 
+    public float jumpHeight;
 
 	private void Awake()
 	{
