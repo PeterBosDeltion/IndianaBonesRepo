@@ -51,10 +51,13 @@ public class RoomEntryChecker : MonoBehaviour {
                 if (left)
                 {
                     other.GetComponent<Player>().enteredLeft = true;
+                    p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x + .4F, other.transform.position.y, other.transform.position.z);
+
                 }
                 else
                 {
                     other.GetComponent<Player>().enteredLeft = false;
+                    p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x - .4F, other.transform.position.y, other.transform.position.z);
                 }
 
             }
