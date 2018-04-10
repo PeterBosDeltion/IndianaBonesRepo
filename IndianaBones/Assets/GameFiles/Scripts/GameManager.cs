@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if(File.Exists(filePath + "/SaveGame.dat"))
 		{
+			print("load");
 			ChangeScene(1);
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Application.dataPath + filePath, FileMode.Open);
