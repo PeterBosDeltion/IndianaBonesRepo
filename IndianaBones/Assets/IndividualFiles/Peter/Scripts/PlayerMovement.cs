@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour {
             transform.localScale = new Vector3(-0.8F, 0.8F, 0.8F);
             transform.rotation = Quaternion.Euler(0, -90, 0);
         }
+        else if(x == 0)
+        {
+            //Do nothing plz dont delete kevin
+        }
         else
         {
             transform.localScale = new Vector3(0.8F, 0.8F, 0.8F);
