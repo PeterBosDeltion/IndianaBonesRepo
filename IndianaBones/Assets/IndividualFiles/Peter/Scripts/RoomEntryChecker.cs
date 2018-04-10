@@ -74,7 +74,7 @@ public class RoomEntryChecker : MonoBehaviour {
         Debug.Log("Started fade");
 
         running = true;
-        gm.fadeOut.GetComponent<Animator>().speed = 2;
+        gm.fadeOut.GetComponent<Animator>().speed = 2.9F;
 
         gm.fadeOut.SetActive(true);
         gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", false);
