@@ -10,14 +10,24 @@ public class Bounce : TriggerdObjects
 
 	public float forceAmount;
 	public float randomSideForce;
+	public bool moveZ;
 
 
 	private void Awake()
 	{
+		player = FindObjectOfType<Player>();
 		rb = GetComponent<Rigidbody>();
 		startpos = transform.position;
 	}
 
+	void Update()
+	{
+		if(moveZ == true)
+		{
+			Vector3 targetPosition = new Vector3(transform.position.x,transform.position.y,player.transform.position.z); 
+			transform.position = Vector3.Lerp(transform.position,targetPosition,3 * Time.deltaTime);
+		}
+	}
     public override void TriggerFunctionality()
     {
         PushUp();
@@ -43,5 +53,6 @@ public class Bounce : TriggerdObjects
 
 		// Add de force om hem omhoog te schieten
 		rb.AddForce((Vector3.up + randomizer) * forceAmount, ForceMode.Impulse);
+		moveZ = true;
 	}
 }
