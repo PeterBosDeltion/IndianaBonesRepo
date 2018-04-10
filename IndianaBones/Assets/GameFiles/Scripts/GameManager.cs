@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour {
 	public Resolution resolution;
 	public bool screenMode = true;
 	public ToSave currentData;
+    public GameObject fadeOut;
 
-	void Start()
+    void Start()
 	{
 		DontDestroyOnLoad(this.gameObject);
 		if (gm == null)

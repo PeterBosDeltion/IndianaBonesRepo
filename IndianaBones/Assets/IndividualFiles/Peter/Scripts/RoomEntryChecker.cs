@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomEntryChecker : MonoBehaviour {
     public bool left;
@@ -9,11 +10,13 @@ public class RoomEntryChecker : MonoBehaviour {
     private bool changedPos;
 
     public float xOffset = 5;
-	// Use this for initialization
-	void Start () 
+    private GameManager gm;
+    private PlayerCamera pc;
+    // Use this for initialization
+    void Start () 
     {
-
-        
+        gm = FindObjectOfType<GameManager>();
+        pc = FindObjectOfType<PlayerCamera>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -21,9 +24,10 @@ public class RoomEntryChecker : MonoBehaviour {
 
         if (other.tag == "Player")
         {
-
+            pc.focusPlayer = false;
+            StartCoroutine(Fade(other.gameObject));
             Player p = other.GetComponent<Player>();
-            p.currentRoom = nextRoom;
+            other.GetComponent<PlayerMovement>().enabled = false;
 
             if (p != null)
             {
@@ -55,7 +59,23 @@ public class RoomEntryChecker : MonoBehaviour {
         }
 
     }
+    public IEnumerator Fade(GameObject player)
+    {
+        
+        gm.fadeOut.SetActive(true);
+        gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", false);
+        gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+        yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
+        player.GetComponent<Player>().currentRoom = nextRoom;
 
-       
+        gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", true);
+        gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+        yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 0);
+
+        player.GetComponent<PlayerMovement>().enabled = true;
+        pc.focusPlayer = true;
+
     }
+
+}
 
