@@ -55,8 +55,6 @@ public class CombinationLockWheel : TriggerdObjects {
         else if (currentSelected == 4)
         {
             transform.localRotation = Quaternion.Euler(0, -180, -105);
-            Debug.Log("4");
-
         }
         else if (currentSelected == 5)
         {
