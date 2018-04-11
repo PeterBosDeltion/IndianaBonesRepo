@@ -36,6 +36,7 @@ public class InteractableObject : MonoBehaviour {
 			if(Input.GetButtonDown("E"))
 			{
 				Player.Interact(interactionType);
+				StartCoroutine(FindObjectOfType<Player>().RestartMovement());
 				if(triggersPuzzlePart)
 				{
 					puzzleManager.triggers = toTrigger.Count;
@@ -68,4 +69,5 @@ public class InteractableObject : MonoBehaviour {
 			}
 		}	
 	}
+
 }

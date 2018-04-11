@@ -225,6 +225,7 @@ public class Player : MonoBehaviour {
             Debug.LogError("Variable descriptionText is null, Script: Player");
         }
         displayingText = false;
+        
     }
 
     public static void Interact(int i)
@@ -232,11 +233,18 @@ public class Player : MonoBehaviour {
         if(i == 1)
         {
            animator.SetTrigger("Interact");
+           FindObjectOfType<PlayerMovement>().enabled = false;
         }
 
         if(i == 2)
         {
             animator.SetTrigger("Kick");
+            FindObjectOfType<PlayerMovement>().enabled = false;
         }
+    }
+    public IEnumerator RestartMovement()
+    {
+        yield return new WaitForSeconds(2);
+        FindObjectOfType<PlayerMovement>().enabled = true;
     }
 }
