@@ -1720,6 +1720,7 @@ MonoBehaviour:
   shadedObject: {fileID: 0}
   interactionType: 2
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!65 &765188755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3184,6 +3185,15 @@ Prefab:
       propertyPath: interactionType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114027344608552938, guid: fbd78287e03f55f458336b04d23f9731,
+        type: 2}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 1605266180}
+    - target: {fileID: 4303640962993216, guid: fbd78287e03f55f458336b04d23f9731, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbd78287e03f55f458336b04d23f9731, type: 2}
   m_IsPrefabParent: 0
@@ -3887,6 +3897,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f55d767072bc5bf4280893bc09997fd3, type: 2}
   m_IsPrefabParent: 0
+--- !u!198 &1605266180 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198574662772263686, guid: 32d8ed9ba79618c4ea2963237bb13ca8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1620187329}
 --- !u!1001 &1620187329
 Prefab:
   m_ObjectHideFlags: 0
@@ -3953,12 +3968,27 @@ Prefab:
     - target: {fileID: 198574662772263686, guid: 32d8ed9ba79618c4ea2963237bb13ca8,
         type: 2}
       propertyPath: randomSeed
-      value: -880819005
+      value: -509607932
       objectReference: {fileID: 0}
     - target: {fileID: 198574662772263686, guid: 32d8ed9ba79618c4ea2963237bb13ca8,
         type: 2}
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198574662772263686, guid: 32d8ed9ba79618c4ea2963237bb13ca8,
+        type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198574662772263686, guid: 32d8ed9ba79618c4ea2963237bb13ca8,
+        type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198574662772263686, guid: 32d8ed9ba79618c4ea2963237bb13ca8,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32d8ed9ba79618c4ea2963237bb13ca8, type: 2}

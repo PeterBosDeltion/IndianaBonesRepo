@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534201974683382}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -319.74405, y: 2, z: -1.669}
+  m_LocalPosition: {x: -318.1386, y: 0.4186465, z: -4.383972}
   m_LocalScale: {x: 0.5, y: 0.5000004, z: 0.5000004}
   m_Children:
   - {fileID: 4575515141295142}
@@ -328,6 +328,7 @@ MonoBehaviour:
   shadedObject: {fileID: 1534201974683382}
   interactionType: 1
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!114 &114194471383122046
 MonoBehaviour:
   m_ObjectHideFlags: 1

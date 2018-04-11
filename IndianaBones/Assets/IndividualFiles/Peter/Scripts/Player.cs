@@ -246,5 +246,6 @@ public class Player : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         FindObjectOfType<PlayerMovement>().enabled = true;
+        InteractableObject.interacting = false;
     }
 }

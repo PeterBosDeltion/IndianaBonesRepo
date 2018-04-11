@@ -13,6 +13,8 @@ public class InteractableObject : MonoBehaviour {
 
 	public bool triggersPuzzlePart;
 
+	public ParticleSystem particleSystem;
+	public static bool interacting;
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -33,15 +35,23 @@ public class InteractableObject : MonoBehaviour {
 		if(other.transform.gameObject.tag == "Player")
 		{
 			print("collisison check");
-			if(Input.GetButtonDown("E"))
+			if(interacting == false)
 			{
-				Player.Interact(interactionType);
-				StartCoroutine(FindObjectOfType<Player>().RestartMovement());
-				if(triggersPuzzlePart)
+				if(Input.GetButtonDown("E"))
 				{
-					puzzleManager.triggers = toTrigger.Count;
+					if(interactionType == 1)
+					{
+						particleSystem.Emit(1);
+					}
+					interacting = true;
+					Player.Interact(interactionType);
+					StartCoroutine(FindObjectOfType<Player>().RestartMovement());
+					if(triggersPuzzlePart)
+					{
+						puzzleManager.triggers = toTrigger.Count;
+					}
+					Trigger();
 				}
-				Trigger();
 			}
 		}
 	}
