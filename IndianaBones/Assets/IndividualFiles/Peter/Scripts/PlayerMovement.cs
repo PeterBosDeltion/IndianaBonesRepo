@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour {
     void Update()
     {
         Jump();
-        Debug.Log(rb.velocity);
     }
  
 
@@ -62,6 +61,8 @@ public class PlayerMovement : MonoBehaviour {
         if(x != 0)
         {
             anim.SetBool("Run", true);
+            anim.SetBool("Idle", false);
+
         }
         else
         {

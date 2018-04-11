@@ -86,11 +86,16 @@ public class RoomEntryChecker : MonoBehaviour {
         running = true;
         if (running)
         {
-            gm.fadeOut.GetComponent<Animator>().speed = 2.5F;
+            gm.fadeOut.GetComponent<Animator>().speed = 5F;
+            p.GetComponent<PlayerMovement>().x = 0;
 
             gm.fadeOut.SetActive(true);
             gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", false);
             gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+            p.GetComponent<Animator>().SetBool("Run", false);
+            p.GetComponent<Animator>().SetBool("Jump", false);
+            p.GetComponent<Animator>().SetBool("Idle", true);
+
             yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
             Debug.Log("Faded out");
             pc.ResetCam();

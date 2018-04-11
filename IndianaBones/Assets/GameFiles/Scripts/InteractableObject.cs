@@ -37,21 +37,24 @@ public class InteractableObject : MonoBehaviour {
 			print("collisison check");
 			if(interacting == false)
 			{
-				if(Input.GetButtonDown("E"))
-				{
-					if(interactionType == 1)
-					{
-						particleSystem.Emit(1);
-					}
-					interacting = true;
-					Player.Interact(interactionType);
-					StartCoroutine(FindObjectOfType<Player>().RestartMovement());
-					if(triggersPuzzlePart)
-					{
-						puzzleManager.triggers = toTrigger.Count;
-					}
-					Trigger();
-				}
+                if (other.GetComponent<Animator>().GetBool("Idle") == true)
+                {
+                    if (Input.GetButtonDown("E"))
+                    {
+                        if (interactionType == 1)
+                        {
+                            particleSystem.Emit(1);
+                        }
+                        interacting = true;
+                        Player.Interact(interactionType);
+                        StartCoroutine(FindObjectOfType<Player>().RestartMovement());
+                        if (triggersPuzzlePart)
+                        {
+                            puzzleManager.triggers = toTrigger.Count;
+                        }
+                        Trigger();
+                    }
+                }
 			}
 		}
 	}
