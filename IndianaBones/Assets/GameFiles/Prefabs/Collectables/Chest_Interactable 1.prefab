@@ -73,7 +73,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4196163200856298}
-  - component: {fileID: 114238402597073476}
   m_Layer: 9
   m_Name: Chest_Interactable 1
   m_TagString: Untagged
@@ -203,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1259866946048450}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -438.1021, y: -10.777137, z: -3.0476444}
+  m_LocalPosition: {x: -400.149, y: -3.119, z: -2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4607115898412410}
@@ -220,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290772884644734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.035, z: 2.12}
+  m_LocalPosition: {x: 0, y: 0.09, z: 1.795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4196163200856298}
@@ -579,26 +578,6 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   myContent: {fileID: 114751997000950026}
---- !u!114 &114238402597073476
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259866946048450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7f44a4e4300c8439173ad777dca958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  puzzleManager: {fileID: 0}
-  triggerd: 0
-  puzzleNumber: 0
-  puzzlePart: 0
-  outlineMat: {fileID: 0}
-  mats: []
-  outlineChilds: []
-  currentCollectable: 0
 --- !u!114 &114607196847101102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,11 +591,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 0}
   toTrigger:
-  - {fileID: 114238402597073476}
   - {fileID: 114001715165520820}
   pressurePlate: 0
   shadedObject: {fileID: 0}
-  interactionType: 0
+  interactionType: 2
   triggersPuzzlePart: 0
 --- !u!114 &114751997000950026
 MonoBehaviour:
@@ -640,6 +618,7 @@ MonoBehaviour:
   forceAmount: 6
   randomSideForce: 0.2
   moveZ: 0
+  jumpHeight: 0
 --- !u!198 &198274530809047232
 ParticleSystem:
   m_ObjectHideFlags: 1

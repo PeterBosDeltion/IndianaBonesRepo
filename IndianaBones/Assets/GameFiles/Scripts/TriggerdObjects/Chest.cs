@@ -20,7 +20,11 @@ public class Chest : TriggerdObjects {
     public override void TriggerFunctionality()
     {
         GetComponent<Animator>().SetTrigger("Open");
-        StartCoroutine(Wait());
+        if(triggerd == false)
+        {
+            triggerd = true;
+            StartCoroutine(Wait());
+        }
     }
 
     IEnumerator Wait()

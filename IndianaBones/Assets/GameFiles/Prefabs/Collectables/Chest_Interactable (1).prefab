@@ -205,7 +205,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1089228272997368}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -440.57007, y: -10.732, z: -4.3}
+  m_LocalPosition: {x: -440.86, y: -10.743, z: -4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4728610392587008}
@@ -236,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336227264620170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.049, y: 0.012, z: 0}
+  m_LocalPosition: {x: 0.049, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4003527377417566}
@@ -249,7 +249,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668052290456574}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0.01700592, y: 0.290228, z: -0.077967644}
+  m_LocalPosition: {x: -0.01700592, y: 0.495, z: -0.077967644}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4645426085948926}
@@ -602,7 +602,7 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
-  myContent: {fileID: 0}
+  myContent: {fileID: 114317933884174744}
 --- !u!114 &114317933884174744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,6 +625,7 @@ MonoBehaviour:
   forceAmount: 5
   randomSideForce: 0.2
   moveZ: 0
+  jumpHeight: 0
 --- !u!114 &114586905045205238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -641,7 +642,7 @@ MonoBehaviour:
   - {fileID: 114255429095895330}
   pressurePlate: 0
   shadedObject: {fileID: 0}
-  interactionType: 0
+  interactionType: 2
   triggersPuzzlePart: 0
 --- !u!114 &114855211051460830
 MonoBehaviour:
@@ -659,7 +660,7 @@ MonoBehaviour:
   - {fileID: 114255429095895330}
   pressurePlate: 0
   shadedObject: {fileID: 0}
-  interactionType: 0
+  interactionType: 2
   triggersPuzzlePart: 0
 --- !u!198 &198136289852938638
 ParticleSystem:
