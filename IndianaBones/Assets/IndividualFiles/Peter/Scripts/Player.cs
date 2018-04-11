@@ -78,6 +78,9 @@ public class Player : MonoBehaviour {
 
         Destroy(g, respawnTime);
         yield return new WaitForSeconds(respawnTime);
+        GetComponent<Animator>().SetBool("Idle", true);
+        GetComponent<Animator>().SetBool("Run", false);
+        GetComponent<Animator>().SetBool("Jump", false);
         if (currentLives > 0)
         {
             GetComponentInChildren<Renderer>().enabled = true;
