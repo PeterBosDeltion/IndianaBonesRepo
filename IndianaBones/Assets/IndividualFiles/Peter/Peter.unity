@@ -4447,7 +4447,9 @@ MonoBehaviour:
   - {fileID: 1687222622}
   pressurePlate: 0
   shadedObject: {fileID: 1687222620}
+  interactionType: 0
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!65 &33227488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35592,6 +35594,7 @@ MonoBehaviour:
   nextRoom: {fileID: 605069246}
   nextPos: {fileID: 1940829262}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &382556053
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41713,6 +41716,7 @@ MonoBehaviour:
   nextRoom: {fileID: 575268314}
   nextPos: {fileID: 249455688}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &504692985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45892,7 +45896,9 @@ MonoBehaviour:
   - {fileID: 0}
   pressurePlate: 1
   shadedObject: {fileID: 0}
+  interactionType: 0
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!23 &519394327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65982,7 +65988,9 @@ MonoBehaviour:
   toTrigger: []
   pressurePlate: 0
   shadedObject: {fileID: 0}
+  interactionType: 0
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!114 &853866478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83377,6 +83385,7 @@ MonoBehaviour:
   nextRoom: {fileID: 575268314}
   nextPos: {fileID: 109682459}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &1113575624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84134,11 +84143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c328c0515fdd240985a98253c3d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   anim: {fileID: 0}
   speed: 2
+  jump: 0
   jumpForce: 15000
-  jumpCooldown: 2
   x: 0
+  jumpHeight: 7
 --- !u!136 &1141009807
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -85013,7 +85024,9 @@ MonoBehaviour:
   - {fileID: 159226528}
   pressurePlate: 0
   shadedObject: {fileID: 159226526}
+  interactionType: 0
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!65 &1185360597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95250,6 +95263,7 @@ MonoBehaviour:
   nextRoom: {fileID: 1272240414}
   nextPos: {fileID: 377400787}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &1390227189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97165,6 +97179,7 @@ MonoBehaviour:
   nextRoom: {fileID: 0}
   nextPos: {fileID: 0}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &1462429781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101148,6 +101163,7 @@ MonoBehaviour:
   nextRoom: {fileID: 476065404}
   nextPos: {fileID: 1518772825}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &1475994280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -138176,15 +138192,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4186540487004908, guid: 906d1a3018ba0a74f9e9565407d9c5fe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -21.23
+      value: -21.1
       objectReference: {fileID: 0}
     - target: {fileID: 4186540487004908, guid: 906d1a3018ba0a74f9e9565407d9c5fe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 19.833206
+      value: 19.800001
       objectReference: {fileID: 0}
     - target: {fileID: 4186540487004908, guid: 906d1a3018ba0a74f9e9565407d9c5fe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9.211
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4186540487004908, guid: 906d1a3018ba0a74f9e9565407d9c5fe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -145128,7 +145144,9 @@ MonoBehaviour:
   - {fileID: 853866476}
   pressurePlate: 0
   shadedObject: {fileID: 853866470}
+  interactionType: 0
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
 --- !u!65 &2071947577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -149600,6 +149618,7 @@ MonoBehaviour:
   nextRoom: {fileID: 476065404}
   nextPos: {fileID: 1677311205}
   xOffset: 4
+  pc: {fileID: 0}
 --- !u!23 &2097223715
 MeshRenderer:
   m_ObjectHideFlags: 0
