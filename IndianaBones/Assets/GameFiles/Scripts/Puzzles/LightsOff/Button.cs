@@ -33,15 +33,16 @@ public class Button : TriggerdObjects {
 		GetComponent<Animator>().SetTrigger("Push");
 		if(puzzle == true)
 		{
-			if(keepGoingAfterFinished == true)
-			{
-				puzzleManager.puzzleInsert(this);
-			}
-			else if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == false)
+			
+			 if(!puzzleManager.puzzleList[puzzleNumber].puzzleDone)
         	{
            		puzzleManager.puzzleInsert(this);
         	}
-		}
+            else if(keepGoingAfterFinished && (puzzleManager.puzzleList[puzzleNumber].puzzleDone))
+            {
+                puzzleManager.puzzleInsert(this);
+            }
+        }
 	}
 
     IEnumerator ChangeEmissive()

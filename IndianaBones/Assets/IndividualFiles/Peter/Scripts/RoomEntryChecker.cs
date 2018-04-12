@@ -9,6 +9,8 @@ public class RoomEntryChecker : MonoBehaviour {
     public GameObject nextPos;
     private bool changedPos;
 
+    public bool ladder;
+
     public float xOffset = 5;
     private GameManager gm;
     public PlayerCamera pc;
@@ -32,6 +34,23 @@ public class RoomEntryChecker : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
+        if (!ladder)
+        {
+            ChangeRoom(other);
+        }
+        else
+        {
+            if (Input.GetButtonDown("E"))
+            {
+                ChangeRoom(other);
+            }
+        }
+       
+
+    }
+
+    public void ChangeRoom(Collider other)
+    {
         colliding = true;
         if (other.tag == "Player" && colliding)
         {
@@ -50,7 +69,7 @@ public class RoomEntryChecker : MonoBehaviour {
             {
                 //RoomBoundaryCalculator rmb = nextRoom.GetComponent<RoomBoundaryCalculator>();
 
-                if(other.GetComponent<PlayerMovement>().x > 0)
+                if (other.GetComponent<PlayerMovement>().x > 0)
                 {
                     other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
                 }
@@ -77,7 +96,6 @@ public class RoomEntryChecker : MonoBehaviour {
             }
 
         }
-
     }
     public IEnumerator Fade(GameObject p)
     {

@@ -85,12 +85,20 @@ public class PlayerMovement : MonoBehaviour {
                 {
                     rb.velocity += new Vector3(0, jumpHeight, 0);
                     anim.SetBool("Jump", true);
+                    anim.SetBool("Run", false);
+                    anim.SetBool("Idle", false);
                 }
                 else
                 {
                     Debug.LogError("Variable rb (RigidBody) is null, Script: PlayerMovement");
                 }
             }
+        }
+        else
+        {
+            anim.SetBool("Jump", true);
+            anim.SetBool("Run", false);
+            anim.SetBool("Idle", false);
         }
     }
 }
