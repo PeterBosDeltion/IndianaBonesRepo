@@ -54,49 +54,55 @@ public class RoomEntryChecker : MonoBehaviour {
         colliding = true;
         if (other.tag == "Player" && colliding)
         {
-            other.transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
             other.GetComponent<PlayerMovement>().enabled = false;
             pc.focusPlayer = false;
             if (!running)
             {
                 StartCoroutine(Fade(other.gameObject));
             }
-            Player p = other.GetComponent<Player>();
-            p.currentRoom = nextRoom;
+            
+        }
+    }
+
+    private void ChangeRoomTwo(Collider other)
+    {
+        Player p = other.GetComponent<Player>();
+        p.currentRoom = nextRoom;
 
 
-            if (p != null)
+        if (p != null)
+        {
+            //RoomBoundaryCalculator rmb = nextRoom.GetComponent<RoomBoundaryCalculator>();
+
+            if (other.GetComponent<PlayerMovement>().x > 0)
             {
-                //RoomBoundaryCalculator rmb = nextRoom.GetComponent<RoomBoundaryCalculator>();
-
-                if (other.GetComponent<PlayerMovement>().x > 0)
-                {
-                    other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
-                }
-                else
-                {
-                    other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
-                }
-                if (left)
-                {
-                    other.GetComponent<Player>().enteredLeft = true;
-                    p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x + .4F, other.transform.position.y, other.transform.position.z);
-
-                }
-                else
-                {
-                    other.GetComponent<Player>().enteredLeft = false;
-                    p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x - .4F, other.transform.position.y, other.transform.position.z);
-                }
+                other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
+            }
+            else
+            {
+                other.transform.position = new Vector3(nextPos.transform.position.x, nextPos.transform.position.y, other.transform.position.z);
+            }
+            if (left)
+            {
+                other.GetComponent<Player>().enteredLeft = true;
+                p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().leftSideBound.x + .4F, other.transform.position.y, other.transform.position.z);
 
             }
             else
             {
-                Debug.LogError("Variable p (Player) is null, Script: RoomEntryChecker");
+                other.GetComponent<Player>().enteredLeft = false;
+                p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x - .4F, other.transform.position.y, other.transform.position.z);
             }
 
         }
+        else
+        {
+            Debug.LogError("Variable p (Player) is null, Script: RoomEntryChecker");
+        }
+
     }
+
     public IEnumerator Fade(GameObject p)
     {
 
@@ -114,7 +120,11 @@ public class RoomEntryChecker : MonoBehaviour {
             p.GetComponent<Animator>().SetBool("Idle", true);
 
             yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
+
+
+            ChangeRoomTwo(p.GetComponent<Collider>());//Wait until screen is black and then complete function
             pc.ResetCam();
+
 
             gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", true);
             gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
