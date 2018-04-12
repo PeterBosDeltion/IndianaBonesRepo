@@ -61,11 +61,8 @@ public class Button : TriggerdObjects {
 
     public override void OutlineShaderToggle()
 	{
-		print("4");
 		foreach (GameObject child in outlineChilds)
 		{
-			print("5");
-			print("outline");
 			mats = child.GetComponent<Renderer>().materials;
 			if(mats[1] != outlineMat && outline != true)
 			{
