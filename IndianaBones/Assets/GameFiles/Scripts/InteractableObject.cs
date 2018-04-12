@@ -13,7 +13,7 @@ public class InteractableObject : MonoBehaviour {
 
 	public bool triggersPuzzlePart;
 
-	public ParticleSystem particleSystem;
+	public new ParticleSystem particleSystem;
 	public static bool interacting;
 	void Start()
 	{

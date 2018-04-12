@@ -6,7 +6,7 @@ using UnityEngine;
 public class SimonSaysPuzzle : Puzzle {
     public List<GameObject> correctOrder = new List<GameObject>();
     public List<GameObject> insertedOrder = new List<GameObject>();
-    private List<GameObject> finalOrder = new List<GameObject>();
+    //private List<GameObject> finalOrder = new List<GameObject>();
 
     public List<TriggerdObjects> trapsToTriggerOnLose = new List<TriggerdObjects>();
 

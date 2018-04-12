@@ -24,7 +24,7 @@ public class Room : MonoBehaviour {
         {
 
             Player p = other.GetComponent<Player>();
-            PlayerMovement plm = other.GetComponent<PlayerMovement>();
+            //PlayerMovement plm = other.GetComponent<PlayerMovement>();
 
             if (p != null)
             {

@@ -48,7 +48,7 @@ public class RoomEntryChecker : MonoBehaviour {
 
             if (p != null)
             {
-                RoomBoundaryCalculator rmb = nextRoom.GetComponent<RoomBoundaryCalculator>();
+                //RoomBoundaryCalculator rmb = nextRoom.GetComponent<RoomBoundaryCalculator>();
 
                 if(other.GetComponent<PlayerMovement>().x > 0)
                 {

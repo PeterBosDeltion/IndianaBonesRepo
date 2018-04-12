@@ -6,7 +6,7 @@ public class Bounce : TriggerdObjects
 {
 	private Rigidbody rb;
 
-	private Vector3 startpos;
+	//private Vector3 startpos;
 
 	public float forceAmount;
 	public float randomSideForce;
@@ -18,7 +18,7 @@ public class Bounce : TriggerdObjects
 	{
 		player = FindObjectOfType<Player>();
 		rb = GetComponent<Rigidbody>();
-		startpos = transform.position;
+		//startpos = transform.position;
 	}
 
 	void Update()
