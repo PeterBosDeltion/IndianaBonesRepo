@@ -16,7 +16,9 @@ public class RoomEntryChecker : MonoBehaviour {
     public PlayerCamera pc;
 
     private bool running;
-    private bool colliding; 
+    private bool colliding;
+    private bool partTwoing;
+    private Collider colliderOther;
 
     // Use this for initialization
     void Start () 
@@ -29,32 +31,49 @@ public class RoomEntryChecker : MonoBehaviour {
         if(other.tag == "Player")
         {
             colliding = false;
+            colliderOther = null;
         }
     }
 
-    void OnTriggerStay(Collider other)
+    void Update()
     {
-        if (!ladder)
+        if(colliding)
         {
-            ChangeRoom(other);
+            if (!running && !partTwoing && colliderOther.GetComponent<Animator>().GetBool("Idle") == true)
+            {
+                if (Input.GetButton("E"))
+                {
+                    ChangeRoom(colliderOther);
+                }
+            }
         }
-        else
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == "Player")
         {
-            if (Input.GetButtonDown("E"))
+            colliderOther = other;
+            colliding = true;
+            if (!ladder)
             {
                 ChangeRoom(other);
             }
+           
         }
+       
        
 
     }
+
+    
 
     public void ChangeRoom(Collider other)
     {
         colliding = true;
         if (other.tag == "Player" && colliding)
         {
-            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
+            //other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
             other.GetComponent<PlayerMovement>().enabled = false;
             pc.focusPlayer = false;
             if (!running)
@@ -67,6 +86,7 @@ public class RoomEntryChecker : MonoBehaviour {
 
     private void ChangeRoomTwo(Collider other)
     {
+        partTwoing = true;
         Player p = other.GetComponent<Player>();
         p.currentRoom = nextRoom;
 
@@ -94,6 +114,7 @@ public class RoomEntryChecker : MonoBehaviour {
                 other.GetComponent<Player>().enteredLeft = false;
                 p.beginingRoom = new Vector3(nextRoom.GetComponent<RoomBoundaryCalculator>().rightSideBound.x - .4F, other.transform.position.y, other.transform.position.z);
             }
+            StartCoroutine(Reset());
 
         }
         else
@@ -101,6 +122,12 @@ public class RoomEntryChecker : MonoBehaviour {
             Debug.LogError("Variable p (Player) is null, Script: RoomEntryChecker");
         }
 
+    }
+
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(.5F);
+        partTwoing = false;
     }
 
     public IEnumerator Fade(GameObject p)
@@ -121,8 +148,10 @@ public class RoomEntryChecker : MonoBehaviour {
 
             yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
 
-
-            ChangeRoomTwo(p.GetComponent<Collider>());//Wait until screen is black and then complete function
+            if (!partTwoing)
+            {
+                ChangeRoomTwo(p.GetComponent<Collider>());//Wait until screen is black and then complete function
+            }
             pc.ResetCam();
 
 
@@ -141,6 +170,7 @@ public class RoomEntryChecker : MonoBehaviour {
         }
 
     }
+
 
 }
 
