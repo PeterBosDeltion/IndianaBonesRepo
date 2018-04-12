@@ -65,7 +65,6 @@ public class InteractableObject : MonoBehaviour {
                         {
                             puzzleManager.triggers = toTrigger.Count;
                         }
-                        Trigger();
                     }
                 }
 			}
