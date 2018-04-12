@@ -20,6 +20,13 @@ public class InteractableObject : MonoBehaviour {
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
+	    foreach (ParticleSystem p in FindObjectOfType<Player>().GetComponentsInChildren<ParticleSystem>())
+		{
+			if(p.name == "ClickTextEffect")
+			{
+				particleSystem = p;
+			}
+		}
 	}
 
     
