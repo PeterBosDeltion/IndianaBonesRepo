@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour {
 
 	public new ParticleSystem particleSystem;
 	public static bool interacting;
-
+	public GameObject collisionOther;
     private bool colliding;
 	void Start()
 	{
@@ -43,48 +43,41 @@ public class InteractableObject : MonoBehaviour {
 
     void Update()
     {
-        if(Input.GetButtonDown("E") && colliding)
-        {
-            Trigger();
-        }
-    }
-
-	public void OnTriggerStay(Collider other)
-	{
-		if(other.transform.gameObject.tag == "Player")
+		if(interacting == false && colliding)
 		{
-			print("collisison check");
-            colliding = true;
-			if(interacting == false)
-            {
-                if (other.GetComponent<Animator>().GetBool("Idle") == true)
-                {
-                    if (Input.GetButtonDown("E"))
-                    {
-                        if (interactionType == 1)
-                        {
-							particleSystem.Emit(1);
-                        }
-                        interacting = true;
-                        Player.Interact(interactionType);
-                        StartCoroutine(FindObjectOfType<Player>().RestartMovement());
-                        if (triggersPuzzlePart)
-                        {
-                            puzzleManager.triggers = toTrigger.Count;
-                        }
-                    }
-                }
+			if (collisionOther.GetComponent<Animator>().GetBool("Idle") == true)
+			{
+				if (Input.GetButtonDown("E"))
+				{
+					if (interactionType == 1)
+					{
+						particleSystem.Emit(1);
+					}
+					interacting = true;
+					Player.Interact(interactionType);
+					StartCoroutine(FindObjectOfType<Player>().RestartMovement());
+					if (triggersPuzzlePart)
+					{
+						puzzleManager.triggers = toTrigger.Count;
+					}
+					Trigger();
+				}
 			}
 		}
-	}
+    }
     public void OnTriggerEnter(Collider other)
     {
+		print("collisison check");
         if (pressurePlate && other.transform.tag == "Player")
         {
+			collisionOther = other.transform.gameObject;
+			colliding = true;
             Trigger();
         }
 	    if(other.transform.gameObject.tag == "Player")
 		{
+			collisionOther = other.transform.gameObject;
+			colliding = true;
 			if(shadedObject != null)
 			{
 				if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
