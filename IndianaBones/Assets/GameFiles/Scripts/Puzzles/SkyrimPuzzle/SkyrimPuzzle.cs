@@ -33,6 +33,7 @@ public class SkyrimPuzzle : Puzzle
 		{
 			trap.TriggerFunctionality();
 		}
+		print(returnBool);
 		puzzleManager.done = returnBool;
 	}
 }

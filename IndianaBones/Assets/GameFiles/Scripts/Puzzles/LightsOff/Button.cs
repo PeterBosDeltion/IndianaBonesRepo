@@ -9,6 +9,7 @@ public class Button : TriggerdObjects {
 	public Material buttonBase;
 	bool outline = false;
 	int partsLeft = 2;
+	public bool keepGoingAfterFinished;
 
     private bool emissionOff;
     public GameObject redCircle;
@@ -32,7 +33,11 @@ public class Button : TriggerdObjects {
 		GetComponent<Animator>().SetTrigger("Push");
 		if(puzzle == true)
 		{
-			if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == false)
+			if(keepGoingAfterFinished == true)
+			{
+				puzzleManager.puzzleInsert(this);
+			}
+			else if(puzzleManager.puzzleList[puzzleNumber].puzzleDone == false)
         	{
            		puzzleManager.puzzleInsert(this);
         	}
@@ -56,8 +61,11 @@ public class Button : TriggerdObjects {
 
     public override void OutlineShaderToggle()
 	{
+		print("4");
 		foreach (GameObject child in outlineChilds)
 		{
+			print("5");
+			print("outline");
 			mats = child.GetComponent<Renderer>().materials;
 			if(mats[1] != outlineMat && outline != true)
 			{

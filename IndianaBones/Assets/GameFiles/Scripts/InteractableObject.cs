@@ -43,7 +43,7 @@ public class InteractableObject : MonoBehaviour {
                     {
                         if (interactionType == 1)
                         {
-                            particleSystem.Emit(1);
+							particleSystem.Emit(1);
                         }
                         interacting = true;
                         Player.Interact(interactionType);
@@ -66,9 +66,12 @@ public class InteractableObject : MonoBehaviour {
         }
 	    if(other.transform.gameObject.tag == "Player")
 		{
-			if(shadedObject != null && shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+			if(shadedObject != null)
 			{
-				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
+				if(shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
+				{
+					shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
+				}
 			}
 		}
 	}

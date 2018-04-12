@@ -22,6 +22,7 @@ public class Door : TriggerdObjects {
 		}
 		else
 		{
+			GetComponent<Animator>().SetBool("Left",left);
 			GetComponent<Animator>().SetBool("Close", true);
 			GetComponent<Animator>().SetTrigger("TriggerDoor");
 		}

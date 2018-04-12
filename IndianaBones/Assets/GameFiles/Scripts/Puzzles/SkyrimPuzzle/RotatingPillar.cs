@@ -39,7 +39,6 @@ public class RotatingPillar : TriggerdObjects {
 				GetComponent<Animator>().SetTrigger("Rotate");
 				if(correctState == 3)
 				{
-					print("ya boi");
 					puzzleManager.puzzleInsert(this);
 				}
 			}
