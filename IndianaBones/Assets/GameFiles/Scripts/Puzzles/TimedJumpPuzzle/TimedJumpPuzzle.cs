@@ -7,7 +7,7 @@ public class TimedJumpPuzzle : Puzzle {
 	public List<TriggerdObjects> beams = new List<TriggerdObjects>();
 	public float time;
 	public float timeBetween;
-	private int beamsLeft;
+	public int beamsLeft;
 
 	void Start()
 	{
@@ -17,9 +17,9 @@ public class TimedJumpPuzzle : Puzzle {
 	{
 		if(beamsLeft == 0)
 		{
-			beamsLeft = beams.Count;
 			if(currentObject.puzzlePart == 0)
 			{
+				beamsLeft = beams.Count;
 				foreach(TriggerdObjects beam in beams)
 				{
 					StartCoroutine(NextBeam(beam));
