@@ -119,7 +119,6 @@ public class Player : MonoBehaviour {
                 {
                     if(hit.transform.tag == "Room")
                     {
-                        Debug.Log("Ray hit");
                         currentRoom = hit.transform.parent.gameObject;
                     }
                 }
@@ -139,7 +138,6 @@ public class Player : MonoBehaviour {
                 {
                     if (hit.transform.tag == "Room")
                     {
-                        Debug.Log("Ray hit");
                         currentRoom = hit.transform.parent.gameObject;
                     }
                 }

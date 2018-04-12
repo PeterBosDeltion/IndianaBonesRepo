@@ -8,7 +8,7 @@ public class Boulder : TriggerdObjects {
     public List<GameObject> debris = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
-		
+        transform.tag = "Boulder";
 	}
 	
 	// Update is called once per frame

@@ -81,7 +81,6 @@ public class RoomEntryChecker : MonoBehaviour {
     }
     public IEnumerator Fade(GameObject p)
     {
-        Debug.Log("Started fade");
 
         running = true;
         if (running)
@@ -97,7 +96,6 @@ public class RoomEntryChecker : MonoBehaviour {
             p.GetComponent<Animator>().SetBool("Idle", true);
 
             yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a == 1);
-            Debug.Log("Faded out");
             pc.ResetCam();
 
             gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn", true);
@@ -106,7 +104,6 @@ public class RoomEntryChecker : MonoBehaviour {
             yield return new WaitUntil(() => gm.fadeOut.GetComponent<Image>().color.a <= 0);
             gm.fadeOut.SetActive(false);
 
-            Debug.Log("Faded in");
 
             p.GetComponent<PlayerMovement>().enabled = true;
             pc.focusPlayer = true;
