@@ -15,10 +15,14 @@ public class InteractableObject : MonoBehaviour {
 
 	public new ParticleSystem particleSystem;
 	public static bool interacting;
+
+    private bool colliding;
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
 	}
+
+    
 	public void Trigger()
 	{	
 		foreach(TriggerdObjects trigger in toTrigger)
@@ -30,13 +34,22 @@ public class InteractableObject : MonoBehaviour {
         }
 	}
 
+    void Update()
+    {
+        if(Input.GetButtonDown("E") && colliding)
+        {
+            Trigger();
+        }
+    }
+
 	public void OnTriggerStay(Collider other)
 	{
 		if(other.transform.gameObject.tag == "Player")
 		{
 			print("collisison check");
+            colliding = true;
 			if(interacting == false)
-			{
+            {
                 if (other.GetComponent<Animator>().GetBool("Idle") == true)
                 {
                     if (Input.GetButtonDown("E"))
@@ -79,6 +92,7 @@ public class InteractableObject : MonoBehaviour {
 	{
 		if(other.transform.gameObject.tag == "Player")
 		{
+            colliding = false;
 			if(shadedObject != null && shadedObject.GetComponent<TriggerdObjects>().outlineMat != null)
 			{
 				shadedObject.GetComponent<TriggerdObjects>().OutlineShaderToggle();
