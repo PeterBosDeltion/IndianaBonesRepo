@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
     private bool dying;
 
     public static Animator animator;
+    public GameObject DescriptionImage;
 
     public bool interactingFocus;
     // Use this for initialization
@@ -212,6 +213,7 @@ public class Player : MonoBehaviour {
         displayingText = true;
         if(descriptionText != null)
         {
+            DescriptionImage.SetActive(true);
             descriptionText.text = "" + textToShow;
         }
         else
@@ -221,6 +223,7 @@ public class Player : MonoBehaviour {
         yield return new WaitForSeconds(textDisplayTime + extraTime);
         if(descriptionText != null)
         {
+            DescriptionImage.SetActive(false);
             descriptionText.text = "";
         }
         else
