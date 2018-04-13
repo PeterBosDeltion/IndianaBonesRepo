@@ -40,7 +40,7 @@ public class Pickup : MonoBehaviour {
                 p.milk += 1;
                 SaveTrigger.milkSave += 1;
             }
-
+            FindObjectOfType<UiManager>().UpdateValues();
             Destroy(gameObject);
         }
     }

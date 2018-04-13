@@ -2558,7 +2558,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 33158566627812058, guid: a9d889954ccb78f4ea1515de81a500a3,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33918708079918566, guid: a9d889954ccb78f4ea1515de81a500a3,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33622815296831510, guid: a9d889954ccb78f4ea1515de81a500a3,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114271080623857172, guid: a9d889954ccb78f4ea1515de81a500a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a9d889954ccb78f4ea1515de81a500a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &770749130
@@ -6451,7 +6467,7 @@ MonoBehaviour:
     coins: 0
     milk: 0
     bones: 0
-    finishedPuzzles: 
+    finishedPath: 
   fadeOut: {fileID: 566629975}
 --- !u!4 &1732470608
 Transform:

@@ -8,6 +8,27 @@ public class Door : TriggerdObjects {
 	public bool costsKey;
 	public bool left;
 
+	public int path;
+	public bool partOfPath;
+	void Start()
+	{
+		if(partOfPath == true)
+		{
+			if(GameManager.gm.currentData != null)
+			{
+				print("Data found");
+				if(GameManager.gm.currentData.finishedPath.Length != 0)
+				{
+					
+					if(GameManager.gm.currentData.finishedPath[path] == true)
+					{
+						triggerd = true;
+						TriggerFunctionality();
+					}
+				}
+			}
+		}
+	}
 
 	public override void TriggerFunctionality()
 	{
