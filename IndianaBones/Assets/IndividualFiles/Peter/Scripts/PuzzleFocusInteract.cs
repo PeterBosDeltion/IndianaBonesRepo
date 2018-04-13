@@ -39,7 +39,7 @@ public class PuzzleFocusInteract : MonoBehaviour {
                 }
             }
 
-            if(plm.x < -.6F || plm.x > .6F && !Camera.main.GetComponent<PlayerCamera>().focusPlayer)
+            if(plm.x < -.6F || plm.x > .6F && !Camera.main.GetComponent<PlayerCamera>().focusPlayer && !impairMovement)
             {
                 Camera.main.GetComponent<PlayerCamera>().focussing = false;
                 Camera.main.GetComponent<PlayerCamera>().focusPlayer = true;

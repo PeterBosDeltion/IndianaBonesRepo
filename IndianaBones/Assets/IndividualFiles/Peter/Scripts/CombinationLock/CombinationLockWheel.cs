@@ -7,9 +7,16 @@ public class CombinationLockWheel : TriggerdObjects {
     public int currentSelected = -1;
 
     public List<int> combination = new List<int>();
+    public GameObject myArrow;
 	// Use this for initialization
 	void Start () {
-		
+        foreach (Transform t in transform)
+        {
+            if(t.name == "Arrow_Indicator")
+            {
+                myArrow = t.gameObject;
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -32,68 +39,68 @@ public class CombinationLockWheel : TriggerdObjects {
         }
         else if(currentSelected == 12)
         {
-            currentSelected = 0;
+            currentSelected = 1;
             //GetComponent<ObjectDescriptor>().descriptions.Clear();
             //GetComponent<ObjectDescriptor>().descriptions.Add("" + currentSelected);
         }
 
         if(currentSelected == 1)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -15);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 195);
 
         }
         else if (currentSelected == 2)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -45);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 225);
 
         }
         else if (currentSelected == 3)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -75);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 255);
 
         }
         else if (currentSelected == 4)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -105);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 285);
         }
         else if (currentSelected == 5)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -135);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 315);
 
         }
         else if (currentSelected == 6)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -165);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 345);
 
         }
         else if (currentSelected == 7)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -195);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 375);
 
         }
         else if (currentSelected == 8)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -225);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 405);
 
         }
         else if (currentSelected == 9)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -254);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 435);
 
         }
         else if (currentSelected == 10)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -285);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 465);
 
         }
         else if (currentSelected == 11)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, -315);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 495);
 
         }
         else if (currentSelected == 12)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, 15);
+            myArrow.transform.localRotation = Quaternion.Euler(0, -360, 525);
         }
 
     }
