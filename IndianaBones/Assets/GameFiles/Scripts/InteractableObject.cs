@@ -17,6 +17,8 @@ public class InteractableObject : MonoBehaviour {
 	public static bool interacting;
 	public GameObject collisionOther;
     private bool colliding;
+
+    public bool hasFocus;
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -55,14 +57,24 @@ public class InteractableObject : MonoBehaviour {
 					}
 					interacting = true;
 					Player.Interact(interactionType);
-					StartCoroutine(FindObjectOfType<Player>().RestartMovement());
-					if (triggersPuzzlePart)
+                  
+                    
+                    if (triggersPuzzlePart)
 					{
 						puzzleManager.triggers = toTrigger.Count;
 					}
 					Trigger();
-				}
-			}
+                    if (!hasFocus)
+                    {
+                        StartCoroutine(FindObjectOfType<Player>().RestartMovement());
+                    }
+                    else
+                    {
+                        interacting = false;
+                    }
+
+                }
+            }
 		}
     }
     public void OnTriggerEnter(Collider other)

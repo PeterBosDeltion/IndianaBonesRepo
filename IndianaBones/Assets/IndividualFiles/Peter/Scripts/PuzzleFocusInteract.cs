@@ -24,25 +24,28 @@ public class PuzzleFocusInteract : MonoBehaviour {
     {
         if(other.transform.tag == "Player")
         {
-            PlayerMovement plm = other.GetComponent<PlayerMovement>();
             if (Input.GetButtonDown("E"))
             {
                 if (impairMovement)
                 {
-                    plm.enabled = false;
+                    other.GetComponent<PlayerMovement>().enabled = false;
                 }
 
                 if (!Camera.main.GetComponent<PlayerCamera>().focussing)
                 {
                     Camera.main.GetComponent<PlayerCamera>().PuzzleFocus(focusPoint, focusDuration, extraZoffset);
                     Camera.main.GetComponent<PlayerCamera>().focussing = true;
+                    Camera.main.GetComponent<PlayerCamera>().focusPlayer = false;
                 }
             }
 
-            if(plm.x < -.6F || plm.x > .6F && !Camera.main.GetComponent<PlayerCamera>().focusPlayer && !impairMovement)
+            if (!impairMovement)
             {
-                Camera.main.GetComponent<PlayerCamera>().focussing = false;
-                Camera.main.GetComponent<PlayerCamera>().focusPlayer = true;
+                if (other.GetComponent<PlayerMovement>().x < -.6F || other.GetComponent<PlayerMovement>().x > .6F && !Camera.main.GetComponent<PlayerCamera>().focusPlayer)
+                {
+                    Camera.main.GetComponent<PlayerCamera>().focussing = false;
+                    Camera.main.GetComponent<PlayerCamera>().focusPlayer = true;
+                }
             }
         }
        

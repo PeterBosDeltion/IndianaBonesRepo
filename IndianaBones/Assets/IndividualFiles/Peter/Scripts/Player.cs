@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     private bool dying;
 
     public static Animator animator;
+
+    public bool interactingFocus;
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>(); 
@@ -245,8 +247,12 @@ public class Player : MonoBehaviour {
     }
     public IEnumerator RestartMovement()
     {
-        yield return new WaitForSeconds(2);
-        FindObjectOfType<PlayerMovement>().enabled = true;
-        InteractableObject.interacting = false;
-    }
+        
+            yield return new WaitForSeconds(2);
+            FindObjectOfType<PlayerMovement>().enabled = true;
+            InteractableObject.interacting = false;
+        }
+
+
+
 }
