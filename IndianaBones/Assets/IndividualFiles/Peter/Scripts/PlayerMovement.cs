@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour {
     public bool jump;
     
 
-    public float jumpForce;
     //public float jumpCooldown;
     public float x;
 
