@@ -9,11 +9,22 @@ public class CombinationlockPuzzle : Puzzle {
     public float cycleCooldown = 2;
 
     public int i;
+    public GameObject correctLight;
+    public float blinkCorrectTime = 1.5F;
+    private bool blinking;
 
     public List<TriggerdObjects> trapsLose = new List<TriggerdObjects>();
 	// Use this for initialization
 	void Start () {
         puzzleManager = FindObjectOfType<PuzzleManager>();
+        foreach (Transform t in myWheel.transform)
+        {
+            if(t.name == "CorrectLight")
+            {
+                correctLight = t.gameObject;
+                correctLight.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            }
+        }
     }
 
     // Update is called once per frame
@@ -25,8 +36,12 @@ public class CombinationlockPuzzle : Puzzle {
     {
         if(myWheel.currentSelected == myWheel.combination[i])
         {
+           
+            StartCoroutine(BlinkLight());
+           
             Debug.Log("Correct");
             i++;
+           
 
             if(i == myWheel.combination.Count)
             {
@@ -51,6 +66,19 @@ public class CombinationlockPuzzle : Puzzle {
         {
             StartCoroutine(StartCycle());
         }
+    }
+
+    private IEnumerator BlinkLight()
+    {
+        if (!blinking)
+        {
+            blinking = true;
+            correctLight.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            yield return new WaitForSeconds(blinkCorrectTime);
+            correctLight.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            blinking = false;
+        }
+       
     }
 
     private IEnumerator StartCycle()
