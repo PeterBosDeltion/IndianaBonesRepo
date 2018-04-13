@@ -232,6 +232,7 @@ public class UiManager : MonoBehaviour {
 	}
 	public void Quit()
 	{
+		GameManager.ToggleTimeScale();
 		GameManager.gm.ChangeScene(0);
 	}
 
