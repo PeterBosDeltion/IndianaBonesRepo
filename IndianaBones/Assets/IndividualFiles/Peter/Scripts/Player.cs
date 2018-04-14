@@ -204,7 +204,6 @@ public class Player : MonoBehaviour {
         if (!displayingText)
         {
             StartCoroutine(SetPlayerDescriptionText(s, extraTime));
-            
         }
     }
 

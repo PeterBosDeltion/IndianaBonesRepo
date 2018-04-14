@@ -17,6 +17,7 @@ public class InteractableObject : MonoBehaviour {
 	public static bool interacting;
 	public GameObject collisionOther;
     private bool colliding;
+	private bool cantAnimate;
 
     public bool hasFocus;
 	void Start()
@@ -39,6 +40,7 @@ public class InteractableObject : MonoBehaviour {
             if(trigger != null)
             {
                 trigger.TriggerFunctionality();
+				cantAnimate = trigger.triggerd;
             }
         }
 	}
@@ -51,19 +53,19 @@ public class InteractableObject : MonoBehaviour {
 			{
 				if (Input.GetButtonDown("E"))
 				{
-					if (interactionType == 1)
-					{
-						particleSystem.Emit(1);
-					}
 					interacting = true;
-					Player.Interact(interactionType);
-                  
-                    
+					if(!cantAnimate)
+					{
+						if (interactionType == 1)
+						{
+							particleSystem.Emit(1);
+						}
+						Player.Interact(interactionType);
+					}
                     if (triggersPuzzlePart)
 					{
 						puzzleManager.triggers = toTrigger.Count;
 					}
-					Trigger();
                     if (!hasFocus)
                     {
                         StartCoroutine(FindObjectOfType<Player>().RestartMovement());
@@ -72,7 +74,7 @@ public class InteractableObject : MonoBehaviour {
                     {
                         interacting = false;
                     }
-
+					Trigger();
                 }
             }
 		}

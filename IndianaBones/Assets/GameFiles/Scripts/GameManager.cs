@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-		SaveGameState();
 	}
 	public void ChangeScene(int i)
 	{
@@ -75,20 +74,20 @@ public class GameManager : MonoBehaviour {
 		Screen.SetResolution(resolution.width,resolution.height,Screen.fullScreen = screenMode);
 	}
 
-	public void SaveGameState()
+	public void SaveGameState(ToSave template)
 	{
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file;
 		file = File.Create(Application.dataPath + filePath);
-		print(Application.persistentDataPath);
-		ToSave savefile = new ToSave();
+		ToSave savefile = template;
+		print(template.coins);
 		bf.Serialize(file,savefile);
 		file.Close();
 	}
 
 	public void LoadGameState()
 	{
-		if(File.Exists(filePath + "/SaveGame.dat"))
+		if(File.Exists(Application.dataPath + filePath))
 		{
 			print("load");
 			ChangeScene(1);
@@ -103,7 +102,17 @@ public class GameManager : MonoBehaviour {
 			ChangeScene(1);
 		}
 	}
+	void OnApplicationQuit()
+	{
+#if UNITY_EDITOR
+        File.Delete(Application.dataPath + filePath);
+#else
+
+#endif
+	}
 }
+
+	
 
 [System.Serializable]
 public class ToSave
@@ -114,6 +123,5 @@ public class ToSave
     public int coins;
     public int milk;
     public int bones;
-
-	public bool[] finishedPuzzles;
+	public bool[] finishedPath;
 }

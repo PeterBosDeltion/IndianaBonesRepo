@@ -11,18 +11,24 @@ public class SaveTrigger : TriggerdObjects
     public static int coinsSave;
     public static int milkSave;
     public static int bonesSave;
+	public bool[] finishedPathSave;
 
-	public static bool[] finishedPuzzlesSave;
 	void Start()
 	{
-		template = GameObject.FindObjectOfType<GameManager>().GetComponent<ToSave>();
+		// template = GameObject.FindObjectOfType<GameManager>().GetComponent<ToSave>();
+		template = new ToSave();
+		finishedPathSave = new bool[2];
 	}
 
+	void OnTriggerEnter(Collider other)
+	{
+		TriggerFunctionality();
+	}
 	public override void TriggerFunctionality()
 	{
 		AssignVariables();
-		GameManager.gm.SaveGameState();
-		GameManager.gm.ChangeScene(1);
+		GameManager.gm.SaveGameState(template);
+		GameManager.gm.LoadGameState();
 	}
 	public void AssignVariables()
 	{
@@ -32,6 +38,6 @@ public class SaveTrigger : TriggerdObjects
 		template.coins = coinsSave;
 		template.milk = milkSave;
 		template.bones = bonesSave;
-		template.finishedPuzzles = finishedPuzzlesSave;
+		template.finishedPath = finishedPathSave;
 	}
 }
