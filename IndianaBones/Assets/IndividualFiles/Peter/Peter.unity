@@ -87121,6 +87121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248703135}
   - component: {fileID: 1248703134}
+  - component: {fileID: 1248703137}
   - component: {fileID: 1248703136}
   m_Layer: 0
   m_Name: Directional Light
@@ -87202,6 +87203,19 @@ MonoBehaviour:
   triggers: 0
   puzzle: 0
   done: 0
+--- !u!114 &1248703137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1248703133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af65f98e6afa14429d3256d68d4dc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bugs: []
+  resolved: []
 --- !u!1 &1249888478
 GameObject:
   m_ObjectHideFlags: 0

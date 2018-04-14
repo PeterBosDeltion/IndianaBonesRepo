@@ -16,7 +16,7 @@ public class RoomBoundaryCalculator : MonoBehaviour {
 	void Start () {
         CalculateBounds();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
