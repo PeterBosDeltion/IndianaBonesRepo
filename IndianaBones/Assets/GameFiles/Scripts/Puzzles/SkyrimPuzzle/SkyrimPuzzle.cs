@@ -17,6 +17,17 @@ public class SkyrimPuzzle : Puzzle
 		{
 			PuzzleCheck();
 		}
+		else
+		{
+			if(finishedParts[currentObject.puzzlePart] != true)
+			{
+				finishedParts[currentObject.puzzlePart] = true;
+			}
+			else
+			{
+				finishedParts[currentObject.puzzlePart] = false;
+			}
+		}
 	}
 
 	public void PuzzleCheck()

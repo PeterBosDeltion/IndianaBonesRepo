@@ -20,12 +20,6 @@ public class DartTrapArrow : MonoBehaviour {
         {
             col.transform.GetComponent<Player>().Death();
         }
-
-        if(col.transform.tag == "Boulder")
-        {
-            Physics.IgnoreCollision(GetComponent<Collider>(), col.transform.GetComponent<Collider>(), true);
-        }
-
         Destroy(gameObject);
     }
 }

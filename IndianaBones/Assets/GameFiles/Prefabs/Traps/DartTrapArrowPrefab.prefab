@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54656528448572276}
   - component: {fileID: 114356222686305932}
   - component: {fileID: 65131330393907844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DartTrapArrowPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

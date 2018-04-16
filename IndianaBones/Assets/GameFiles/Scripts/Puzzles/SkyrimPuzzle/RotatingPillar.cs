@@ -17,6 +17,12 @@ public class RotatingPillar : TriggerdObjects {
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
 		GetComponent<Animator>().SetInteger("CurentState", (int)side);
+		GetComponent<Animator>().SetTrigger("Rotate");
+		if(correctState == (int)side)
+		{
+			print("Already Correct");
+			puzzleManager.puzzleInsert(this);
+		}
 	}
 	public override void TriggerFunctionality()
 	{
@@ -24,11 +30,15 @@ public class RotatingPillar : TriggerdObjects {
 		{
 			canMove = false;
 			StartCoroutine(rotationBlock());
+			if(correctState == (int)side)
+			{
+				puzzleManager.puzzleInsert(this);
+			}
 			if(side == Side.side1)
 			{
 				side = Side.side2;
 				GetComponent<Animator>().SetTrigger("Rotate");
-				if(correctState == 2)
+				if(correctState == (int)side)
 				{
 					puzzleManager.puzzleInsert(this);
 				}
@@ -37,7 +47,7 @@ public class RotatingPillar : TriggerdObjects {
 			{
 				side = Side.side3;
 				GetComponent<Animator>().SetTrigger("Rotate");
-				if(correctState == 3)
+				if(correctState == (int)side)
 				{
 					puzzleManager.puzzleInsert(this);
 				}
@@ -46,7 +56,7 @@ public class RotatingPillar : TriggerdObjects {
 			{
 				side = Side.side1;
 				GetComponent<Animator>().SetTrigger("Rotate");
-				if(correctState == 1)
+				if(correctState == (int)side)
 				{
 					puzzleManager.puzzleInsert(this);
 				}
@@ -56,7 +66,7 @@ public class RotatingPillar : TriggerdObjects {
 
 	public IEnumerator rotationBlock()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.2f);
 		canMove = true;
 	}
 }

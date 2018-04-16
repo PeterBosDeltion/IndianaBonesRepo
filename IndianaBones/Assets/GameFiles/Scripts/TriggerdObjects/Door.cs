@@ -19,7 +19,6 @@ public class Door : TriggerdObjects {
 				print("Data found");
 				if(GameManager.gm.currentData.finishedPath.Length != 0)
 				{
-					
 					if(GameManager.gm.currentData.finishedPath[path] == true)
 					{
 						triggerd = true;

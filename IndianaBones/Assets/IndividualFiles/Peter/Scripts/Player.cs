@@ -39,7 +39,7 @@ public class Player : MonoBehaviour {
         respawnParticles.SetActive(false);
         if(GameManager.gm != null)
         {
-            if (GameManager.gm.currentData != null)
+            if (GameManager.gm.currentData.finishedPath.Length != 0)
             {
                 hasKey = GameManager.gm.currentData.hasKey;
                 currentLives = GameManager.gm.currentData.currentLives;
@@ -48,6 +48,7 @@ public class Player : MonoBehaviour {
                 milk = GameManager.gm.currentData.milk;
                 bones = GameManager.gm.currentData.bones;
             }
+            CallUIUpdate();
         }
         else
         {
@@ -250,7 +251,7 @@ public class Player : MonoBehaviour {
     public IEnumerator RestartMovement()
     {
         
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1.3f);
             FindObjectOfType<PlayerMovement>().enabled = true;
             InteractableObject.interacting = false;
         }

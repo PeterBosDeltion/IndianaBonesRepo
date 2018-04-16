@@ -118,8 +118,8 @@ public class GameManager : MonoBehaviour {
 public class ToSave
 {
 	public bool hasKey;
-    public int currentLives;
-    public int maxLives;
+    public int currentLives = 3;
+    public int maxLives = 3;
     public int coins;
     public int milk;
     public int bones;
