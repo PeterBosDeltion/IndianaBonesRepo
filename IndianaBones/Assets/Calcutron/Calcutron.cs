@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 public class Calcutron : MonoBehaviour {
-
+#if UNITY_EDITOR
     // Use this for initialization
     [HideInInspector]
     public List<string> bugs = new List<string>();
@@ -92,4 +94,5 @@ public class Calcutron : MonoBehaviour {
             Debug.Log("404 error, bug not found");
         }
     }
+#endif
 }

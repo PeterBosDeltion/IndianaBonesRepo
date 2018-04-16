@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
+#if UNITY_EDITOR
 
 [CustomEditor(typeof(Calcutron))]
 public class AddBugEditorButton : Editor
 {
 
-    
+
     public string text;
 
     public override void OnInspectorGUI()
@@ -18,7 +22,7 @@ public class AddBugEditorButton : Editor
         string s = EditorGUILayout.TextArea(text);
         text = s;
         Calcutron myScript = (Calcutron)target;
-        if (GUILayout.Button("Get Random Bug"))
+        if (GUILayout.Button("Select Random Bug"))
         {
             string st = myScript.GetRandomBug();
             text = st;
@@ -32,7 +36,7 @@ public class AddBugEditorButton : Editor
         {
             myScript.LogBugs();
         }
-      
+
         if (GUILayout.Button("Resolve current selected bug"))
         {
             myScript.ClearBug(text);
@@ -51,3 +55,4 @@ public class AddBugEditorButton : Editor
         }
     }
 }
+#endif
