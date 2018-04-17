@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestItem: 0
+  mySave: {fileID: 0}
 --- !u!114 &114255429095895330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -626,9 +627,11 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
-  outlineMat: {fileID: 0}
+  outlineMat: {fileID: 2100000, guid: 49e15eb481ef4b943bb7ab1bb8cd9c2d, type: 2}
   mats: []
-  outlineChilds: []
+  outlineChilds:
+  - {fileID: 1373293723987870}
+  - {fileID: 1485637307035626}
   myContent: {fileID: 114317933884174744}
 --- !u!114 &114317933884174744
 MonoBehaviour:
@@ -668,7 +671,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 114255429095895330}
   pressurePlate: 0
-  shadedObject: {fileID: 0}
+  shadedObject: {fileID: 1893861868435742}
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
@@ -710,7 +713,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 114255429095895330}
   pressurePlate: 0
-  shadedObject: {fileID: 0}
+  shadedObject: {fileID: 1893861868435742}
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}

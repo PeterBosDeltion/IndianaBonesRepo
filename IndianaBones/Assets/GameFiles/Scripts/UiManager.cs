@@ -19,6 +19,7 @@ public class UiManager : MonoBehaviour {
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
 	public TMP_Dropdown qualityDropdown;
+	public TMP_Dropdown screenModeDropdown;
 	public GameObject lastPannel;
 	public UiState uiState;
 	public Player player;

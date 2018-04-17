@@ -369,6 +369,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: d5f1ac4d3299e2a4b83fdf9858fc6921, type: 2}
+  - {fileID: 2100000, guid: d5f1ac4d3299e2a4b83fdf9858fc6921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -402,6 +403,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: cc835963a63833f44be0495d4f5eee9a, type: 2}
   - {fileID: 2100000, guid: cc835963a63833f44be0495d4f5eee9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -635,9 +637,11 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
-  outlineMat: {fileID: 0}
+  outlineMat: {fileID: 2100000, guid: 49e15eb481ef4b943bb7ab1bb8cd9c2d, type: 2}
   mats: []
-  outlineChilds: []
+  outlineChilds:
+  - {fileID: 1048294041998454}
+  - {fileID: 1872516588626392}
   myContent: {fileID: 114794203138864958}
 --- !u!114 &114642335276449080
 MonoBehaviour:
@@ -654,7 +658,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 114461036072512374}
   pressurePlate: 0
-  shadedObject: {fileID: 0}
+  shadedObject: {fileID: 1096071890053524}
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
@@ -672,6 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestItem: 1
+  mySave: {fileID: 0}
 --- !u!114 &114794203138864958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -710,7 +715,7 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 114461036072512374}
   pressurePlate: 0
-  shadedObject: {fileID: 0}
+  shadedObject: {fileID: 1096071890053524}
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}

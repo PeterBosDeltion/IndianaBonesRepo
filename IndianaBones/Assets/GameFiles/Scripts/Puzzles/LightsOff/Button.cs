@@ -7,8 +7,6 @@ public class Button : TriggerdObjects {
 	public bool puzzle;
 	public Material button;
 	public Material buttonBase;
-	bool outline = false;
-	int partsLeft = 2;
 	public bool keepGoingAfterFinished;
 
     private bool emissionOff;
@@ -59,32 +57,4 @@ public class Button : TriggerdObjects {
         }
         emissionOff = false;
     }
-
-    public override void OutlineShaderToggle()
-	{
-		foreach (GameObject child in outlineChilds)
-		{
-			mats = child.GetComponent<Renderer>().materials;
-			if(mats[1] != outlineMat && outline != true)
-			{
-				mats[1] = outlineMat;
-				partsLeft -= 1;
-				if(partsLeft == 0)
-				{
-					outline = true;
-				}
-			}
-			
-			else
-			{
-				mats[1] = mats[0];
-				partsLeft += 1;
-				if(partsLeft == 2)
-				{
-					outline = false;
-				}
-			}
-			child.GetComponent<Renderer>().materials = mats;
-		}
-	}
 }

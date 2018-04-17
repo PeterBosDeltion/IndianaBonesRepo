@@ -7,7 +7,6 @@ public class PuzzleManager : MonoBehaviour {
 	public List<TriggerdObjects> puzzleTriggerObjects = new List<TriggerdObjects>();
 	public List<Puzzle> puzzleList = new List<Puzzle>();
 	public int triggers;
-	public int puzzle;
 
 	public bool done;
 	//checked de puzzle list activeerd de bijhoorende puzzle functie en returned uitijndelijk een bool zonder de restrictie die de function een bool maken geeft

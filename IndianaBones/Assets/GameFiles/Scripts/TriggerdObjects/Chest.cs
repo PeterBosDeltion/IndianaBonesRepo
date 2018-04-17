@@ -22,6 +22,7 @@ public class Chest : TriggerdObjects {
         GetComponent<Animator>().SetTrigger("Open");
         if(triggerd == false)
         {
+            OutlineShaderToggle();
             triggerd = true;
             StartCoroutine(Wait());
         }

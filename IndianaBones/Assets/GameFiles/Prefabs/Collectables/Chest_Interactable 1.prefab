@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 95824233033777480}
   - component: {fileID: 54439601448291470}
   - component: {fileID: 114751997000950026}
+  - component: {fileID: 65166078263927276}
+  - component: {fileID: 114150840809900670}
   m_Layer: 8
   m_Name: coinOB
   m_TagString: Untagged
@@ -201,8 +203,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1259866946048450}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -400.149, y: -3.119, z: -2.2}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 13.468979, y: 3.243059, z: 1.6247001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4607115898412410}
@@ -336,6 +338,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: d5f1ac4d3299e2a4b83fdf9858fc6921, type: 2}
+  - {fileID: 2100000, guid: d5f1ac4d3299e2a4b83fdf9858fc6921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -404,6 +407,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: cc835963a63833f44be0495d4f5eee9a, type: 2}
+  - {fileID: 2100000, guid: cc835963a63833f44be0495d4f5eee9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -471,6 +475,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!65 &65166078263927276
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151987661107308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22748306, y: 0.025000032, z: 0.23413521}
+  m_Center: {x: -0.002952575, y: -0.012500002, z: 0.09426751}
 --- !u!65 &65301741668600372
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -574,10 +590,24 @@ MonoBehaviour:
   triggerd: 0
   puzzleNumber: 0
   puzzlePart: 0
-  outlineMat: {fileID: 0}
+  outlineMat: {fileID: 2100000, guid: 49e15eb481ef4b943bb7ab1bb8cd9c2d, type: 2}
   mats: []
-  outlineChilds: []
+  outlineChilds:
+  - {fileID: 1036570392301930}
+  - {fileID: 1340575766845828}
   myContent: {fileID: 114751997000950026}
+--- !u!114 &114150840809900670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151987661107308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20130f71414db4446a6f8d9d214cdb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &114607196847101102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,9 +623,12 @@ MonoBehaviour:
   toTrigger:
   - {fileID: 114001715165520820}
   pressurePlate: 0
-  shadedObject: {fileID: 0}
+  shadedObject: {fileID: 1768612942786294}
   interactionType: 2
   triggersPuzzlePart: 0
+  particleSystem: {fileID: 0}
+  collisionOther: {fileID: 0}
+  hasFocus: 0
 --- !u!114 &114751997000950026
 MonoBehaviour:
   m_ObjectHideFlags: 1

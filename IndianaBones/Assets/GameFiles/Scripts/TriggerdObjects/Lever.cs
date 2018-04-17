@@ -15,38 +15,6 @@ public class Lever : TriggerdObjects {
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
 	}
-	public override void OutlineShaderToggle()
-	{
-		if(triggerd != true)
-		{
-			foreach (GameObject child in outlineChilds)
-			{
-				mats = child.GetComponent<Renderer>().materials;
-				print(outline);
-				if(mats[1] != outlineMat && outline != true)
-				{
-					mats[1] = outlineMat;
-					partsLeft -= 1;
-					if(partsLeft == 0)
-					{
-						outline = true;
-					}
-				}
-			
-				else
-				{
-					mats[1] = mats[0];
-					partsLeft += 1;
-					if(partsLeft == 2)
-					{
-						outline = false;
-					}
-				}
-				child.GetComponent<Renderer>().materials = mats;
-			}
-		}
-		
-	}
 	public override void TriggerFunctionality()
 	{
 		GetComponent<Animator>().SetBool("Return",returnLever);

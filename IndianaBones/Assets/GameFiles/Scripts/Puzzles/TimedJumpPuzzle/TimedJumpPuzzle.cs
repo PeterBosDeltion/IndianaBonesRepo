@@ -5,9 +5,9 @@ using UnityEngine;
 public class TimedJumpPuzzle : Puzzle {
 
 	public List<TriggerdObjects> beams = new List<TriggerdObjects>();
-	public float time;
+	private float time;
 	public float timeBetween;
-	public int beamsLeft;
+	private int beamsLeft;
 
 	void Start()
 	{
