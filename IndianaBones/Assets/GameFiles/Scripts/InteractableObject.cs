@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour {
 
 	public new ParticleSystem particleSystem;
 	public static bool interacting;
-	public GameObject collisionOther;
+	private GameObject collisionOther;
     private bool colliding;
 	private bool cantAnimate;
 
