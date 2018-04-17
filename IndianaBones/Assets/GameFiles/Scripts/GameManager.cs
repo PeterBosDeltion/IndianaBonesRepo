@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public AudioMixer mainMixer;
 	public static GameManager gm;
 	public int gameQualityIndex;
+	public int reselutionIndex;
 	public Resolution resolution;
 	public bool screenMode = true;
 	public ToSave currentData;

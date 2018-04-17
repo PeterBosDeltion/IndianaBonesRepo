@@ -20,7 +20,6 @@ public class RotatingPillar : TriggerdObjects {
 		GetComponent<Animator>().SetTrigger("Rotate");
 		if(correctState == (int)side)
 		{
-			print("Already Correct");
 			puzzleManager.puzzleInsert(this);
 		}
 	}

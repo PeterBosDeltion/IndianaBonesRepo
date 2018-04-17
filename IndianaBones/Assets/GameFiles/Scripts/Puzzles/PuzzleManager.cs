@@ -15,7 +15,6 @@ public class PuzzleManager : MonoBehaviour {
 	{
 		done = false;
 		puzzleList[currentObject.puzzleNumber].PuzzleTrigger(currentObject);
-		print(done);
 		if(done == true)
 		{
 			if(triggers == 0)

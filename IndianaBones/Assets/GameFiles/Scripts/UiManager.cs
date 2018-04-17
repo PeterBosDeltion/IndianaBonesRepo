@@ -18,6 +18,7 @@ public class UiManager : MonoBehaviour {
 	public Slider sliderEffects;
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
+	public TMP_Dropdown qualityDropdown;
 	public GameObject lastPannel;
 	public UiState uiState;
 	public Player player;
@@ -89,12 +90,16 @@ public class UiManager : MonoBehaviour {
 		sliderMusic.value = audioValue;
 		GameManager.gm.mainMixer.GetFloat("SoundEffects",out audioValue);
 		sliderEffects.value = audioValue;
+
+		print(GameManager.gm.gameQualityIndex);
+		qualityDropdown.value = GameManager.gm.gameQualityIndex;
+		print(GameManager.gm.reselutionIndex);
+		resolutionDropdown.value = GameManager.gm.reselutionIndex;
 	}
 	void Update()
 	{
 		if(Input.GetButtonDown("ESC"))
 		{
-			print("ok");
 			ChangeUiState();
 		}
 	}
@@ -170,25 +175,13 @@ public class UiManager : MonoBehaviour {
         {
             milkCount.text = "Milk : " + player.milk;
         }
-        else
-        {
-            Debug.LogError("Variable milkCount is null, Script: UiManager");
-        }
         if(bonesCount != null)
         {
             bonesCount.text = "Bones : " + player.bones;
         }
-        else
-        {
-            Debug.LogError("Variable bonesCount is null, Script: UiManager");
-        }
         if (coinCount != null)
         {
             coinCount.text = "Coins : " + player.coins;
-        }
-        else
-        {
-            Debug.LogError("Variable coinCount is null, Script: UiManager");
         }
         if (player.currentLives != player.maxLives)
 		{

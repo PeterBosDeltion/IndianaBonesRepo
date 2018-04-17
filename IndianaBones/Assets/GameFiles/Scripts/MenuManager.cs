@@ -19,6 +19,12 @@ public class MenuManager : MonoBehaviour {
 	public Animator cameraAnimator;
 	public Animator cascetAnimator;
 	public GameObject fadeOut;
+
+	public Resolution currentRes;
+	public int currentResIndex;
+	public int currentQualityIndex;
+	public bool currentScreenMode;
+
 	void Start()
 	{
 		audioSource.Play();
@@ -105,28 +111,32 @@ public class MenuManager : MonoBehaviour {
 
 	public void ChangeQuality(int qualityIndex)
 	{
-		GameManager.gm.gameQualityIndex = qualityIndex;
+		currentQualityIndex = qualityIndex;
 	}
 
-	public void ChangeReselution(int resolutionIndex)
+	public void ChangeReselution(int resolutionInd)
 	{
-		GameManager.gm.resolution = reselutions[resolutionIndex];
+		currentRes = reselutions[resolutionInd];
+		currentResIndex = resolutionInd;
 	}
 	public void AcceptUIOptions()
 	{
+		GameManager.gm.screenMode = currentScreenMode;
+		GameManager.gm.gameQualityIndex = currentQualityIndex;
+		GameManager.gm.resolution = currentRes;
+		GameManager.gm.reselutionIndex = currentResIndex;
 		GameManager.gm.QualityOptionsUpdate();
 	}
 
 	public void ChangeScreenMode(int screenModeIndex)
 	{
-		print(screenModeIndex);
 		if(screenModeIndex == 0)
 		{
-			GameManager.gm.screenMode = true;
+			currentScreenMode = true;
 		}
 		else if(screenModeIndex == 1)
 		{
-			GameManager.gm.screenMode = false;
+			currentScreenMode = false;
 		}
 	}
 
