@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+		reselutionIndex = Screen.resolutions.Length;
 	}
 	public void ChangeScene(int i)
 	{

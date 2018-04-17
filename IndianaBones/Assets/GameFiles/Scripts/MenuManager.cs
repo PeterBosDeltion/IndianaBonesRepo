@@ -15,6 +15,8 @@ public class MenuManager : MonoBehaviour {
 	public AudioSource audioSource;
 	public Resolution[] reselutions;
 	public TMP_Dropdown resolutionDropdown;
+	public TMP_Dropdown QualityDropdown;
+	public TMP_Dropdown screenMode;
 	public float audioValue;
 	public Animator cameraAnimator;
 	public Animator cascetAnimator;
@@ -54,6 +56,16 @@ public class MenuManager : MonoBehaviour {
 		sliderMusic.value = audioValue;
 		GameManager.gm.mainMixer.GetFloat("SoundEffects",out audioValue);
 		sliderEffects.value = audioValue;
+		resolutionDropdown.value = GameManager.gm.reselutionIndex;
+		QualityDropdown.value = GameManager.gm.gameQualityIndex;
+		if(GameManager.gm.screenMode == true)
+		{
+			screenMode.value = 0;
+		}
+		else
+		{
+			screenMode.value = 1;
+		}
 	}
 	void Update()
 	{

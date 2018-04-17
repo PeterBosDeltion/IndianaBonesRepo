@@ -96,6 +96,14 @@ public class UiManager : MonoBehaviour {
 		qualityDropdown.value = GameManager.gm.gameQualityIndex;
 		print(GameManager.gm.reselutionIndex);
 		resolutionDropdown.value = GameManager.gm.reselutionIndex;
+		if(GameManager.gm.screenMode == true)
+		{
+			screenModeDropdown.value = 0;
+		}
+		else
+		{
+			screenModeDropdown.value = 1;
+		}
 	}
 	void Update()
 	{

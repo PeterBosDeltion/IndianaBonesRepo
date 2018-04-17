@@ -6577,6 +6577,7 @@ MonoBehaviour:
   filePath: /SaveGame.dat
   mainMixer: {fileID: 24100000, guid: 591a9aacbf47a6541a9da81f389f1609, type: 2}
   gameQualityIndex: 0
+  reselutionIndex: 0
   screenMode: 1
   currentData:
     hasKey: 0
@@ -7601,10 +7602,15 @@ MonoBehaviour:
   loop: {fileID: 8300000, guid: d24fd0474db451244b59f247a2aefb40, type: 3}
   audioSource: {fileID: 1242691885}
   resolutionDropdown: {fileID: 952145645}
+  QualityDropdown: {fileID: 1766874582}
+  screenMode: {fileID: 298549193}
   audioValue: 0
   cameraAnimator: {fileID: 1927907378}
   cascetAnimator: {fileID: 908578778}
   fadeOut: {fileID: 1296667398}
+  currentResIndex: 0
+  currentQualityIndex: 0
+  currentScreenMode: 0
 --- !u!1 &1936607443
 GameObject:
   m_ObjectHideFlags: 0
