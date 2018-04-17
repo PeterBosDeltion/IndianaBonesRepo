@@ -10,13 +10,14 @@ public class Player : MonoBehaviour {
     public int milk;
     public int bones;
     public int textDisplayTime;
-    private bool displayingText;
+    public bool displayingText;
 
     public bool enteredLeft;
     public Vector3 beginingRoom;
     public GameObject currentRoom;
 
     public TextMeshProUGUI descriptionText;
+    public TextMeshPro descriptionWorldText;
     public GameObject deadPlayer;
     public GameObject respawnParticles;
 
@@ -28,8 +29,15 @@ public class Player : MonoBehaviour {
     public GameObject DescriptionImage;
 
     public bool interactingFocus;
+
+    public GameObject playerWorldUI;
+
     // Use this for initialization
     void Start () {
+
+        GameObject gam = GameObject.Find("PlayerWorldUI");
+        Destroy(gam);
+        Instantiate(playerWorldUI, Vector3.zero, Quaternion.identity);
         animator = GetComponent<Animator>(); 
         maxLives = 3;
         currentLives = maxLives;
@@ -200,21 +208,29 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void SetText(string s, float extraTime)
+    public void SetText(string s, float extraTime, bool sign)
     {
         if (!displayingText)
         {
-            StartCoroutine(SetPlayerDescriptionText(s, extraTime));
+            StartCoroutine(SetPlayerDescriptionText(s, extraTime, sign));
         }
     }
 
-    private IEnumerator SetPlayerDescriptionText(string textToShow, float extraTime)
+    private IEnumerator SetPlayerDescriptionText(string textToShow, float extraTime, bool sign)
     {
         displayingText = true;
         if(descriptionText != null)
         {
-            DescriptionImage.SetActive(true);
-            descriptionText.text = "" + textToShow;
+            if (sign)
+            {
+                DescriptionImage.SetActive(true);
+                descriptionText.text = "" + textToShow;
+
+            }
+            else
+            {
+                descriptionWorldText.text = "" + textToShow;
+            }
         }
         else
         {
@@ -223,8 +239,16 @@ public class Player : MonoBehaviour {
         yield return new WaitForSeconds(textDisplayTime + extraTime);
         if(descriptionText != null)
         {
-            DescriptionImage.SetActive(false);
-            descriptionText.text = "";
+            if (sign)
+            {
+                DescriptionImage.SetActive(false);
+                descriptionText.text = "";
+
+            }
+            else
+            {
+                descriptionWorldText.text = "";
+            }
         }
         else
         {

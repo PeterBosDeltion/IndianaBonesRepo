@@ -134,6 +134,7 @@ public class SimonSaysPuzzle : Puzzle {
         {
             if(correctOrder[intyMcIntface] == currentObject.gameObject)
             {
+                currentObject.GetComponent<SayButton>().StartCoroutine(currentObject.GetComponent<SayButton>().LightUp(.6F));
                 intyMcIntface++;
             }
             else
@@ -148,6 +149,8 @@ public class SimonSaysPuzzle : Puzzle {
 
             if(intyMcIntface == correctOrder.Count)
             {
+                StartCoroutine(ShowWhenDone());
+
                 puzzleManager.done = true;
                 done = true;
                 //foreach (TriggerdObjects t in toTriggerOnWin)
@@ -161,6 +164,15 @@ public class SimonSaysPuzzle : Puzzle {
 
     }
 
+    public IEnumerator ShowWhenDone()
+    {
+        yield return new WaitForSeconds(.7F);
+        foreach (GameObject g in correctOrder)
+        {
+            SayButton sb = g.GetComponent<SayButton>();
+            sb.StartCoroutine(sb.LightUp(3));
+        }
+    }
 
 
 }

@@ -1123,11 +1123,14 @@ MonoBehaviour:
   beginingRoom: {x: 0, y: 0, z: 0}
   currentRoom: {fileID: 0}
   descriptionText: {fileID: 0}
+  descriptionWorldText: {fileID: 0}
   deadPlayer: {fileID: 1665340207060332, guid: 2d692b32cbbf3354db82365538fb75bd, type: 2}
   respawnParticles: {fileID: 1703571524652360}
   respawnTime: 3
   DescriptionImage: {fileID: 0}
   interactingFocus: 0
+  playerWorldUI: {fileID: 1966818956343300, guid: 45bc90e5ec0540d4b89e01507a927bf8,
+    type: 2}
 --- !u!114 &114876426278114812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1145,6 +1148,7 @@ MonoBehaviour:
     IndianaBones'
   myNameText: {fileID: 0}
   extraDisplayTime: 0
+  sign: 0
 --- !u!114 &114946292910413882
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,6 +10,7 @@ public class ObjectDescriptor : MonoBehaviour {
     public float extraDisplayTime;
 
     private Player player;
+    public bool sign;
 	// Use this for initialization
 	void Start () {
         if(transform.tag != "Player")
@@ -19,7 +20,7 @@ public class ObjectDescriptor : MonoBehaviour {
         if (myNameText != null)
         {
             myNameText.text = gameObject.name;
-            myNameText.enabled = false;
+            myNameText.gameObject.SetActive(false);
         }
         else
         {
@@ -36,7 +37,7 @@ public class ObjectDescriptor : MonoBehaviour {
         {
             if (myNameText.isActiveAndEnabled && Input.GetKeyUp(KeyCode.LeftAlt))
             {
-                myNameText.enabled = false;
+                myNameText.gameObject.SetActive(false);
             }
         }
         else
@@ -50,10 +51,14 @@ public class ObjectDescriptor : MonoBehaviour {
     {
         if(myNameText != null)
         {
-            if (!myNameText.isActiveAndEnabled && Input.GetKey(KeyCode.LeftAlt))
+            if (!player.displayingText)
             {
-                myNameText.enabled = true;
+                if (!myNameText.isActiveAndEnabled && Input.GetKey(KeyCode.LeftAlt))
+                {
+                    myNameText.gameObject.SetActive(true);
+                }
             }
+           
         }
         else
         {
@@ -61,9 +66,10 @@ public class ObjectDescriptor : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftAlt))
         {
+            myNameText.gameObject.SetActive(false);
             if(player != null)
             {
-                player.SetText(RandomStringFromList(), extraDisplayTime);
+                player.SetText(RandomStringFromList(), extraDisplayTime, sign);
             }
             else
             {
@@ -96,7 +102,7 @@ public class ObjectDescriptor : MonoBehaviour {
         {
             if (myNameText.isActiveAndEnabled)
             {
-                myNameText.enabled = false;
+                myNameText.gameObject.SetActive(false);
             }
         }
         else
