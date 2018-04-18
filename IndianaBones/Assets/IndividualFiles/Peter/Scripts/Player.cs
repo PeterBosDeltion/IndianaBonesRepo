@@ -89,78 +89,79 @@ public class Player : MonoBehaviour {
 
     IEnumerator Die()
     {
-        dying = true;
-        GameObject g = Instantiate(deadPlayer, transform.position, Quaternion.identity);
-
-        Destroy(g, respawnTime);
-        yield return new WaitForSeconds(respawnTime);
-        GetComponent<Animator>().SetBool("Idle", true);
-        GetComponent<Animator>().SetBool("Run", false);
-        GetComponent<Animator>().SetBool("Jump", false);
         if (currentLives > 0)
         {
-            GetComponentInChildren<Renderer>().enabled = true;
-            GetComponent<PlayerMovement>().enabled = true;
-            currentLives -= 1;
-            SaveTrigger.currentLivesSave -= 1;
-            if (uiManager != null)
-            {
-                uiManager.UpdateValues();
-            }
-            else
-            {
-                Debug.LogError("Variable uiManager is null, Script: Player");
-            }
-            PlayerCamera p = Camera.main.GetComponent<PlayerCamera>();
-            if (p != null)
-            {
-                p.ResetCam();
-            }
-            else
-            {
-                Debug.LogError("Variable p (PlayerCamera) is null, add PlayerCamera to Main Camera, Script: Player");
-            }
-            if (enteredLeft)
-            {
-                transform.position = beginingRoom + new Vector3(.4F, 0, 0);
+            dying = true;
+            GameObject g = Instantiate(deadPlayer, transform.position, Quaternion.identity);
 
-                respawnParticles.SetActive(true);
-                GetComponent<PlayerMovement>().enabled = false;
-                yield return new WaitForSeconds(2F);
+                Destroy(g, respawnTime);
+                yield return new WaitForSeconds(respawnTime);
+                GetComponent<Animator>().SetBool("Idle", true);
+                GetComponent<Animator>().SetBool("Run", false);
+                GetComponent<Animator>().SetBool("Jump", false);
+        
+                GetComponentInChildren<Renderer>().enabled = true;
                 GetComponent<PlayerMovement>().enabled = true;
-                respawnParticles.SetActive(false);
-
-                RaycastHit hit;
-                if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Vector3.down, out hit))
+                currentLives -= 1;
+                SaveTrigger.currentLivesSave -= 1;
+                if (uiManager != null)
                 {
-                    if(hit.transform.tag == "Room")
+                    uiManager.UpdateValues();
+                }
+                else
+                {
+                    Debug.LogError("Variable uiManager is null, Script: Player");
+                }
+                PlayerCamera p = Camera.main.GetComponent<PlayerCamera>();
+                if (p != null)
+                {
+                    p.ResetCam();
+                }
+                else
+                {
+                    Debug.LogError("Variable p (PlayerCamera) is null, add PlayerCamera to Main Camera, Script: Player");
+                }
+                if (enteredLeft)
+                {
+                    transform.position = beginingRoom + new Vector3(.4F, 0, 0);
+
+                    respawnParticles.SetActive(true);
+                    GetComponent<PlayerMovement>().enabled = false;
+                    yield return new WaitForSeconds(2F);
+                    GetComponent<PlayerMovement>().enabled = true;
+                    respawnParticles.SetActive(false);
+
+                    RaycastHit hit;
+                    if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Vector3.down, out hit))
                     {
-                        currentRoom = hit.transform.parent.gameObject;
+                        if(hit.transform.tag == "Room")
+                        {
+                            currentRoom = hit.transform.parent.gameObject;
+                        }
                     }
                 }
-            }
-            else
-            {
-                transform.position = beginingRoom + new Vector3(-.04F, 0, 0);
-
-                respawnParticles.SetActive(true);
-                GetComponent<PlayerMovement>().enabled = false;
-                yield return new WaitForSeconds(2F);
-                GetComponent<PlayerMovement>().enabled = true;
-                respawnParticles.SetActive(false);
-
-                RaycastHit hit;
-                if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y +1, transform.position.z), -transform.up, out hit))
+                else
                 {
-                    if (hit.transform.tag == "Room")
+                    transform.position = beginingRoom + new Vector3(-.04F, 0, 0);
+
+                    respawnParticles.SetActive(true);
+                    GetComponent<PlayerMovement>().enabled = false;
+                    yield return new WaitForSeconds(2F);
+                    GetComponent<PlayerMovement>().enabled = true;
+                    respawnParticles.SetActive(false);
+
+                    RaycastHit hit;
+                    if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y +1, transform.position.z), -transform.up, out hit))
                     {
-                        currentRoom = hit.transform.parent.gameObject;
+                        if (hit.transform.tag == "Room")
+                        {
+                            currentRoom = hit.transform.parent.gameObject;
+                        }
                     }
                 }
+                //Go reset to the bathroom or something
             }
-            //Go reset to the bathroom or something
-        }
-        if (currentLives <= 0)
+        else if (currentLives <= 0)
         {
             if (GameManager.gm != null)
             {
