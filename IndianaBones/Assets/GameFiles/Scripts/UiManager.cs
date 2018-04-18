@@ -33,6 +33,7 @@ public class UiManager : MonoBehaviour {
 	//deze list word gevuld met geinstantiate plaatjes die de max lives voorstellen (instantiation proses nog niet geprogameerd momenteel placeholder voor prototype)
 	public List<GameObject> lifes = new List<GameObject>();
 	public Sprite emptyHeart;
+	public Sprite fullHeartSprite;
 	public GameObject fullHeart;
 	public GameObject healthPannel;
 	public float audioValue;
@@ -92,10 +93,9 @@ public class UiManager : MonoBehaviour {
 		GameManager.gm.mainMixer.GetFloat("SoundEffects",out audioValue);
 		sliderEffects.value = audioValue;
 
-		print(GameManager.gm.gameQualityIndex);
 		qualityDropdown.value = GameManager.gm.gameQualityIndex;
-		print(GameManager.gm.reselutionIndex);
 		resolutionDropdown.value = GameManager.gm.reselutionIndex;
+		
 		if(GameManager.gm.screenMode == true)
 		{
 			screenModeDropdown.value = 0;
@@ -192,13 +192,6 @@ public class UiManager : MonoBehaviour {
         {
             coinCount.text = "Coins : " + player.coins;
         }
-        if (player.currentLives != player.maxLives)
-		{
-            if(lifes.Count > 0)
-            {
-                lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
-            }
-        }
 		if(player.hasKey == true)
 		{
             if(keyImage != null)
@@ -213,8 +206,23 @@ public class UiManager : MonoBehaviour {
                 keyImage.SetActive(false);
             }
         }
+		UpdateHpUI();
 	}
 
+	public void UpdateHpUI()
+	{
+		if(player.currentLives == player.maxLives)
+		{
+			foreach (GameObject live in lifes)
+			{
+				live.GetComponent<UnityEngine.UI.Image>().sprite = fullHeartSprite;
+			}
+		}
+		else if(player.currentLives < player.maxLives)
+		{
+			lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
+		}
+	}
 	public void AddLive()
 	{
 		lifes.Add(Instantiate(fullHeart,healthPannel.transform.position,Quaternion.identity));

@@ -69,6 +69,10 @@ public class Player : MonoBehaviour {
     void Update()
     {
         Debug.DrawRay(transform.position, -transform.up, Color.red);
+        if(Input.GetButtonDown("Heal"))
+        {
+            DrinkMilk();
+        }
     }
 
     public void CallUIUpdate()
@@ -185,10 +189,24 @@ public class Player : MonoBehaviour {
 
     public void DrinkMilk()
     {
-        if(currentLives < maxLives)
+        if(milk != 0)
         {
-            currentLives += 1;
-            SaveTrigger.currentLivesSave += 1;
+            if(currentLives < maxLives)
+            {
+                currentLives += 1;
+                SaveTrigger.currentLivesSave += 1;
+                milk -= 1;
+                SaveTrigger.milkSave -=1;
+                CallUIUpdate();
+            }
+            else
+            {
+                SetText("Im feeling fine",0,false);
+            }
+        }
+        else
+        {
+            SetText("No sweet nectart left",0,false);
         }
     }
 

@@ -66114,6 +66114,7 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   noMoreUse: 0
+  partsLeft: 0
   forceAmount: 6
   randomSideForce: 0.2
   moveZ: 0
@@ -66148,13 +66149,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleManager: {fileID: 0}
   toTrigger:
-  - {fileID: 0}
+  - {fileID: 114697101086820624}
   pressurePlate: 0
   shadedObject: {fileID: 0}
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!114 &114455119235015314
 MonoBehaviour:
@@ -66176,6 +66176,7 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   noMoreUse: 0
+  partsLeft: 0
 --- !u!114 &114463818864072592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66208,6 +66209,7 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   noMoreUse: 0
+  partsLeft: 0
   costsKey: 0
   left: 0
   path: 0
@@ -66232,6 +66234,7 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   noMoreUse: 0
+  partsLeft: 0
   forceAmount: 6
   randomSideForce: 0.2
   moveZ: 0
@@ -66255,7 +66258,6 @@ MonoBehaviour:
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!114 &114502872888197118
 MonoBehaviour:
@@ -66291,6 +66293,7 @@ MonoBehaviour:
   - {fileID: 1282595370629244}
   - {fileID: 1560886219710106}
   noMoreUse: 0
+  partsLeft: 0
   myContent: {fileID: 114287429255350794}
 --- !u!114 &114555416827567800
 MonoBehaviour:
@@ -66312,6 +66315,7 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   noMoreUse: 0
+  partsLeft: 0
   costsKey: 0
   left: 1
   path: 0
@@ -66338,7 +66342,8 @@ MonoBehaviour:
   - {fileID: 1796394819556760}
   - {fileID: 1044305907532138}
   noMoreUse: 0
-  myContent: {fileID: 0}
+  partsLeft: 0
+  myContent: {fileID: 114481189447901248}
 --- !u!114 &114853656555858996
 MonoBehaviour:
   m_ObjectHideFlags: 1

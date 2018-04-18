@@ -16,6 +16,7 @@ public class Chest : TriggerdObjects {
                 clip = c;
             }
         }
+        partsLeft = outlineChilds.Count;
     }
     public override void TriggerFunctionality()
     {

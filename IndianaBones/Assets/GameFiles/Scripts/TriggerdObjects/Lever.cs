@@ -8,12 +8,10 @@ public class Lever : TriggerdObjects {
  	public bool returnLever;
 	public Material lever;
 	public Material leverBase;
-	bool outline = false;
-	int partsLeft = 2;
-
 	void Start()
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
+		partsLeft = outlineChilds.Count;
 	}
 	public override void TriggerFunctionality()
 	{

@@ -14,6 +14,7 @@ public class Button : TriggerdObjects {
 	void Start()
 	{
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
+        partsLeft = outlineChilds.Count;
         foreach (Transform t in transform)
         {
             if(t.transform.name == "Cylinder003")

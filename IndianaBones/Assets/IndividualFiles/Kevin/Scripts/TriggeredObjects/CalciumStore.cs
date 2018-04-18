@@ -6,6 +6,7 @@ public class CalciumStore : TriggerdObjects {
 
 	void Start()
 	{
+		partsLeft = outlineChilds.Count;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
 	}
 	public override void TriggerFunctionality()
@@ -15,7 +16,8 @@ public class CalciumStore : TriggerdObjects {
 			player.coins -= 1;
 			SaveTrigger.coinsSave -= 1;
 			player.milk += 1;
-			SaveTrigger.milkSave -= 1;
+			SaveTrigger.milkSave += 1;
+			player.CallUIUpdate();
 		}
 		else if(player.coins == 0)
 		{

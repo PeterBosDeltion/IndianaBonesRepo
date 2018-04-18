@@ -14,7 +14,7 @@ public abstract class TriggerdObjects : MonoBehaviour {
 	public List<GameObject> outlineChilds = new List<GameObject>();
 	bool outline = false;
 	public bool noMoreUse;
-	int partsLeft = 2;
+	public int partsLeft;
 
 	public abstract void TriggerFunctionality();
 
@@ -39,7 +39,7 @@ public abstract class TriggerdObjects : MonoBehaviour {
 				{
 					mats[1] = mats[0];
 					partsLeft += 1;
-					if(partsLeft == 2)
+					if(partsLeft == outlineChilds.Count)
 					{
 						outline = false;
 					}
