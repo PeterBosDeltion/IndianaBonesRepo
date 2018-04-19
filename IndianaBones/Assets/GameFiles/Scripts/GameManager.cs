@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
 	public Resolution resolution;
 	public bool screenMode = true;
 	public ToSave currentData;
+
+    public GameObject controlsImage;
     public GameObject fadeOut;
 
     void Start()
@@ -30,6 +32,19 @@ public class GameManager : MonoBehaviour {
 		}
 		reselutionIndex = Screen.resolutions.Length;
 	}
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.F1))
+        {
+            controlsImage.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.F1))
+        {
+            controlsImage.SetActive(false);
+        }
+    }
+
 	public void ChangeScene(int i)
 	{
 		SceneManager.LoadScene(i);	

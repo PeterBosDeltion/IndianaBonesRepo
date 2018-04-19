@@ -8,6 +8,7 @@ TagManager:
   - TestLights
   - Room
   - Boulder
+  - ControlsImage
   layers:
   - Default
   - TransparentFX
