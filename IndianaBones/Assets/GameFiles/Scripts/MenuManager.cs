@@ -27,6 +27,9 @@ public class MenuManager : MonoBehaviour {
 	public int currentQualityIndex;
 	public bool currentScreenMode;
 
+	public GameObject loadingPannel;
+	public Slider loadingSlider;
+
 	void Start()
 	{
 		audioSource.Play();
@@ -75,6 +78,10 @@ public class MenuManager : MonoBehaviour {
 			audioSource.loop = true;
 			audioSource.Play();
 		}
+		if(GameManager.gm.loading == true)
+		{
+			loadingUI();
+		}
 	}
 
 	public void UIButton(int i)
@@ -95,6 +102,12 @@ public class MenuManager : MonoBehaviour {
 			cameraAnimator.SetTrigger("Exit");
 		}
 		
+	}
+
+	public void loadingUI()
+	{
+		loadingPannel.SetActive(true);
+		loadingSlider.value = GameManager.gm.loadingProgress;
 	}
 	public void PlayGame()
 	{

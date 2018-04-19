@@ -104,6 +104,17 @@ public class Player : MonoBehaviour {
                 GetComponent<PlayerMovement>().enabled = true;
                 currentLives -= 1;
                 SaveTrigger.currentLivesSave -= 1;
+                if (currentLives <= 0)
+                {
+                    if (GameManager.gm != null)
+                    {
+                        GameManager.gm.LoadGameState();
+                    }
+                    else
+                    {
+                        Debug.LogError("Variable GameManager.gm is null, Script: Player");
+                    }
+                }
                 if (uiManager != null)
                 {
                     uiManager.UpdateValues();
@@ -161,18 +172,6 @@ public class Player : MonoBehaviour {
                 }
                 //Go reset to the bathroom or something
             }
-        else if (currentLives <= 0)
-        {
-            if (GameManager.gm != null)
-            {
-                GameManager.gm.LoadGameState();
-            }
-            else
-            {
-                Debug.LogError("Variable GameManager.gm is null, Script: Player");
-            }
-        }
-
         dying = false;
     }
 

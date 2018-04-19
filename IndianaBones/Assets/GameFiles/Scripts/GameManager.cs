@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public string filePath;
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour {
 
     public GameObject controlsImage;
     public GameObject fadeOut;
+	AsyncOperation async;
+	public float loadingProgress;
+	public bool loading;
 
     void Start()
 	{
@@ -47,7 +51,9 @@ public class GameManager : MonoBehaviour {
 
 	public void ChangeScene(int i)
 	{
-		SceneManager.LoadScene(i);	
+		async = SceneManager.LoadSceneAsync(i);	
+		async.allowSceneActivation = false;
+		StartCoroutine(LoadingScreen());
 	}
 	
 	public static void Quit()
@@ -119,6 +125,23 @@ public class GameManager : MonoBehaviour {
 			ChangeScene(1);
 		}
 	}
+
+	public IEnumerator LoadingScreen()
+	{
+		loading = true;
+		while (async.isDone == false)
+		{
+			loadingProgress = async.progress;
+			if(async.progress == 0.9f)
+			{
+				loadingProgress = 1;
+				loading = false;
+				async.allowSceneActivation = true;
+			}
+			yield return null;
+		}
+	}
+
 	void OnApplicationQuit()
 	{
 #if UNITY_EDITOR

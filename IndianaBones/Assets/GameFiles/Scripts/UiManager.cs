@@ -104,6 +104,10 @@ public class UiManager : MonoBehaviour {
 		{
 			screenModeDropdown.value = 1;
 		}
+
+		GameManager.gm.fadeOut.SetActive(true);
+		GameManager.gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn",true);
+		GameManager.gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
 	}
 	void Update()
 	{
