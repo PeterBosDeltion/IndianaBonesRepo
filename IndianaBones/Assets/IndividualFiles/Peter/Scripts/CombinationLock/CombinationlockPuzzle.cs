@@ -14,12 +14,12 @@ public class CombinationlockPuzzle : Puzzle {
     private bool blinking;
 
     public List<TriggerdObjects> trapsLose = new List<TriggerdObjects>();
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         puzzleManager = FindObjectOfType<PuzzleManager>();
         foreach (Transform t in myWheel.transform)
         {
-            if(t.name == "CorrectLight")
+            if (t.name == "CorrectLight")
             {
                 correctLight = t.gameObject;
                 correctLight.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
@@ -28,24 +28,25 @@ public class CombinationlockPuzzle : Puzzle {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         CycleWheel();
-	}
+    }
 
     public override void PuzzleTrigger(TriggerdObjects currentObject)
     {
-        if(myWheel.currentSelected == myWheel.combination[i])
+        if (myWheel.currentSelected == myWheel.combination[i])
         {
-           
-            StartCoroutine(BlinkLight());
-           
+
+            StartCoroutine(BlinkLight(blinkCorrectTime));
+
             Debug.Log("Correct");
             i++;
-           
 
-            if(i == myWheel.combination.Count)
+
+            if (i == myWheel.combination.Count)
             {
                 puzzleManager.done = true;
+                StartCoroutine(BlinkCorrect());
             }
         }
         else
@@ -68,13 +69,19 @@ public class CombinationlockPuzzle : Puzzle {
         }
     }
 
-    private IEnumerator BlinkLight()
+    private IEnumerator BlinkCorrect()
+    {
+        yield return new WaitForSeconds(blinkCorrectTime);
+        StartCoroutine(BlinkLight(4));
+    }
+
+    private IEnumerator BlinkLight(float f)
     {
         if (!blinking)
         {
             blinking = true;
             correctLight.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-            yield return new WaitForSeconds(blinkCorrectTime);
+            yield return new WaitForSeconds(f);
             correctLight.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             blinking = false;
         }
