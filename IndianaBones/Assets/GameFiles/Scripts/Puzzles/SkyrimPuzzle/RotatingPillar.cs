@@ -15,6 +15,7 @@ public class RotatingPillar : TriggerdObjects {
 	private bool canMove = true;
 	void Start()
 	{
+		partsLeft = 2;
 		puzzleManager = FindObjectOfType<PuzzleManager>();
 		GetComponent<Animator>().SetInteger("CurentState", (int)side);
 		GetComponent<Animator>().SetTrigger("Rotate");
