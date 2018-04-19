@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DartTrapArrow : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 		

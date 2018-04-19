@@ -4450,7 +4450,6 @@ MonoBehaviour:
   interactionType: 0
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!65 &33227488
 BoxCollider:
@@ -14722,6 +14721,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
 --- !u!1001 &142075779
 Prefab:
   m_ObjectHideFlags: 0
@@ -15279,6 +15280,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
   thingsToRotate:
   - {fileID: 2125932655}
   - {fileID: 1464111503}
@@ -15322,6 +15325,8 @@ MonoBehaviour:
   outlineChilds:
   - {fileID: 1995691827}
   - {fileID: 335847569}
+  noMoreUse: 0
+  partsLeft: 0
   puzzle: 0
   button: {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
   buttonBase: {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
@@ -35102,6 +35107,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
 --- !u!65 &365139112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42355,6 +42362,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
 --- !u!1001 &511544972
 Prefab:
   m_ObjectHideFlags: 0
@@ -46137,7 +46146,6 @@ MonoBehaviour:
   interactionType: 0
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!23 &519394327
 MeshRenderer:
@@ -50381,6 +50389,114 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 116
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &681612319 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1237296817526744, guid: 684c590df91def8408d32778c5907131,
+    type: 2}
+  m_PrefabInternal: {fileID: 1263058557}
+--- !u!82 &681612321
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681612319}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0467d8691f25a284bbe12329586f4e9a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &681612322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681612319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcf1338021d2454391f4e5e0331fbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
+  sourceToPlay: {fileID: 681612321}
+  whenToPlay: 0
 --- !u!4 &684578492 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4146094151306362, guid: 6fd0bfc3cd9fd084bb6f385264dbce3a,
@@ -66268,6 +66384,8 @@ MonoBehaviour:
   outlineChilds:
   - {fileID: 844238403}
   - {fileID: 217460998}
+  noMoreUse: 0
+  partsLeft: 0
   puzzle: 0
   button: {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
   buttonBase: {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
@@ -66310,6 +66428,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
   platforms:
   - {fileID: 1804310927}
   - {fileID: 563728601}
@@ -66336,7 +66456,6 @@ MonoBehaviour:
   interactionType: 0
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!114 &853866478
 MonoBehaviour:
@@ -84541,6 +84660,7 @@ MonoBehaviour:
   milk: 0
   bones: 0
   textDisplayTime: 3
+  displayingText: 0
   enteredLeft: 1
   beginingRoom: {x: 0, y: 0, z: 0}
   currentRoom: {fileID: 1272240414}
@@ -85533,7 +85653,6 @@ MonoBehaviour:
   interactionType: 0
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!65 &1185360597
 BoxCollider:
@@ -87308,7 +87427,6 @@ MonoBehaviour:
   - {fileID: 506542302}
   - {fileID: 863563643}
   triggers: 0
-  puzzle: 0
   done: 0
 --- !u!114 &1248703137
 MonoBehaviour:
@@ -90520,6 +90638,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
 --- !u!65 &1334713178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98071,6 +98191,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
   timeUntilDestroyed: 0
   debris: []
 --- !u!1 &1463900875
@@ -122517,6 +122639,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
   thingsToRotate:
   - {fileID: 176343270}
   - {fileID: 254675414}
@@ -122560,6 +122684,8 @@ MonoBehaviour:
   outlineChilds:
   - {fileID: 1034215894}
   - {fileID: 1483225391}
+  noMoreUse: 0
+  partsLeft: 0
   puzzle: 0
   button: {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
   buttonBase: {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
@@ -146012,7 +146138,6 @@ MonoBehaviour:
   interactionType: 0
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!65 &2071947577
 BoxCollider:
