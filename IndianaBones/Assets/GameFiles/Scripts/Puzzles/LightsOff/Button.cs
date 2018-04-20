@@ -11,10 +11,16 @@ public class Button : TriggerdObjects {
 
     private bool emissionOff;
     public GameObject redCircle;
+
+    private GameManager gm;
 	void Start()
 	{
+        gm = FindObjectOfType<GameManager>();
 		puzzleManager = GameObject.FindObjectOfType<PuzzleManager>();
         partsLeft = outlineChilds.Count;
+
+        AddAudio();
+
         foreach (Transform t in transform)
         {
             if(t.transform.name == "Cylinder003")
@@ -42,7 +48,25 @@ public class Button : TriggerdObjects {
                 puzzleManager.puzzleInsert(this);
             }
         }
+
+        Audio aud = GetComponent<Audio>();
+        if(aud != null)
+        {
+            aud.TriggerFunctionality();
+        }
 	}
+
+    public void AddAudio()
+    {
+        AudioSource asr = gameObject.AddComponent<AudioSource>();
+        Audio a =gameObject.AddComponent<Audio>();
+
+        asr.clip = gm.buttonClick;
+        a.sourceToPlay = asr;
+        a.whenToPlay = Audio.State.Trigger;
+
+
+    }
 
     IEnumerator ChangeEmissive()
     {

@@ -60,10 +60,10 @@ public class InteractableObject : MonoBehaviour {
 					{
 						if (interactionType == 1)
 						{
-                            if (!partPlaying)
-                            {
-                                StartCoroutine(PlayPart());
-                            }
+                            //if (!partPlaying)
+                            //{
+                            //    StartCoroutine(PlayPart());
+                            //}
 						}
 						Player.Interact(interactionType);
 					}

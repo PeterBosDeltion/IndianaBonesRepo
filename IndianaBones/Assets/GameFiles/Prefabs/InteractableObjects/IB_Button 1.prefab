@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 4303640962993216}
   - component: {fileID: 65146176013105818}
   - component: {fileID: 114027344608552938}
+  - component: {fileID: 114104466870295292}
+  - component: {fileID: 82976995396767028}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -293,6 +295,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82976995396767028
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438361344364830}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3690860f966dc194ea1fae09109a029f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95230637307272488
 Animator:
   serializedVersion: 3
@@ -329,6 +411,30 @@ MonoBehaviour:
   interactionType: 1
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
+  hasFocus: 0
+--- !u!114 &114104466870295292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438361344364830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcf1338021d2454391f4e5e0331fbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  triggerd: 0
+  puzzleNumber: 0
+  puzzlePart: 0
+  outlineMat: {fileID: 0}
+  mats: []
+  outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
+  sourceToPlay: {fileID: 0}
+  whenToPlay: 1
 --- !u!114 &114194471383122046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,9 +569,12 @@ MonoBehaviour:
   outlineChilds:
   - {fileID: 1291666896161750}
   - {fileID: 1431548611117164}
+  noMoreUse: 0
+  partsLeft: 0
   puzzle: 1
   button: {fileID: 2100000, guid: d93c50ff5a38165488e13192a5225b70, type: 2}
   buttonBase: {fileID: 2100000, guid: fd79336a27bd4ab4eb0cf9639eeb023d, type: 2}
+  keepGoingAfterFinished: 0
   redCircle: {fileID: 0}
 --- !u!114 &114676109162423934
 MonoBehaviour:
@@ -482,6 +591,7 @@ MonoBehaviour:
   - The sign might have something to say about it
   myNameText: {fileID: 114194471383122046}
   extraDisplayTime: 0
+  sign: 0
 --- !u!114 &114754676176849004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -501,6 +611,8 @@ MonoBehaviour:
   outlineMat: {fileID: 0}
   mats: []
   outlineChilds: []
+  noMoreUse: 0
+  partsLeft: 0
   simonSaysPuzzle: {fileID: 0}
   obj: {fileID: 0}
 --- !u!222 &222068958817190060

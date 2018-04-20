@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour {
 	public float loadingProgress;
 	public bool loading;
 
+    public AudioClip buttonClick;
+
     void Start()
 	{
 		DontDestroyOnLoad(this.gameObject);

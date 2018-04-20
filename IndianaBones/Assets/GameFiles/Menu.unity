@@ -5692,6 +5692,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 123
       objectReference: {fileID: 0}
+    - target: {fileID: 33987753740732974, guid: 2b33af9b290d9eb4cb684cf21b6f33dd,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b33af9b290d9eb4cb684cf21b6f33dd, type: 2}
   m_IsPrefabParent: 0
@@ -6972,6 +6977,7 @@ MonoBehaviour:
   fadeOut: {fileID: 566629975}
   loadingProgress: 0
   loading: 0
+  buttonClick: {fileID: 8300000, guid: 3690860f966dc194ea1fae09109a029f, type: 3}
 --- !u!4 &1732470608
 Transform:
   m_ObjectHideFlags: 0
