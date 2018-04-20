@@ -20,6 +20,8 @@ public class InteractableObject : MonoBehaviour {
 	private bool cantAnimate;
 
     public bool hasFocus;
+
+    private bool partPlaying;
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -58,7 +60,10 @@ public class InteractableObject : MonoBehaviour {
 					{
 						if (interactionType == 1)
 						{
-							particleSystem.Emit(1);
+                            if (!partPlaying)
+                            {
+                                StartCoroutine(PlayPart());
+                            }
 						}
 						Player.Interact(interactionType);
 					}
@@ -79,6 +84,17 @@ public class InteractableObject : MonoBehaviour {
             }
 		}
     }
+
+    private IEnumerator PlayPart()
+    {
+        partPlaying = true;
+        particleSystem.Play();
+        yield return new WaitForSeconds(2.3F);
+        particleSystem.Stop();
+        partPlaying = false;
+
+    }
+
     public void OnTriggerEnter(Collider other)
     {
 		print("collisison check");

@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     public TextMeshPro descriptionWorldText;
     public GameObject deadPlayer;
     public GameObject respawnParticles;
+    public GameObject clickParticle;
 
     private UiManager uiManager;
     public float respawnTime;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour {
         //descriptionText = GetComponentInChildren<TextMeshProUGUI>();
         uiManager = GameObject.FindObjectOfType<UiManager>();
         respawnParticles.SetActive(false);
+        clickParticle = GameObject.Find("ClickTextEffect");
         if(GameManager.gm != null)
         {
             if (GameManager.gm.currentData.finishedPath.Length != 0)
