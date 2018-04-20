@@ -8,6 +8,7 @@ public class CalciumStore : TriggerdObjects {
 	{
 		partsLeft = outlineChilds.Count;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        GetComponent<ObjectDescriptor>().myNameText.text = "Reaper";
 	}
 	public override void TriggerFunctionality()
 	{
