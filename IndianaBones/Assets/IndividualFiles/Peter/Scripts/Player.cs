@@ -119,7 +119,7 @@ public class Player : MonoBehaviour {
                 }
                 if (uiManager != null)
                 {
-                    uiManager.UpdateValues();
+                    uiManager.RemoveLiveUI();
                 }
                 else
                 {
@@ -195,11 +195,11 @@ public class Player : MonoBehaviour {
         {
             if(currentLives < maxLives)
             {
+                uiManager.AddLiveUI();
                 currentLives += 1;
                 SaveTrigger.currentLivesSave += 1;
                 milk -= 1;
                 SaveTrigger.milkSave -=1;
-                CallUIUpdate();
             }
             else
             {

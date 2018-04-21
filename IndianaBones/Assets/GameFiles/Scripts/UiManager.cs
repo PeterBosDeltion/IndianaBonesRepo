@@ -67,6 +67,7 @@ public class UiManager : MonoBehaviour {
 		{
 			AddLive();
 		}
+		UpdateHpUI();
 		resolutionDropdown.ClearOptions();
 		reselutions = Screen.resolutions;
 		List<string> options = new List<string>();
@@ -210,22 +211,30 @@ public class UiManager : MonoBehaviour {
                 keyImage.SetActive(false);
             }
         }
-		UpdateHpUI();
 	}
 
 	public void UpdateHpUI()
 	{
-		if(player.currentLives == player.maxLives)
+		if(player.currentLives != player.maxLives)
 		{
-			foreach (GameObject live in lifes)
+			if(player.currentLives == 1)
 			{
-				live.GetComponent<UnityEngine.UI.Image>().sprite = fullHeartSprite;
+				lifes[2].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
+				lifes[1].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
+			}
+			else
+			{
+				lifes[2].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
 			}
 		}
-		else if(player.currentLives < player.maxLives)
-		{
-			lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
-		}
+	}
+	public void RemoveLiveUI()
+	{
+		lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = emptyHeart;
+	}
+	public void AddLiveUI()
+	{
+		lifes[player.currentLives].GetComponent<UnityEngine.UI.Image>().sprite = fullHeartSprite;
 	}
 	public void AddLive()
 	{
