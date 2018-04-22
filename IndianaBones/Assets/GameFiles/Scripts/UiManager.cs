@@ -62,12 +62,12 @@ public class UiManager : MonoBehaviour {
 		GameManager.ToggleTimeScale();
 		lastPannel = mainPannel;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
-		UpdateValues();
+		
 		while(lifes.Count != player.maxLives)
 		{
 			AddLive();
 		}
-		UpdateHpUI();
+		
 		resolutionDropdown.ClearOptions();
 		reselutions = Screen.resolutions;
 		List<string> options = new List<string>();
@@ -109,6 +109,8 @@ public class UiManager : MonoBehaviour {
 		GameManager.gm.fadeOut.SetActive(true);
 		GameManager.gm.fadeOut.GetComponent<Animator>().SetBool("FadeIn",true);
 		GameManager.gm.fadeOut.GetComponent<Animator>().SetTrigger("Fade");
+		UpdateValues();
+		UpdateHpUI();
 	}
 	void Update()
 	{
@@ -187,6 +189,8 @@ public class UiManager : MonoBehaviour {
 	{
         if(milkCount != null)
         {
+			print(player);
+			print(player.milk);
             milkCount.text = "Milk : " + player.milk;
         }
         if(bonesCount != null)

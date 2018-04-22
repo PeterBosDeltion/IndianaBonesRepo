@@ -58,7 +58,6 @@ public class Player : MonoBehaviour {
                 milk = GameManager.gm.currentData.milk;
                 bones = GameManager.gm.currentData.bones;
             }
-            CallUIUpdate();
         }
         else
         {

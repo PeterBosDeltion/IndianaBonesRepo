@@ -5697,6 +5697,14 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1927317380733236, guid: 2b33af9b290d9eb4cb684cf21b6f33dd, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034562632704854, guid: 2b33af9b290d9eb4cb684cf21b6f33dd, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114525750360248064, guid: 2b33af9b290d9eb4cb684cf21b6f33dd, type: 2}
     - {fileID: 114709990888846596, guid: 2b33af9b290d9eb4cb684cf21b6f33dd, type: 2}

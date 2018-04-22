@@ -60,10 +60,8 @@ public class InteractableObject : MonoBehaviour {
 					{
 						if (interactionType == 1)
 						{
-                            //if (!partPlaying)
-                            //{
-                            //    StartCoroutine(PlayPart());
-                            //}
+							particleSystem.Clear();
+                            particleSystem.Play();
 						}
 						Player.Interact(interactionType);
 					}
@@ -83,16 +81,6 @@ public class InteractableObject : MonoBehaviour {
                 }
             }
 		}
-    }
-
-    private IEnumerator PlayPart()
-    {
-        partPlaying = true;
-        particleSystem.Play();
-        yield return new WaitForSeconds(2.3F);
-        particleSystem.Stop();
-        partPlaying = false;
-
     }
 
     public void OnTriggerEnter(Collider other)
