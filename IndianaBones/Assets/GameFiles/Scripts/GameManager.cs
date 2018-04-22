@@ -105,7 +105,6 @@ public class GameManager : MonoBehaviour {
 		FileStream file;
 		file = File.Create(Application.dataPath + filePath);
 		ToSave savefile = template;
-		print(template.coins);
 		bf.Serialize(file,savefile);
 		file.Close();
 	}

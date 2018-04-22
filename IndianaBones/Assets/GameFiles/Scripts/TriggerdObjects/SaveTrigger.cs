@@ -17,7 +17,6 @@ public class SaveTrigger : TriggerdObjects
 	{
 		if(GameManager.gm.currentData.finishedPath.Length != 0)
 		{
-			print("template data");
 			template = GameManager.gm.currentData;
 			finishedPathSave = template.finishedPath;
 		}

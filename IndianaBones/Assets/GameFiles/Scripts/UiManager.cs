@@ -189,8 +189,6 @@ public class UiManager : MonoBehaviour {
 	{
         if(milkCount != null)
         {
-			print(player);
-			print(player.milk);
             milkCount.text = "Milk : " + player.milk;
         }
         if(bonesCount != null)
