@@ -6993,6 +6993,7 @@ MonoBehaviour:
   pistonRetract: {fileID: 8300000, guid: e1fcbd9d46ea47b498b02a26c80a0417, type: 3}
   stoneTurn: {fileID: 8300000, guid: 8a24104fbb319dc448a2b832db5a0ea3, type: 3}
   coinFall: {fileID: 8300000, guid: c18230060b594bb45bc8f28756e96485, type: 3}
+  arrowClip: {fileID: 8300000, guid: 91c7f56fea0773c4882966097d01e379, type: 3}
 --- !u!4 &1732470608
 Transform:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class Pickup : MonoBehaviour {
         gm = FindObjectOfType<GameManager>();
 
         source = gameObject.AddComponent<AudioSource>();
+        source.playOnAwake = false;
         coinFall = gm.coinFall;
         source.clip = coinFall;
 	}

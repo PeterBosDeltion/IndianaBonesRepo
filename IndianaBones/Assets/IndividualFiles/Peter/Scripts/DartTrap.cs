@@ -13,9 +13,21 @@ public class DartTrap : TriggerdObjects {
     public bool repeat;
 
     private bool shooting;
+
+    public AudioSource source;
+    public AudioClip arrowClip;
+    private GameManager gm;
 	// Use this for initialization
 	void Start () {
+        gm = FindObjectOfType<GameManager>();
 
+        source = gameObject.AddComponent<AudioSource>();
+        source.playOnAwake = false;
+        source.volume = 0.1F;
+
+        arrowClip = gm.arrowClip;
+
+        source.clip = arrowClip;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +50,7 @@ public class DartTrap : TriggerdObjects {
 
     public void Shoot()
     {
+        source.Play();
         GameObject g = Instantiate(arrowPrefab, emptyPos.transform.position, transform.rotation);
 
         Rigidbody rb = g.GetComponent<Rigidbody>();

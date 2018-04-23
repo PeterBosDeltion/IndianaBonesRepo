@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour {
 
     public AudioClip coinFall;
 
+    public AudioClip arrowClip;
+
     void Start()
 	{
 		DontDestroyOnLoad(this.gameObject);

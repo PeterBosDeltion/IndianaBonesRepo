@@ -23,6 +23,7 @@ public class RotatingPillar : TriggerdObjects {
 		partsLeft = 2;
 
         source = gameObject.AddComponent<AudioSource>();
+        source.playOnAwake = false;
         stoneTurn = gm.stoneTurn;
         source.clip = stoneTurn;
 
