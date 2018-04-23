@@ -35,7 +35,6 @@ public class WoodenBeam : TriggerdObjects {
         source = gameObject.AddComponent<AudioSource>();
 
         source.playOnAwake = false;
-		source.outputAudioMixerGroup = 
         extendClip = gm.pistonExtend;
         retractClip = gm.pistonRetract;
 
