@@ -25,6 +25,13 @@ public class GameManager : MonoBehaviour {
 
     public AudioClip buttonClick;
 
+    public AudioClip pistonExtend;
+    public AudioClip pistonRetract;
+
+    public AudioClip stoneTurn;
+
+    public AudioClip coinFall;
+
     void Start()
 	{
 		DontDestroyOnLoad(this.gameObject);

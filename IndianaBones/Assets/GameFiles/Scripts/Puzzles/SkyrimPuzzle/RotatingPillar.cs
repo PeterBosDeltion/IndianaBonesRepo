@@ -13,9 +13,20 @@ public class RotatingPillar : TriggerdObjects {
 	public Side side;
 	public int correctState;
 	private bool canMove = true;
+
+    public AudioSource source;
+    public AudioClip stoneTurn;
+    private GameManager gm;
 	void Start()
 	{
+        gm = FindObjectOfType<GameManager>();
 		partsLeft = 2;
+
+        source = gameObject.AddComponent<AudioSource>();
+        stoneTurn = gm.stoneTurn;
+        source.clip = stoneTurn;
+
+
 		puzzleManager = FindObjectOfType<PuzzleManager>();
 		GetComponent<Animator>().SetInteger("CurentState", (int)side);
 		GetComponent<Animator>().SetTrigger("Rotate");
@@ -28,6 +39,8 @@ public class RotatingPillar : TriggerdObjects {
 	{
 		if(puzzleManager.puzzleList[puzzleNumber].puzzleDone != true && canMove == true)
 		{
+            source.Play();
+
 			canMove = false;
 			StartCoroutine(rotationBlock());
 			if(correctState == (int)side)

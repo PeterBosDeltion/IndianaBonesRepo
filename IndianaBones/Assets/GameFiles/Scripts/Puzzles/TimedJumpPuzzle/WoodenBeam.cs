@@ -21,10 +21,24 @@ public class WoodenBeam : TriggerdObjects {
 	public Animator beam;
 	public bool startStayInPlaceStateExtended;
 
+    public AudioSource source;
+    public AudioClip extendClip;
+    public AudioClip retractClip;
+
+    private GameManager gm;
+
 	void Start()
 	{
+        gm = FindObjectOfType<GameManager>();
+
 		beam = GetComponent<Animator>();
-		if(startStayInPlaceStateExtended == true)
+        source = gameObject.AddComponent<AudioSource>();
+
+        source.playOnAwake = false;
+        extendClip = gm.pistonExtend;
+        retractClip = gm.pistonRetract;
+
+        if (startStayInPlaceStateExtended == true)
 		{
 			if(state == BeamAction.StayInPlace)
 			{
@@ -42,26 +56,42 @@ public class WoodenBeam : TriggerdObjects {
 		{
 			beam.SetTrigger("Trigger");
 			StartCoroutine(BeamTimer(afterTime));
+            ExtendAudio();
+            
 		}
 
-		if(state == BeamAction.Gradual)
+        if (state == BeamAction.Gradual)
 		{
 			beam.SetTrigger("Trigger");
 			StartCoroutine(BeamTimer(instant));
+            ExtendAudio();
 		}
-		if(state == BeamAction.Instant)
+        if (state == BeamAction.Instant)
 		{
 			beam.SetTrigger("Trigger");
 			StartCoroutine(BeamTimer(instant));
+            ExtendAudio();
 		}
-		if(state == BeamAction.StayInPlace)
+        if (state == BeamAction.StayInPlace)
 		{
 			beam.SetTrigger("Trigger");
+            ExtendAudio();
 		}
-	}
+    }
+
+    private void ExtendAudio()
+    {
+        source.clip = extendClip;
+        source.Play();
+    }
+
 	public IEnumerator BeamTimer (float time)
 	{
 		yield return new WaitForSeconds(time);
+
+        source.clip = retractClip;
+        source.Play();
+
 		if(state == BeamAction.Gradual)
 		{
 			beam.speed = gradual;

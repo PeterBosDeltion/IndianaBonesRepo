@@ -11,9 +11,17 @@ public class Pickup : MonoBehaviour {
     }
 
     public Type type;
+    public AudioSource source;
+    public AudioClip coinFall;
+    private GameManager gm;
+
 	// Use this for initialization
 	void Start () {
-		
+        gm = FindObjectOfType<GameManager>();
+
+        source = gameObject.AddComponent<AudioSource>();
+        coinFall = gm.coinFall;
+        source.clip = coinFall;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +35,8 @@ public class Pickup : MonoBehaviour {
             Player p = other.GetComponent<Player>();
             if(type == Type.Coin)
             {
+                source.Play();
+
                 p.coins += 1;
                 SaveTrigger.coinsSave += 1;
             }
