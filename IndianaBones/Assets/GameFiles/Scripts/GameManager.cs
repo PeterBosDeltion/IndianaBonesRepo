@@ -155,10 +155,14 @@ public class GameManager : MonoBehaviour {
 	void OnApplicationQuit()
 	{
 #if UNITY_EDITOR
-        File.Delete(Application.dataPath + filePath);
+       DeleteSave();
 #else
 
 #endif
+	}
+	public void DeleteSave()
+	{
+		 File.Delete(Application.dataPath + filePath);
 	}
 }
 

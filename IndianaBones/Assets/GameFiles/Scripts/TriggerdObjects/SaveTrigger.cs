@@ -12,6 +12,7 @@ public class SaveTrigger : TriggerdObjects
     public static int milkSave;
     public static int bonesSave;
 	public bool[] finishedPathSave;
+	public PlayerMovement playerMovement;
 
 	void Start()
 	{
@@ -31,6 +32,7 @@ public class SaveTrigger : TriggerdObjects
 		milkSave = template.milk;
 		bonesSave = template.bones;
 		hasKeySave = template.hasKey;
+		playerMovement = FindObjectOfType<PlayerMovement>();
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -39,6 +41,7 @@ public class SaveTrigger : TriggerdObjects
 	}
 	public override void TriggerFunctionality()
 	{
+		playerMovement.enabled = false;
 		AssignVariables();
 		GameManager.gm.SaveGameState(template);
 		GameManager.gm.LoadGameState();

@@ -10,10 +10,8 @@ public class Gate : TriggerdObjects {
 	{
 		if(partOfPath == true)
 		{
-			print("Bool on");
 			if(GameManager.gm.currentData != null)
 			{
-				print("current data there");
 				if(GameManager.gm.currentData.finishedPath.Length != 0)
 				{
 					bool finishedGame = true;
