@@ -22,6 +22,8 @@ public class InteractableObject : MonoBehaviour {
     public bool hasFocus;
 
     private bool partPlaying;
+
+	public bool klickParticalOn;
 	void Start()
 	{
 		puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -60,8 +62,11 @@ public class InteractableObject : MonoBehaviour {
 					{
 						if (interactionType == 1)
 						{
-							particleSystem.Clear();
-                            particleSystem.Play();
+							if(klickParticalOn == true)
+							{
+								particleSystem.Clear();
+                            	particleSystem.Play();
+							}
 						}
 						Player.Interact(interactionType);
 					}
