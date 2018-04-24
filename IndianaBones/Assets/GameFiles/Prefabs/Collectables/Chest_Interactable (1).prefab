@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 65207412925665354}
   - component: {fileID: 65428214012147530}
   - component: {fileID: 65093510806038234}
+  - component: {fileID: 82061075646750414}
   m_Layer: 9
   m_Name: IB_Chest
   m_TagString: Untagged
@@ -213,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1089228272997368}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -2.72, y: 4.802, z: -9.409}
+  m_LocalPosition: {x: -2.1360016, y: 4.710863, z: -9.409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4728610392587008}
@@ -631,6 +632,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82061075646750414
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893861868435742}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2a64808196ece5047a07ecab473d706e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95051215859707560
 Animator:
   serializedVersion: 3
@@ -700,6 +781,7 @@ MonoBehaviour:
   - {fileID: 1373293723987870}
   - {fileID: 1485637307035626}
   noMoreUse: 0
+  partsLeft: 0
   myContent: {fileID: 114317933884174744}
 --- !u!114 &114317933884174744
 MonoBehaviour:
@@ -721,6 +803,7 @@ MonoBehaviour:
   mats: []
   outlineChilds: []
   noMoreUse: 0
+  partsLeft: 0
   forceAmount: 6
   randomSideForce: 0.2
   moveZ: 0
@@ -744,7 +827,6 @@ MonoBehaviour:
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!114 &114772964313977084
 MonoBehaviour:
@@ -760,12 +842,12 @@ MonoBehaviour:
   puzzleManager: {fileID: 0}
   toTrigger:
   - {fileID: 0}
+  - {fileID: 0}
   pressurePlate: 1
   shadedObject: {fileID: 0}
   interactionType: 0
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!114 &114855211051460830
 MonoBehaviour:
@@ -786,7 +868,6 @@ MonoBehaviour:
   interactionType: 2
   triggersPuzzlePart: 0
   particleSystem: {fileID: 0}
-  collisionOther: {fileID: 0}
   hasFocus: 0
 --- !u!198 &198136289852938638
 ParticleSystem:
