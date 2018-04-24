@@ -82,6 +82,8 @@ Properties {
 	_StencilReadMask	("Stencil Read Mask", Float) = 255
 
 	_ColorMask			("Color Mask", Float) = 15
+
+	_LayerInt 			("TextLayerInt", Int) = 0
 }
 
 SubShader {
