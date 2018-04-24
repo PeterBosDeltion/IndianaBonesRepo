@@ -26,7 +26,6 @@ public class EndGame : TriggerdObjects {
 	public IEnumerator TheEnd()
 	{
 		yield return new WaitForSeconds(3);
-		print("fade tet");
 		fadeToWhiteText.GetComponent<Animator>().SetTrigger("Fade");
 		yield return new WaitForSeconds(5);
 		GameManager.gm.DeleteSave();

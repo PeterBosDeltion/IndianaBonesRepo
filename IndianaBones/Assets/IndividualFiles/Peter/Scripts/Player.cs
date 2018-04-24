@@ -199,6 +199,7 @@ public class Player : MonoBehaviour {
                 SaveTrigger.currentLivesSave += 1;
                 milk -= 1;
                 SaveTrigger.milkSave -=1;
+                CallUIUpdate();
             }
             else
             {
