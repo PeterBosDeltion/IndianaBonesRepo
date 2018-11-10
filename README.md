@@ -1,4 +1,4 @@
-# IndianaBonesRepo
+
 Indiana Bones
 ===
 ##Indiana Bones is a puzzle/platforming game. You play as a skeleton trying to escape a dungeon so you can be a generic enemy in the outside world.
