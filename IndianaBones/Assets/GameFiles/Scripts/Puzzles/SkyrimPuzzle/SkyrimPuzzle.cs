@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkyrimPuzzle : Puzzle 
 {
-    //a list of booleans the keep track of which pillar is rotated correctly
+    //a list of booleans to keep track of which pillar is rotated correctly
 	public List<bool> finishedParts = new List<bool>();
     //The object that will trigger to kill the palyer when the outcome is wrong
 	public TriggerdObjects trap;
